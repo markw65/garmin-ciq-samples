@@ -1,0 +1,495 @@
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> $.BulkDownloadDelegate </title>
+
+    <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "$.BulkDownloadDelegate";
+      relpath = '../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: $.BulkDownloadDelegate</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">Communications.SyncDelegate</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class='inline'>
+    Communications.SyncDelegate
+  </div>
+</li>
+<li class="next">
+  <div class='inline'>
+    <a href="../Global/BulkDownloadDelegate.html">BulkDownloadDelegate</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Responds to sync requests
+</p>
+
+
+    </div>
+  </div>
+
+
+
+
+<div class="tags">
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<h2>Instance Member Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+<ul class="summary">
+   <li class="public">
+  <span class="summary_signature">
+    <a href="#_colors-var" title="_colors (Var)"><strong>_colors</strong></a>  as <span class='type'>Lang.Array</span>&lt;Lang.Number&gt;
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_colorsDownloaded-var" title="_colorsDownloaded (Var)"><strong>_colorsDownloaded</strong></a>  as Lang.Number
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_colorsToDownload-var" title="_colorsToDownload (Var)"><strong>_colorsToDownload</strong></a>  as Lang.Number
+  </span>
+
+
+</li>
+</ul>
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature">
+      <a href="#downloadColor-instance_function" title="downloadColor (Instance Function)"><strong>downloadColor</strong></a>(colorId as Lang.Number)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Initiate a request to download an image of the given color.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#initialize-instance_function" title="initialize (Instance Function)"><strong>initialize</strong></a>()
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Constructor.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#isSyncNeeded-instance_function" title="isSyncNeeded (Instance Function)"><strong>isSyncNeeded</strong></a>()    as Lang.Boolean
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Called by the system to determine if a sync is needed.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#onDownloadComplete-instance_function" title="onDownloadComplete (Instance Function)"><strong>onDownloadComplete</strong></a>(code as Lang.Number)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Handle download completion.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#onStartSync-instance_function" title="onStartSync (Instance Function)"><strong>onStartSync</strong></a>()    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Called by the system when starting a bulk sync.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#onStopSync-instance_function" title="onStopSync (Instance Function)"><strong>onStopSync</strong></a>()    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Called by the system when finishing a bulk sync.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#startNextDownload-instance_function" title="startNextDownload (Instance Function)"><strong>startNextDownload</strong></a>()    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Start processing the next download, or terminate syncing.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+ <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    <dt id="_colors-var" class="">
+<h3 class="signature " id="_colors-var">
+
+var _colors  as <span class='type'>Lang.Array</span>&lt;Lang.Number&gt;
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_colorsDownloaded-var" class="">
+<h3 class="signature " id="_colorsDownloaded-var">
+
+var _colorsDownloaded  as Lang.Number
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_colorsToDownload-var" class="">
+<h3 class="signature " id="_colorsToDownload-var">
+
+var _colorsToDownload  as Lang.Number
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt>
+ </div>
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details">
+  <h3 class="signature" id="downloadColor-instance_function">
+    <strong>downloadColor(colorId as Lang.Number)</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Initiate a request to download an image of the given color
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>colorId</span>
+        &mdash;
+        <div class='inline'>
+<p>
+The id of the color to download
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="initialize-instance_function">
+    <strong>initialize()</strong>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Constructor
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="isSyncNeeded-instance_function">
+    <strong>isSyncNeeded()</strong> <span class='type'> as Lang.Boolean</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Called by the system to determine if a sync is needed
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class='inline'>
+    <p>
+true if sync is needed, false otherwise
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="onDownloadComplete-instance_function">
+    <strong>onDownloadComplete(code as Lang.Number)</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Handle download completion
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>code</span>
+        &mdash;
+        <div class='inline'>
+<p>
+The server response code or BLE error
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="onStartSync-instance_function">
+    <strong>onStartSync()</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Called by the system when starting a bulk sync.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="onStopSync-instance_function">
+    <strong>onStopSync()</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Called by the system when finishing a bulk sync.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="startNextDownload-instance_function">
+    <strong>startNextDownload()</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Start processing the next download, or terminate syncing.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Feb 8, 2022 2:56:17 PM
+</p>
+
+</body>

@@ -1,0 +1,447 @@
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> $.ColorFactory </title>
+
+    <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "$.ColorFactory";
+      relpath = '../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: $.ColorFactory</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">WatchUi.PickerFactory</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class='inline'>
+    WatchUi.PickerFactory
+  </div>
+</li>
+<li class="next">
+  <div class='inline'>
+    <a href="../Global/ColorFactory.html">ColorFactory</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Factory that controls which colors can be picked
+</p>
+
+
+    </div>
+  </div>
+
+
+
+
+<div class="tags">
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<h2>Instance Member Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+<ul class="summary">
+   <li class="public">
+  <span class="summary_signature">
+    <a href="#_colorWheel-var" title="_colorWheel (Var)"><strong>_colorWheel</strong></a>  as <span class='type'><a href="../Global/ColorWheel.html">$.ColorWheel</a></span>
+  </span>
+
+
+</li>
+</ul>
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature">
+      <a href="#getDrawable-instance_function" title="getDrawable (Instance Function)"><strong>getDrawable</strong></a>(index as Lang.Number, selected as Lang.Boolean)    as WatchUi.Drawable or <b>Null</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Generate a Drawable instance for an item.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#getIndex-instance_function" title="getIndex (Instance Function)"><strong>getIndex</strong></a>(value as Graphics.ColorType)    as Lang.Number
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the index of a color item.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#getSize-instance_function" title="getSize (Instance Function)"><strong>getSize</strong></a>()    as Lang.Number
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the number of picker items.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#getValue-instance_function" title="getValue (Instance Function)"><strong>getValue</strong></a>(index as Lang.Number)    as Lang.Object or <b>Null</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the value of the item at the given index.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#initialize-instance_function" title="initialize (Instance Function)"><strong>initialize</strong></a>(colors as <span class='type'>Lang.Array</span>&lt;Graphics.ColorType&gt;)
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Constructor.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+ <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    <dt id="_colorWheel-var" class="">
+<h3 class="signature " id="_colorWheel-var">
+
+var _colorWheel  as <span class='type'><a href="../Global/ColorWheel.html">$.ColorWheel</a></span>
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt>
+ </div>
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details">
+  <h3 class="signature" id="getDrawable-instance_function">
+    <strong>getDrawable(index as Lang.Number, selected as Lang.Boolean)</strong> <span class='type'> as WatchUi.Drawable or <b>Null</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Generate a Drawable instance for an item
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>index</span>
+        &mdash;
+        <div class='inline'>
+<p>
+The item index
+</p>
+
+
+        </div>
+    </li><li>
+        <span class='name'>selected</span>
+        &mdash;
+        <div class='inline'>
+<p>
+true if the current item is selected, false otherwise
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class='inline'>
+    <p>
+Drawable for the item
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="getIndex-instance_function">
+    <strong>getIndex(value as Graphics.ColorType)</strong> <span class='type'> as Lang.Number</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the index of a color item
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>value</span>
+        &mdash;
+        <div class='inline'>
+<p>
+The color to get the index of
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class='inline'>
+    <p>
+The index of the color
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="getSize-instance_function">
+    <strong>getSize()</strong> <span class='type'> as Lang.Number</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the number of picker items
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class='inline'>
+    <p>
+Number of items
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="getValue-instance_function">
+    <strong>getValue(index as Lang.Number)</strong> <span class='type'> as Lang.Object or <b>Null</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the value of the item at the given index
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>index</span>
+        &mdash;
+        <div class='inline'>
+<p>
+Index of the item to get the value of
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class='inline'>
+    <p>
+Value of the item
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="initialize-instance_function">
+    <strong>initialize(colors as <span class='type'>Lang.Array</span>&lt;Graphics.ColorType&gt;)</strong>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Constructor
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>colors</span>
+        &mdash;
+        <div class='inline'>
+<p>
+Colors to display in the Color Wheel
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Feb 8, 2022 2:55:55 PM
+</p>
+
+</body>

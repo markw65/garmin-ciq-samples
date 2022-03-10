@@ -1,0 +1,13 @@
+<drawable-list id="train" background="Graphics.COLOR_TRANSPARENT">
+    <shape type="circle" x="48%" y="67%" radius="4%" color="Graphics.COLOR_RED" />
+    <shape type="circle" x="39%" y="67%" radius="4%" color="Graphics.COLOR_RED" />
+    <shape type="rectangle" x="35%" y="55%" width="30%" height="10%" color="Graphics.COLOR_YELLOW" />
+    <shape type="rectangle" x="37%" y="57%" width="20%" height="3%" corner_radius="3" color="Graphics.COLOR_ORANGE" />
+    <shape type="circle" x="58%" y="66%" radius="5%" color="Graphics.COLOR_YELLOW" border_width="5" border_color="Graphics.COLOR_RED" />
+    <shape type="rectangle" x="40%" y="65%" width="21%" height="3%" color="Graphics.COLOR_PURPLE" corner_radius="2" />
+    <shape type="polygon" points="[[35%,55%],[35%,67%],[30%,67%]]" color="Graphics.COLOR_RED" />
+    <shape type="rectangle" x="55%" y="45%" width="10%" height="11%" color="Graphics.COLOR_PURPLE" border_width="3" border_color="Graphics.COLOR_YELLOW" />
+    <shape type="rectangle" x="45%" y="47%" width="3%" height="9%" color="Graphics.COLOR_RED" />
+    <shape type="rectangle" x="44%" y="45%" width="5%" height="2%" color="Graphics.COLOR_PURPLE" />
+    <shape type="polygon" points="[[44%,45%],[45%,43%],[48%,43%],[49%,45%]]" color="Graphics.COLOR_YELLOW" />
+</drawable-list>

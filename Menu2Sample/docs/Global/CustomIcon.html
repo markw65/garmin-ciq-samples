@@ -1,0 +1,362 @@
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> $.CustomIcon </title>
+
+    <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "$.CustomIcon";
+      relpath = '../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: $.CustomIcon</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">WatchUi.Drawable</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class='inline'>
+    WatchUi.Drawable
+  </div>
+</li>
+<li class="next">
+  <div class='inline'>
+    <a href="../Global/CustomIcon.html">CustomIcon</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+This is the custom Icon drawable. It fills the icon space with a color
+to demonstrate its extents. It changes color each time the next state is
+triggered, which is done when the item is selected in this application.
+</p>
+
+
+    </div>
+  </div>
+
+
+
+
+<div class="tags">
+
+
+
+
+
+</div>
+
+
+
+
+
+<!-- Constants -->
+<h2>Constant Summary</h2>
+<dl class="constants">
+<h3>Constant Variables</h3>
+<table class='constTable'>
+    <tr>
+        <th class='constTableHeader'>Type</th>
+        <th class='constTableHeader'>Name</th>
+        <th class='constTableHeader'>Value</th>
+        <th class='constTableHeader'>Since</th>
+        <th class='constTableHeader'>Description</th>
+    </tr>
+    <tr class='enumTableOdd'>
+    <td class='constTableCell'>Type</td>
+    <td class='constTableCell'>_colorStrings</td>
+    <td class='constTableCell'>["Red","Orange","Yellow","Green","Blue","Violet"]asArray<String></td>
+    <td class='constTableCell'></td>
+    <td class='constTableCell'></td>
+</tr><tr class='enumTableEven'>
+    <td class='constTableCell'>Type</td>
+    <td class='constTableCell'>_colors</td>
+    <td class='constTableCell'>[Graphics.COLOR_RED,Graphics.COLOR_ORANGE,Graphics.COLOR_YELLOW,Graphics.COLOR_GREEN,Graphics.COLOR_BLUE,Graphics.COLOR_PURPLE]asArray<ColorValue></td>
+    <td class='constTableCell'></td>
+    <td class='constTableCell'></td>
+</tr>
+</table>
+</dl>
+
+
+<h2>Instance Member Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+<ul class="summary">
+   <li class="public">
+  <span class="summary_signature">
+    <a href="#_index-var" title="_index (Var)"><strong>_index</strong></a>  as Lang.Number
+  </span>
+
+
+</li>
+</ul>
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature">
+      <a href="#draw-instance_function" title="draw (Instance Function)"><strong>draw</strong></a>(dc as Graphics.Dc)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Set the color for the current state and use dc.clear() to fill the drawable area with that color.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#getString-instance_function" title="getString (Instance Function)"><strong>getString</strong></a>()    as Lang.String
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Return the color string for the menu to use as its sublabel.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#initialize-instance_function" title="initialize (Instance Function)"><strong>initialize</strong></a>()
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Constructor.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#nextState-instance_function" title="nextState (Instance Function)"><strong>nextState</strong></a>()    as Lang.String
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Advance to the next color state for the drawable.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+ <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    <dt id="_index-var" class="">
+<h3 class="signature " id="_index-var">
+
+var _index  as Lang.Number
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt>
+ </div>
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details">
+  <h3 class="signature" id="draw-instance_function">
+    <strong>draw(dc as Graphics.Dc)</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Set the color for the current state and use dc.clear() to fill
+the drawable area with that color
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>dc</span>
+        &mdash;
+        <div class='inline'>
+<p>
+Device Context
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="getString-instance_function">
+    <strong>getString()</strong> <span class='type'> as Lang.String</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Return the color string for the menu to use as its sublabel
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class='inline'>
+    <p>
+The current color
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="initialize-instance_function">
+    <strong>initialize()</strong>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Constructor
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="nextState-instance_function">
+    <strong>nextState()</strong> <span class='type'> as Lang.String</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Advance to the next color state for the drawable
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class='inline'>
+    <p>
+The new color state
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Feb 8, 2022 2:56:09 PM
+</p>
+
+</body>

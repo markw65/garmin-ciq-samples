@@ -1,0 +1,756 @@
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> $.MO2FitContributor </title>
+
+    <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "$.MO2FitContributor";
+      relpath = '../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: $.MO2FitContributor</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">Toybox.Lang.Object</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class='inline'>
+    Toybox.Lang.Object
+  </div>
+</li>
+<li class="next">
+  <div class='inline'>
+    <a href="../Global/MO2FitContributor.html">MO2FitContributor</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+
+
+
+
+<div class="tags">
+
+
+
+
+
+</div>
+
+
+
+
+
+<!-- Constants -->
+<h2>Constant Summary</h2>
+<dl class="constants">
+<dt id="FieldId-module" class="">
+    <h3>FieldId</h3>
+  </dt>
+<table class='enumTable'>
+  <tr>
+    <th class='enumTableHeader'>Name</th>
+    <th class='enumTableHeader'>Value</th>
+    <th class='enumTableHeader'>Since</th>
+    <th class='enumTableHeader'>Description</th>
+  </tr>
+  <tr class='enumTableOdd'>
+    <td class='enumTableCell'>FIELD_CURR_HEMO_CONC</td>
+      <td class='enumTableCell'>0</td>
+      <td class='enumTableCell'></td>
+      <td class='enumTableCell'></td>
+    </td>
+</tr><tr class='enumTableEven'>
+    <td class='enumTableCell'>FIELD_LAP_HEMO_CONC</td>
+      <td class='enumTableCell'>1</td>
+      <td class='enumTableCell'></td>
+      <td class='enumTableCell'></td>
+    </td>
+</tr><tr class='enumTableOdd'>
+    <td class='enumTableCell'>FIELD_AVG_HEMO_CONC</td>
+      <td class='enumTableCell'>2</td>
+      <td class='enumTableCell'></td>
+      <td class='enumTableCell'></td>
+    </td>
+</tr><tr class='enumTableEven'>
+    <td class='enumTableCell'>FIELD_CURR_HEMO_PERCENT</td>
+      <td class='enumTableCell'>3</td>
+      <td class='enumTableCell'></td>
+      <td class='enumTableCell'></td>
+    </td>
+</tr><tr class='enumTableOdd'>
+    <td class='enumTableCell'>FIELD_LAP_HEMO_PERCENT</td>
+      <td class='enumTableCell'>4</td>
+      <td class='enumTableCell'></td>
+      <td class='enumTableCell'></td>
+    </td>
+</tr><tr class='enumTableEven'>
+    <td class='enumTableCell'>FIELD_AVG_HEMO_PERCENT</td>
+      <td class='enumTableCell'>5</td>
+      <td class='enumTableCell'></td>
+      <td class='enumTableCell'></td>
+    </td>
+</tr>
+</table>
+</dl>
+
+
+<h2>Instance Member Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+<ul class="summary">
+   <li class="public">
+  <span class="summary_signature">
+    <a href="#_currentHCField-var" title="_currentHCField (Var)"><strong>_currentHCField</strong></a>  as FitContributor.Field
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_currentHPField-var" title="_currentHPField (Var)"><strong>_currentHPField</strong></a>  as FitContributor.Field
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_hCLapAverage-var" title="_hCLapAverage (Var)"><strong>_hCLapAverage</strong></a>  as Lang.Numeric
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_hCSessionAverage-var" title="_hCSessionAverage (Var)"><strong>_hCSessionAverage</strong></a>  as Lang.Numeric
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_hPLapAverage-var" title="_hPLapAverage (Var)"><strong>_hPLapAverage</strong></a>  as Lang.Numeric
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_hPSessionAverage-var" title="_hPSessionAverage (Var)"><strong>_hPSessionAverage</strong></a>  as Lang.Numeric
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_lapAverageHCField-var" title="_lapAverageHCField (Var)"><strong>_lapAverageHCField</strong></a>  as FitContributor.Field
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_lapAverageHPField-var" title="_lapAverageHPField (Var)"><strong>_lapAverageHPField</strong></a>  as FitContributor.Field
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_lapRecordCount-var" title="_lapRecordCount (Var)"><strong>_lapRecordCount</strong></a>  as Lang.Number
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_sessionAverageHCField-var" title="_sessionAverageHCField (Var)"><strong>_sessionAverageHCField</strong></a>  as FitContributor.Field
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_sessionAverageHPField-var" title="_sessionAverageHPField (Var)"><strong>_sessionAverageHPField</strong></a>  as FitContributor.Field
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_sessionRecordCount-var" title="_sessionRecordCount (Var)"><strong>_sessionRecordCount</strong></a>  as Lang.Number
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_timerRunning-var" title="_timerRunning (Var)"><strong>_timerRunning</strong></a>  as Lang.Boolean
+  </span>
+
+
+</li>
+</ul>
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature">
+      <a href="#compute-instance_function" title="compute (Instance Function)"><strong>compute</strong></a>(sensor as <span class='type'><a href="../Global/MO2Sensor.html">$.MO2Sensor</a></span> or <b>Null</b>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Update data and fields.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#initialize-instance_function" title="initialize (Instance Function)"><strong>initialize</strong></a>(dataField as <span class='type'><a href="../Global/MO2Field.html">$.MO2Field</a></span>)
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Constructor.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#onTimerLap-instance_function" title="onTimerLap (Instance Function)"><strong>onTimerLap</strong></a>()    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Handle lap event.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#onTimerReset-instance_function" title="onTimerReset (Instance Function)"><strong>onTimerReset</strong></a>()    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Handle timer reset.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#setTimerRunning-instance_function" title="setTimerRunning (Instance Function)"><strong>setTimerRunning</strong></a>(state as Lang.Boolean)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Set whether the timer is running.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#toFixed-instance_function" title="toFixed (Instance Function)"><strong>toFixed</strong></a>(value as Lang.Numeric, scale as Lang.Number)    as Lang.Number
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Convert to fixed value.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+ <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    <dt id="_currentHCField-var" class="">
+<h3 class="signature " id="_currentHCField-var">
+
+var _currentHCField  as FitContributor.Field
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_currentHPField-var" class="">
+<h3 class="signature " id="_currentHPField-var">
+
+var _currentHPField  as FitContributor.Field
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_hCLapAverage-var" class="">
+<h3 class="signature " id="_hCLapAverage-var">
+
+var _hCLapAverage  as Lang.Numeric
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_hCSessionAverage-var" class="">
+<h3 class="signature " id="_hCSessionAverage-var">
+
+var _hCSessionAverage  as Lang.Numeric
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_hPLapAverage-var" class="">
+<h3 class="signature " id="_hPLapAverage-var">
+
+var _hPLapAverage  as Lang.Numeric
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_hPSessionAverage-var" class="">
+<h3 class="signature " id="_hPSessionAverage-var">
+
+var _hPSessionAverage  as Lang.Numeric
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_lapAverageHCField-var" class="">
+<h3 class="signature " id="_lapAverageHCField-var">
+
+var _lapAverageHCField  as FitContributor.Field
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_lapAverageHPField-var" class="">
+<h3 class="signature " id="_lapAverageHPField-var">
+
+var _lapAverageHPField  as FitContributor.Field
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_lapRecordCount-var" class="">
+<h3 class="signature " id="_lapRecordCount-var">
+
+var _lapRecordCount  as Lang.Number
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_sessionAverageHCField-var" class="">
+<h3 class="signature " id="_sessionAverageHCField-var">
+
+var _sessionAverageHCField  as FitContributor.Field
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_sessionAverageHPField-var" class="">
+<h3 class="signature " id="_sessionAverageHPField-var">
+
+var _sessionAverageHPField  as FitContributor.Field
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_sessionRecordCount-var" class="">
+<h3 class="signature " id="_sessionRecordCount-var">
+
+var _sessionRecordCount  as Lang.Number
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_timerRunning-var" class="">
+<h3 class="signature " id="_timerRunning-var">
+
+var _timerRunning  as Lang.Boolean
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt>
+ </div>
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details">
+  <h3 class="signature" id="compute-instance_function">
+    <strong>compute(sensor as <span class='type'><a href="../Global/MO2Sensor.html">$.MO2Sensor</a></span> or <b>Null</b>)</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Update data and fields
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>sensor</span>
+        &mdash;
+        <div class='inline'>
+<p>
+The ANT channel and data
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="initialize-instance_function">
+    <strong>initialize(dataField as <span class='type'><a href="../Global/MO2Field.html">$.MO2Field</a></span>)</strong>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Constructor
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>dataField</span>
+        &mdash;
+        <div class='inline'>
+<p>
+Data field to use to create fields
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="onTimerLap-instance_function">
+    <strong>onTimerLap()</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Handle lap event
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="onTimerReset-instance_function">
+    <strong>onTimerReset()</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Handle timer reset
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="setTimerRunning-instance_function">
+    <strong>setTimerRunning(state as Lang.Boolean)</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Set whether the timer is running
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>state</span>
+        &mdash;
+        <div class='inline'>
+<p>
+Whether the timer is running
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="toFixed-instance_function">
+    <strong>toFixed(value as Lang.Numeric, scale as Lang.Number)</strong> <span class='type'> as Lang.Number</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Convert to fixed value
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>value</span>
+        &mdash;
+        <div class='inline'>
+<p>
+Value to fix
+</p>
+
+
+        </div>
+    </li><li>
+        <span class='name'>scale</span>
+        &mdash;
+        <div class='inline'>
+<p>
+Scale to use
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class='inline'>
+    <p>
+Fixed value
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Feb 8, 2022 2:56:19 PM
+</p>
+
+</body>

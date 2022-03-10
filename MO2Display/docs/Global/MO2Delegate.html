@@ -1,0 +1,588 @@
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> $.MO2Delegate </title>
+
+    <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "$.MO2Delegate";
+      relpath = '../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: $.MO2Delegate</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">WatchUi.InputDelegate</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class='inline'>
+    WatchUi.InputDelegate
+  </div>
+</li>
+<li class="next">
+  <div class='inline'>
+    <a href="../Global/MO2Delegate.html">MO2Delegate</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+
+
+
+
+<div class="tags">
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<h2>Instance Member Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+<ul class="summary">
+   <li class="public">
+  <span class="summary_signature">
+    <a href="#_index-var" title="_index (Var)"><strong>_index</strong></a>  as Lang.Number
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_sensor-var" title="_sensor (Var)"><strong>_sensor</strong></a>  as <span class='type'><a href="../Global/MO2Sensor.html">$.MO2Sensor</a></span>
+  </span>
+
+
+</li>
+</ul>
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature">
+      <a href="#getDelegate-instance_function" title="getDelegate (Instance Function)"><strong>getDelegate</strong></a>()    as <span class='type'><a href="../Global/MO2Delegate.html">$.MO2Delegate</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get a new delegate.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#getView-instance_function" title="getView (Instance Function)"><strong>getView</strong></a>()    as <span class='type'><a href="../Global/MainView.html">$.MainView</a></span> or <span class='type'><a href="../Global/DataView.html">$.DataView</a></span> or <span class='type'><a href="../Global/GraphView.html">$.GraphView</a></span> or <span class='type'><a href="../Global/CommandView.html">$.CommandView</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get a new view based on the current index.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#initialize-instance_function" title="initialize (Instance Function)"><strong>initialize</strong></a>(sensor as <span class='type'><a href="../Global/MO2Sensor.html">$.MO2Sensor</a></span>, index as Lang.Number)
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Constructor.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#onKey-instance_function" title="onKey (Instance Function)"><strong>onKey</strong></a>(evt as WatchUi.KeyEvent)    as Lang.Boolean
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Handle a physical button being pressed and released.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#onNextPage-instance_function" title="onNextPage (Instance Function)"><strong>onNextPage</strong></a>()    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Go to the next page.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#onPreviousPage-instance_function" title="onPreviousPage (Instance Function)"><strong>onPreviousPage</strong></a>()    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Go to the previous page.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#onSwipe-instance_function" title="onSwipe (Instance Function)"><strong>onSwipe</strong></a>(evt as WatchUi.SwipeEvent)    as Lang.Boolean
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Handle the touch screen swipe event.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#onTap-instance_function" title="onTap (Instance Function)"><strong>onTap</strong></a>(evt as WatchUi.ClickEvent)    as Lang.Boolean
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Handle a screen tap event.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+ <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    <dt id="_index-var" class="">
+<h3 class="signature " id="_index-var">
+
+var _index  as Lang.Number
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_sensor-var" class="">
+<h3 class="signature " id="_sensor-var">
+
+var _sensor  as <span class='type'><a href="../Global/MO2Sensor.html">$.MO2Sensor</a></span>
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt>
+ </div>
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details">
+  <h3 class="signature" id="getDelegate-instance_function">
+    <strong>getDelegate()</strong> <span class='type'> as <span class='type'><a href="../Global/MO2Delegate.html">$.MO2Delegate</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get a new delegate
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class='inline'>
+    <p>
+The delegate
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="getView-instance_function">
+    <strong>getView()</strong> <span class='type'> as <span class='type'><a href="../Global/MainView.html">$.MainView</a></span> or <span class='type'><a href="../Global/DataView.html">$.DataView</a></span> or <span class='type'><a href="../Global/GraphView.html">$.GraphView</a></span> or <span class='type'><a href="../Global/CommandView.html">$.CommandView</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get a new view based on the current index
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class='inline'>
+    <p>
+The view
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="initialize-instance_function">
+    <strong>initialize(sensor as <span class='type'><a href="../Global/MO2Sensor.html">$.MO2Sensor</a></span>, index as Lang.Number)</strong>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Constructor
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>sensor</span>
+        &mdash;
+        <div class='inline'>
+<p>
+ANT channel and data
+</p>
+
+
+        </div>
+    </li><li>
+        <span class='name'>index</span>
+        &mdash;
+        <div class='inline'>
+<p>
+Number indicating the current view
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="onKey-instance_function">
+    <strong>onKey(evt as WatchUi.KeyEvent)</strong> <span class='type'> as Lang.Boolean</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Handle a physical button being pressed and released
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>evt</span>
+        &mdash;
+        <div class='inline'>
+<p>
+The key event that occurred
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class='inline'>
+    <p>
+true if handled, false otherwise
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="onNextPage-instance_function">
+    <strong>onNextPage()</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Go to the next page
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="onPreviousPage-instance_function">
+    <strong>onPreviousPage()</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Go to the previous page
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="onSwipe-instance_function">
+    <strong>onSwipe(evt as WatchUi.SwipeEvent)</strong> <span class='type'> as Lang.Boolean</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Handle the touch screen swipe event
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>evt</span>
+        &mdash;
+        <div class='inline'>
+<p>
+The swipe event that occurred
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class='inline'>
+    <p>
+true if handled, false otherwise
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="onTap-instance_function">
+    <strong>onTap(evt as WatchUi.ClickEvent)</strong> <span class='type'> as Lang.Boolean</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Handle a screen tap event
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>evt</span>
+        &mdash;
+        <div class='inline'>
+<p>
+The click event that occurred
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class='inline'>
+    <p>
+true if handled, false otherwise
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Feb 8, 2022 2:55:52 PM
+</p>
+
+</body>

@@ -1,0 +1,4 @@
+<menu id="MainMenu" title="@Strings.MapMenuTitle">
+    <menu-item id="view_map" label="@Strings.viewMap"/>
+    <menu-item id="track_map" label="@Strings.trackMap"/>
+</menu>

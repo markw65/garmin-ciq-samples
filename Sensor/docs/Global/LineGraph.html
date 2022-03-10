@@ -1,0 +1,425 @@
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> $.LineGraph </title>
+
+    <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "$.LineGraph";
+      relpath = '../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: $.LineGraph</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">Toybox.Lang.Object</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class='inline'>
+    Toybox.Lang.Object
+  </div>
+</li>
+<li class="next">
+  <div class='inline'>
+    <a href="../Global/LineGraph.html">LineGraph</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+A simple line graph drawing class
+</p>
+
+
+    </div>
+  </div>
+
+
+
+
+<div class="tags">
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<h2>Instance Member Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+<ul class="summary">
+   <li class="public">
+  <span class="summary_signature">
+    <a href="#_graphArray-var" title="_graphArray (Var)"><strong>_graphArray</strong></a>  as <span class='type'>Lang.Array</span>&lt;Lang.Number or Lang.Float or <b>Null</b>&gt;
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_graphColor-var" title="_graphColor (Var)"><strong>_graphColor</strong></a>  as Graphics.ColorType
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_graphIndex-var" title="_graphIndex (Var)"><strong>_graphIndex</strong></a>  as Lang.Number
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_graphMinRange-var" title="_graphMinRange (Var)"><strong>_graphMinRange</strong></a>  as Lang.Number
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_graphRange-var" title="_graphRange (Var)"><strong>_graphRange</strong></a>  as <span class='type'>Lang.Array</span>&lt;Lang.Number or Lang.Float or <b>Null</b>&gt;
+  </span>
+
+
+</li>
+</ul>
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature">
+      <a href="#addItem-instance_function" title="addItem (Instance Function)"><strong>addItem</strong></a>(value as Lang.Number or Lang.Float)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Add an item to the line graph.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#draw-instance_function" title="draw (Instance Function)"><strong>draw</strong></a>(dc as Graphics.Dc, topLeft as <span class='type'>Lang.Array</span>&lt;Lang.Number&gt;, bottomRight as <span class='type'>Lang.Array</span>&lt;Lang.Number&gt;)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Draw the line graph.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#initialize-instance_function" title="initialize (Instance Function)"><strong>initialize</strong></a>(size as Lang.Number, minRange as Lang.Number, color as Graphics.ColorType)
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Constructor.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+ <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    <dt id="_graphArray-var" class="">
+<h3 class="signature " id="_graphArray-var">
+
+var _graphArray  as <span class='type'>Lang.Array</span>&lt;Lang.Number or Lang.Float or <b>Null</b>&gt;
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_graphColor-var" class="">
+<h3 class="signature " id="_graphColor-var">
+
+var _graphColor  as Graphics.ColorType
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_graphIndex-var" class="">
+<h3 class="signature " id="_graphIndex-var">
+
+var _graphIndex  as Lang.Number
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_graphMinRange-var" class="">
+<h3 class="signature " id="_graphMinRange-var">
+
+var _graphMinRange  as Lang.Number
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_graphRange-var" class="">
+<h3 class="signature " id="_graphRange-var">
+
+var _graphRange  as <span class='type'>Lang.Array</span>&lt;Lang.Number or Lang.Float or <b>Null</b>&gt;
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt>
+ </div>
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details">
+  <h3 class="signature" id="addItem-instance_function">
+    <strong>addItem(value as Lang.Number or Lang.Float)</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Add an item to the line graph
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>value</span>
+        &mdash;
+        <div class='inline'>
+<p>
+Number to add to the graph
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="draw-instance_function">
+    <strong>draw(dc as Graphics.Dc, topLeft as <span class='type'>Lang.Array</span>&lt;Lang.Number&gt;, bottomRight as <span class='type'>Lang.Array</span>&lt;Lang.Number&gt;)</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Draw the line graph
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>dc</span>
+        &mdash;
+        <div class='inline'>
+<p>
+Device context
+</p>
+
+
+        </div>
+    </li><li>
+        <span class='name'>topLeft</span>
+        &mdash;
+        <div class='inline'>
+<p>
+Array [x, y] of the top left corner
+</p>
+
+
+        </div>
+    </li><li>
+        <span class='name'>bottomRight</span>
+        &mdash;
+        <div class='inline'>
+<p>
+Array [x, y] of the bottom right corner
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="initialize-instance_function">
+    <strong>initialize(size as Lang.Number, minRange as Lang.Number, color as Graphics.ColorType)</strong>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Constructor
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>size</span>
+        &mdash;
+        <div class='inline'>
+<p>
+Number of points in the graph
+</p>
+
+
+        </div>
+    </li><li>
+        <span class='name'>minRange</span>
+        &mdash;
+        <div class='inline'>
+<p>
+Smallest range to use for the graph
+</p>
+
+
+        </div>
+    </li><li>
+        <span class='name'>color</span>
+        &mdash;
+        <div class='inline'>
+<p>
+Color to use to draw the graph
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Feb 8, 2022 2:56:10 PM
+</p>
+
+</body>

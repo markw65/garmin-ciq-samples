@@ -1,0 +1,569 @@
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> $.BulkDownloadRequestDelegate </title>
+
+    <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "$.BulkDownloadRequestDelegate";
+      relpath = '../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: $.BulkDownloadRequestDelegate</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">Toybox.Lang.Object</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class='inline'>
+    Toybox.Lang.Object
+  </div>
+</li>
+<li class="next">
+  <div class='inline'>
+    <a href="../Global/BulkDownloadRequestDelegate.html">BulkDownloadRequestDelegate</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Helper class makes a web or image request with context data.
+</p>
+
+
+    </div>
+  </div>
+
+
+
+
+<div class="tags">
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<h2>Instance Member Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+<ul class="summary">
+   <li class="public">
+  <span class="summary_signature">
+    <a href="#_callback-var" title="_callback (Var)"><strong>_callback</strong></a>  as <span class='type'>Lang.Method</span>(code as Lang.Number) as <b>Void</b>
+  </span>
+
+
+</li>
+</ul>
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature">
+      <a href="#initialize-instance_function" title="initialize (Instance Function)"><strong>initialize</strong></a>(callback as <span class='type'>Lang.Method</span>(code as Lang.Number) as <b>Void</b>)
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Constructor.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#makeImageRequest-instance_function" title="makeImageRequest (Instance Function)"><strong>makeImageRequest</strong></a>(url as Lang.String, params as Lang.Dictionary or <b>Null</b>, options as { :palette as <span class='type'>Lang.Array</span>&lt;Lang.Number&gt;, :maxWidth as Lang.Number, :maxHeight as Lang.Number, :dithering as Communications.Dithering })    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Make an image request using the given options.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#makeWebRequest-instance_function" title="makeWebRequest (Instance Function)"><strong>makeWebRequest</strong></a>(url as Lang.String, params as Lang.Dictionary or <b>Null</b>, options as { :method as Communications.HttpRequestMethod, :headers as Lang.Dictionary, :responseType as Communications.HttpResponseContentType, :context as Lang.Object or <b>Null</b>, :maxBandwidth as Lang.Number, :fileDownloadProgressCallback as <span class='type'>Lang.Method</span>(totalBytesTransferred as Lang.Number, fileSize as Lang.Number or <b>Null</b>) as <b>Void</b> } or <b>Null</b>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Make a web request using the given options.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#onImageResponse-instance_function" title="onImageResponse (Instance Function)"><strong>onImageResponse</strong></a>(code as Lang.Number, data as WatchUi.BitmapResource or <b>Null</b>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Handle completed image request.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#onWebResponse-instance_function" title="onWebResponse (Instance Function)"><strong>onWebResponse</strong></a>(code as Lang.Number, data as Lang.Dictionary or <b>Null</b>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Handle completed web request.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+ <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    <dt id="_callback-var" class="">
+<h3 class="signature " id="_callback-var">
+
+var _callback  as <span class='type'>Lang.Method</span>(code as Lang.Number) as <b>Void</b>
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt>
+ </div>
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details">
+  <h3 class="signature" id="initialize-instance_function">
+    <strong>initialize(callback as <span class='type'>Lang.Method</span>(code as Lang.Number) as <b>Void</b>)</strong>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Constructor
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>callback</span>
+        &mdash;
+        <div class='inline'>
+<p>
+The method to invoke when the request completes.
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="makeImageRequest-instance_function">
+    <strong>makeImageRequest(url as Lang.String, params as Lang.Dictionary or <b>Null</b>, options as { :palette as <span class='type'>Lang.Array</span>&lt;Lang.Number&gt;, :maxWidth as Lang.Number, :maxHeight as Lang.Number, :dithering as Communications.Dithering })</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Make an image request using the given options.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>url</span>
+        &mdash;
+        <div class='inline'>
+<p>
+The URL of an image to request
+</p>
+
+
+        </div>
+    </li><li>
+        <span class='name'>params</span>
+        &mdash;
+        <div class='inline'>
+<p>
+Items to append to the URL
+</p>
+
+
+        </div>
+    </li><li>
+        <span class='name'>options</span>
+        &mdash;
+        <div class='inline'>
+<p>
+Additional image options
+</p>
+
+
+        </div>
+        <ul>
+        <li>
+        <span class='name'>:palette</span>
+        &mdash;
+        <div class='inline'>
+<p>
+The color palette to restrict the image dithering to
+</p>
+
+
+        </div>
+    </li><li>
+        <span class='name'>:maxWidth</span>
+        &mdash;
+        <div class='inline'>
+<p>
+The maximum width an image should be scaled to
+</p>
+
+
+        </div>
+    </li><li>
+        <span class='name'>:maxHeight</span>
+        &mdash;
+        <div class='inline'>
+<p>
+The maximum height an image should be scaled to
+</p>
+
+
+        </div>
+    </li><li>
+        <span class='name'>:dithering</span>
+        &mdash;
+        <div class='inline'>
+<p>
+The type of dithering to use when processing the image
+</p>
+
+
+        </div>
+    </li>
+        </ul>
+    </li>
+    </ul>
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="makeWebRequest-instance_function">
+    <strong>makeWebRequest(url as Lang.String, params as Lang.Dictionary or <b>Null</b>, options as { :method as Communications.HttpRequestMethod, :headers as Lang.Dictionary, :responseType as Communications.HttpResponseContentType, :context as Lang.Object or <b>Null</b>, :maxBandwidth as Lang.Number, :fileDownloadProgressCallback as <span class='type'>Lang.Method</span>(totalBytesTransferred as Lang.Number, fileSize as Lang.Number or <b>Null</b>) as <b>Void</b> } or <b>Null</b>)</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Make a web request using the given options.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>url</span>
+        &mdash;
+        <div class='inline'>
+<p>
+The URL to load in the web view to begin authentication
+</p>
+
+
+        </div>
+    </li><li>
+        <span class='name'>params</span>
+        &mdash;
+        <div class='inline'>
+<p>
+Items to append to the URL as a GET request or set as the body for a POST request
+</p>
+
+
+        </div>
+    </li><li>
+        <span class='name'>options</span>
+        &mdash;
+        <div class='inline'>
+<p>
+Additional web request options
+</p>
+
+
+        </div>
+        <ul>
+        <li>
+        <span class='name'>:method</span>
+        &mdash;
+        <div class='inline'>
+<p>
+The HTTP method of the request
+</p>
+
+
+        </div>
+    </li><li>
+        <span class='name'>:headers</span>
+        &mdash;
+        <div class='inline'>
+<p>
+A Dictionary of HTTP headers to include in the request
+</p>
+
+
+        </div>
+    </li><li>
+        <span class='name'>:responseType</span>
+        &mdash;
+        <div class='inline'>
+<p>
+The format of the response
+</p>
+
+
+        </div>
+    </li><li>
+        <span class='name'>:context</span>
+        &mdash;
+        <div class='inline'>
+<p>
+A user-specific context object to pass to the response callback
+</p>
+
+
+        </div>
+    </li><li>
+        <span class='name'>:maxBandwidth</span>
+        &mdash;
+        <div class='inline'>
+<p>
+The maximum bandwidth
+</p>
+
+
+        </div>
+    </li><li>
+        <span class='name'>:fileDownloadProgressCallback</span>
+        &mdash;
+        <div class='inline'>
+<p>
+A callback method
+</p>
+
+
+        </div>
+    </li>
+        </ul>
+    </li>
+    </ul>
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="onImageResponse-instance_function">
+    <strong>onImageResponse(code as Lang.Number, data as WatchUi.BitmapResource or <b>Null</b>)</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Handle completed image request
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>code</span>
+        &mdash;
+        <div class='inline'>
+<p>
+The server response code or BLE error
+</p>
+
+
+        </div>
+    </li><li>
+        <span class='name'>data</span>
+        &mdash;
+        <div class='inline'>
+<p>
+A bitmap from a successful request
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="onWebResponse-instance_function">
+    <strong>onWebResponse(code as Lang.Number, data as Lang.Dictionary or <b>Null</b>)</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Handle completed web request
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>code</span>
+        &mdash;
+        <div class='inline'>
+<p>
+The server response code or BLE error
+</p>
+
+
+        </div>
+    </li><li>
+        <span class='name'>data</span>
+        &mdash;
+        <div class='inline'>
+<p>
+Dictionary of content from a successful request
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Feb 8, 2022 2:56:17 PM
+</p>
+
+</body>

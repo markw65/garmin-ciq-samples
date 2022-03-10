@@ -1,0 +1,18 @@
+project.manifest = manifest.xml
+
+# everything is assumed to have jsondata support
+base.resourcePath = resources;resources-jsondata
+approachs60.resourcePath = resources;resources-approachs60;resources-jsondata
+
+# devices that don't support jsondata get custom rules that exclude resources-jsondata
+d2bravo_titanium.resourcePath = resources
+d2bravo.resourcePath = resources
+epix.resourcePath = resources
+fenix3_hr.resourcePath = resources
+fenix3.resourcePath = resources
+fr230.resourcePath = resources
+fr235.resourcePath =  resources
+fr630.resourcePath =  resources
+fr920xt.resourcePath = resources
+oregon7xx.resourcePath = resources
+vivoactive.resourcePath = resources

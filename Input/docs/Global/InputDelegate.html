@@ -1,0 +1,1287 @@
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> $.InputDelegate </title>
+
+    <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "$.InputDelegate";
+      relpath = '../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: $.InputDelegate</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">WatchUi.BehaviorDelegate</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class='inline'>
+    WatchUi.BehaviorDelegate
+  </div>
+</li>
+<li class="next">
+  <div class='inline'>
+    <a href="../Global/InputDelegate.html">InputDelegate</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Handles the behavior / input events
+</p>
+
+
+    </div>
+  </div>
+
+
+
+
+<div class="tags">
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<h2>Instance Member Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+<ul class="summary">
+   <li class="public">
+  <span class="summary_signature">
+    <a href="#_buttonsExpected-var" title="_buttonsExpected (Var)"><strong>_buttonsExpected</strong></a>  as System.ButtonInputs or <b>Null</b>
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_buttonsPressed-var" title="_buttonsPressed (Var)"><strong>_buttonsPressed</strong></a>  as Lang.Number or <b>Null</b>
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_lastBehavior-var" title="_lastBehavior (Var)"><strong>_lastBehavior</strong></a>  as <span class='type'><a href="../index.html#Behavior-module">$.Behavior</a></span> or <b>Null</b>
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_lastKey-var" title="_lastKey (Var)"><strong>_lastKey</strong></a>  as WatchUi.Key or <b>Null</b>
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_parentView-var" title="_parentView (Var)"><strong>_parentView</strong></a>  as <span class='type'><a href="../Global/InputView.html">$.InputView</a></span>
+  </span>
+
+
+</li>
+</ul>
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature">
+      <a href="#getButton-instance_function" title="getButton (Instance Function)"><strong>getButton</strong></a>(key as WatchUi.Key)    as <span class='type'><a href="../index.html#Button-module">$.Button</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Find the button that corresponds to the given key and return whether there are buttons that haven't been pressed.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#getButtonBit-instance_function" title="getButtonBit (Instance Function)"><strong>getButtonBit</strong></a>(key as WatchUi.Key)    as System.ButtonInputs or <b>Null</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the button input that corresponds to the given key enum.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#getKeyAction-instance_function" title="getKeyAction (Instance Function)"><strong>getKeyAction</strong></a>(key as WatchUi.Key)    as <span class='type'><a href="../index.html#Action-module">$.Action</a></span> or <b>Null</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the action enum corresponding to the given key enum.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#initialize-instance_function" title="initialize (Instance Function)"><strong>initialize</strong></a>(view as <span class='type'><a href="../Global/InputView.html">$.InputView</a></span>)
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Constructor.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#onBack-instance_function" title="onBack (Instance Function)"><strong>onBack</strong></a>()    as Lang.Boolean
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Handle the back event.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#onHold-instance_function" title="onHold (Instance Function)"><strong>onHold</strong></a>(evt as WatchUi.ClickEvent)    as Lang.Boolean
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Handle the touch screen hold event.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#onKey-instance_function" title="onKey (Instance Function)"><strong>onKey</strong></a>(evt as WatchUi.KeyEvent)    as Lang.Boolean
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Handle a physical button being pressed and released.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#onKeyPressed-instance_function" title="onKeyPressed (Instance Function)"><strong>onKeyPressed</strong></a>(evt as WatchUi.KeyEvent)    as Lang.Boolean
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Handle a physical button being pressed.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#onKeyReleased-instance_function" title="onKeyReleased (Instance Function)"><strong>onKeyReleased</strong></a>(evt as WatchUi.KeyEvent)    as Lang.Boolean
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Handle a physical button being released.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#onMenu-instance_function" title="onMenu (Instance Function)"><strong>onMenu</strong></a>()    as Lang.Boolean
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Handle the menu event.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#onNextMode-instance_function" title="onNextMode (Instance Function)"><strong>onNextMode</strong></a>()    as Lang.Boolean
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Handle the next event.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#onNextPage-instance_function" title="onNextPage (Instance Function)"><strong>onNextPage</strong></a>()    as Lang.Boolean
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Handle going to the next view.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#onPreviousMode-instance_function" title="onPreviousMode (Instance Function)"><strong>onPreviousMode</strong></a>()    as Lang.Boolean
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Handle the previous event.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#onPreviousPage-instance_function" title="onPreviousPage (Instance Function)"><strong>onPreviousPage</strong></a>()    as Lang.Boolean
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Handle going to the previous view.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#onRelease-instance_function" title="onRelease (Instance Function)"><strong>onRelease</strong></a>(evt as WatchUi.ClickEvent)    as Lang.Boolean
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Handle the touch screen release event.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#onSelect-instance_function" title="onSelect (Instance Function)"><strong>onSelect</strong></a>()    as Lang.Boolean
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Handle the select button.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#onSwipe-instance_function" title="onSwipe (Instance Function)"><strong>onSwipe</strong></a>(evt as WatchUi.SwipeEvent)    as Lang.Boolean
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Handle the touch screen swipe event.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#onTap-instance_function" title="onTap (Instance Function)"><strong>onTap</strong></a>(evt as WatchUi.ClickEvent)    as Lang.Boolean
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Handle a screen tap event.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+ <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    <dt id="_buttonsExpected-var" class="">
+<h3 class="signature " id="_buttonsExpected-var">
+
+var _buttonsExpected  as System.ButtonInputs or <b>Null</b>
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_buttonsPressed-var" class="">
+<h3 class="signature " id="_buttonsPressed-var">
+
+var _buttonsPressed  as Lang.Number or <b>Null</b>
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_lastBehavior-var" class="">
+<h3 class="signature " id="_lastBehavior-var">
+
+var _lastBehavior  as <span class='type'><a href="../index.html#Behavior-module">$.Behavior</a></span> or <b>Null</b>
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_lastKey-var" class="">
+<h3 class="signature " id="_lastKey-var">
+
+var _lastKey  as WatchUi.Key or <b>Null</b>
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_parentView-var" class="">
+<h3 class="signature " id="_parentView-var">
+
+var _parentView  as <span class='type'><a href="../Global/InputView.html">$.InputView</a></span>
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt>
+ </div>
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details">
+  <h3 class="signature" id="getButton-instance_function">
+    <strong>getButton(key as WatchUi.Key)</strong> <span class='type'> as <span class='type'><a href="../index.html#Button-module">$.Button</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Find the button that corresponds to the given key and return
+whether there are buttons that haven't been pressed
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>key</span>
+        &mdash;
+        <div class='inline'>
+<p>
+The key that was pressed
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class='inline'>
+    <p>
+Button enum telling whether all buttons have been pressed
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="getButtonBit-instance_function">
+    <strong>getButtonBit(key as WatchUi.Key)</strong> <span class='type'> as System.ButtonInputs or <b>Null</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the button input that corresponds to the given key enum
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>key</span>
+        &mdash;
+        <div class='inline'>
+<p>
+The key enum
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class='inline'>
+    <p>
+Button input of the key, or null if button not found
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="getKeyAction-instance_function">
+    <strong>getKeyAction(key as WatchUi.Key)</strong> <span class='type'> as <span class='type'><a href="../index.html#Action-module">$.Action</a></span> or <b>Null</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the action enum corresponding to the given key enum
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>key</span>
+        &mdash;
+        <div class='inline'>
+<p>
+The key enum
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class='inline'>
+    <p>
+Action enum of key, or null if key not found
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="initialize-instance_function">
+    <strong>initialize(view as <span class='type'><a href="../Global/InputView.html">$.InputView</a></span>)</strong>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Constructor
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>view</span>
+        &mdash;
+        <div class='inline'>
+<p>
+The InputView to operate on
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="onBack-instance_function">
+    <strong>onBack()</strong> <span class='type'> as Lang.Boolean</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Handle the back event
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class='inline'>
+    <p>
+true if handled, false otherwise
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="onHold-instance_function">
+    <strong>onHold(evt as WatchUi.ClickEvent)</strong> <span class='type'> as Lang.Boolean</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Handle the touch screen hold event
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>evt</span>
+        &mdash;
+        <div class='inline'>
+<p>
+The click event that occurred
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class='inline'>
+    <p>
+true if handled, false otherwise
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="onKey-instance_function">
+    <strong>onKey(evt as WatchUi.KeyEvent)</strong> <span class='type'> as Lang.Boolean</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Handle a physical button being pressed and released
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>evt</span>
+        &mdash;
+        <div class='inline'>
+<p>
+The key event that occurred
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class='inline'>
+    <p>
+true if handled, false otherwise
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="onKeyPressed-instance_function">
+    <strong>onKeyPressed(evt as WatchUi.KeyEvent)</strong> <span class='type'> as Lang.Boolean</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Handle a physical button being pressed
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>evt</span>
+        &mdash;
+        <div class='inline'>
+<p>
+The key event that occurred
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class='inline'>
+    <p>
+true if handled, false otherwise
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="onKeyReleased-instance_function">
+    <strong>onKeyReleased(evt as WatchUi.KeyEvent)</strong> <span class='type'> as Lang.Boolean</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Handle a physical button being released
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>evt</span>
+        &mdash;
+        <div class='inline'>
+<p>
+The key event that occurred
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class='inline'>
+    <p>
+true if handled, false otherwise
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="onMenu-instance_function">
+    <strong>onMenu()</strong> <span class='type'> as Lang.Boolean</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Handle the menu event
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class='inline'>
+    <p>
+true if handled, false otherwise
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="onNextMode-instance_function">
+    <strong>onNextMode()</strong> <span class='type'> as Lang.Boolean</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Handle the next event
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class='inline'>
+    <p>
+true if handled, false otherwise
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="onNextPage-instance_function">
+    <strong>onNextPage()</strong> <span class='type'> as Lang.Boolean</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Handle going to the next view
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class='inline'>
+    <p>
+true if handled, false otherwise
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="onPreviousMode-instance_function">
+    <strong>onPreviousMode()</strong> <span class='type'> as Lang.Boolean</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Handle the previous event
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class='inline'>
+    <p>
+true if handled, false otherwise
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="onPreviousPage-instance_function">
+    <strong>onPreviousPage()</strong> <span class='type'> as Lang.Boolean</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Handle going to the previous view
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class='inline'>
+    <p>
+true if handled, false otherwise
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="onRelease-instance_function">
+    <strong>onRelease(evt as WatchUi.ClickEvent)</strong> <span class='type'> as Lang.Boolean</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Handle the touch screen release event
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>evt</span>
+        &mdash;
+        <div class='inline'>
+<p>
+The click event that occurred
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class='inline'>
+    <p>
+true if handled, false otherwise
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="onSelect-instance_function">
+    <strong>onSelect()</strong> <span class='type'> as Lang.Boolean</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Handle the select button
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class='inline'>
+    <p>
+true if handled, false otherwise
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="onSwipe-instance_function">
+    <strong>onSwipe(evt as WatchUi.SwipeEvent)</strong> <span class='type'> as Lang.Boolean</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Handle the touch screen swipe event
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>evt</span>
+        &mdash;
+        <div class='inline'>
+<p>
+The swipe event that occurred
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class='inline'>
+    <p>
+true if handled, false otherwise
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="onTap-instance_function">
+    <strong>onTap(evt as WatchUi.ClickEvent)</strong> <span class='type'> as Lang.Boolean</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Handle a screen tap event
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>evt</span>
+        &mdash;
+        <div class='inline'>
+<p>
+The click event that occurred
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class='inline'>
+    <p>
+true if handled, false otherwise
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Feb 8, 2022 2:55:56 PM
+</p>
+
+</body>

@@ -1,0 +1,291 @@
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> $.DataField </title>
+
+    <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "$.DataField";
+      relpath = '../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: $.DataField</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">WatchUi.SimpleDataField</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class='inline'>
+    WatchUi.SimpleDataField
+  </div>
+</li>
+<li class="next">
+  <div class='inline'>
+    <a href="../Global/DataField.html">DataField</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Data field that shows HR, distance, and time
+</p>
+
+
+    </div>
+  </div>
+
+
+
+
+<div class="tags">
+
+
+
+
+
+</div>
+
+
+
+
+
+<!-- Constants -->
+<h2>Constant Summary</h2>
+<dl class="constants">
+<h3>Constant Variables</h3>
+<table class='constTable'>
+    <tr>
+        <th class='constTableHeader'>Type</th>
+        <th class='constTableHeader'>Name</th>
+        <th class='constTableHeader'>Value</th>
+        <th class='constTableHeader'>Since</th>
+        <th class='constTableHeader'>Description</th>
+    </tr>
+    <tr class='enumTableOdd'>
+    <td class='constTableCell'>Type</td>
+    <td class='constTableCell'>METERS_TO_MILES</td>
+    <td class='constTableCell'>0.000621371</td>
+    <td class='constTableCell'></td>
+    <td class='constTableCell'></td>
+</tr><tr class='enumTableEven'>
+    <td class='constTableCell'>Type</td>
+    <td class='constTableCell'>MILLISECONDS_TO_SECONDS</td>
+    <td class='constTableCell'>0.001</td>
+    <td class='constTableCell'></td>
+    <td class='constTableCell'></td>
+</tr>
+</table>
+</dl>
+
+
+<h2>Instance Member Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+<ul class="summary">
+   <li class="public">
+  <span class="summary_signature">
+    <a href="#_alertDisplayed-var" title="_alertDisplayed (Var)"><strong>_alertDisplayed</strong></a>  as Lang.Boolean
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_counter-var" title="_counter (Var)"><strong>_counter</strong></a>  as Lang.Number
+  </span>
+
+
+</li>
+</ul>
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature">
+      <a href="#compute-instance_function" title="compute (Instance Function)"><strong>compute</strong></a>(info as Activity.Info)    as Lang.Numeric or Time.Duration or Lang.String or <b>Null</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the information to show in the data field.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#initialize-instance_function" title="initialize (Instance Function)"><strong>initialize</strong></a>()
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Constructor.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+ <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    <dt id="_alertDisplayed-var" class="">
+<h3 class="signature " id="_alertDisplayed-var">
+
+var _alertDisplayed  as Lang.Boolean
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_counter-var" class="">
+<h3 class="signature " id="_counter-var">
+
+var _counter  as Lang.Number
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt>
+ </div>
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details">
+  <h3 class="signature" id="compute-instance_function">
+    <strong>compute(info as Activity.Info)</strong> <span class='type'> as Lang.Numeric or Time.Duration or Lang.String or <b>Null</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the information to show in the data field
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>info</span>
+        &mdash;
+        <div class='inline'>
+<p>
+The updated Activity.Info object
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class='inline'>
+    <p>
+The data to show
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="initialize-instance_function">
+    <strong>initialize()</strong>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Constructor
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Feb 8, 2022 2:56:12 PM
+</p>
+
+</body>

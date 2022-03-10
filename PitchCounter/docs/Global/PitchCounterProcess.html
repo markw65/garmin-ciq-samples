@@ -1,0 +1,1081 @@
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> $.PitchCounterProcess </title>
+
+    <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "$.PitchCounterProcess";
+      relpath = '../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: $.PitchCounterProcess</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">Toybox.Lang.Object</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class='inline'>
+    Toybox.Lang.Object
+  </div>
+</li>
+<li class="next">
+  <div class='inline'>
+    <a href="../Global/PitchCounterProcess.html">PitchCounterProcess</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Processes accelerometer data and counts pitches
+</p>
+
+
+    </div>
+  </div>
+
+
+
+
+<div class="tags">
+
+
+
+
+
+</div>
+
+
+
+
+
+<!-- Constants -->
+<h2>Constant Summary</h2>
+<dl class="constants">
+<h3>Constant Variables</h3>
+<table class='constTable'>
+    <tr>
+        <th class='constTableHeader'>Type</th>
+        <th class='constTableHeader'>Name</th>
+        <th class='constTableHeader'>Value</th>
+        <th class='constTableHeader'>Since</th>
+        <th class='constTableHeader'>Description</th>
+    </tr>
+    <tr class='enumTableOdd'>
+    <td class='constTableCell'>Type</td>
+    <td class='constTableCell'>HIGH_THR</td>
+    <td class='constTableCell'>6.0f</td>
+    <td class='constTableCell'></td>
+    <td class='constTableCell'></td>
+</tr><tr class='enumTableEven'>
+    <td class='constTableCell'>Type</td>
+    <td class='constTableCell'>LOW_THR</td>
+    <td class='constTableCell'>-4.2f</td>
+    <td class='constTableCell'></td>
+    <td class='constTableCell'></td>
+</tr><tr class='enumTableOdd'>
+    <td class='constTableCell'>Type</td>
+    <td class='constTableCell'>NUM_FEATURE</td>
+    <td class='constTableCell'>20</td>
+    <td class='constTableCell'></td>
+    <td class='constTableCell'></td>
+</tr><tr class='enumTableEven'>
+    <td class='constTableCell'>Type</td>
+    <td class='constTableCell'>QN_THR</td>
+    <td class='constTableCell'>-QP_THR</td>
+    <td class='constTableCell'></td>
+    <td class='constTableCell'></td>
+</tr><tr class='enumTableOdd'>
+    <td class='constTableCell'>Type</td>
+    <td class='constTableCell'>QP_THR</td>
+    <td class='constTableCell'>2.0f</td>
+    <td class='constTableCell'></td>
+    <td class='constTableCell'></td>
+</tr><tr class='enumTableEven'>
+    <td class='constTableCell'>Type</td>
+    <td class='constTableCell'>Q_RANGE</td>
+    <td class='constTableCell'>(100*40)</td>
+    <td class='constTableCell'></td>
+    <td class='constTableCell'></td>
+</tr><tr class='enumTableOdd'>
+    <td class='constTableCell'>Type</td>
+    <td class='constTableCell'>TIME_PTC</td>
+    <td class='constTableCell'>20</td>
+    <td class='constTableCell'></td>
+    <td class='constTableCell'></td>
+</tr>
+</table>
+</dl>
+
+
+<h2>Instance Member Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+<ul class="summary">
+   <li class="public">
+  <span class="summary_signature">
+    <a href="#_accX1-var" title="_accX1 (Var)"><strong>_accX1</strong></a>  as Lang.Float
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_accX2-var" title="_accX2 (Var)"><strong>_accX2</strong></a>  as Lang.Float
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_accZ1-var" title="_accZ1 (Var)"><strong>_accZ1</strong></a>  as Lang.Number
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_accZ2-var" title="_accZ2 (Var)"><strong>_accZ2</strong></a>  as Lang.Number
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_filter-var" title="_filter (Var)"><strong>_filter</strong></a>  as Math.FirFilter or <b>Null</b>
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_logger-var" title="_logger (Var)"><strong>_logger</strong></a>  as SensorLogging.SensorLogger or <b>Null</b>
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_maxX-var" title="_maxX (Var)"><strong>_maxX</strong></a>  as Lang.Float or Lang.Number
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_maxZ-var" title="_maxZ (Var)"><strong>_maxZ</strong></a>  as Lang.Float or Lang.Number
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_minX-var" title="_minX (Var)"><strong>_minX</strong></a>  as Lang.Float or Lang.Number
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_minZ-var" title="_minZ (Var)"><strong>_minZ</strong></a>  as Lang.Float or Lang.Number
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_pauseCount-var" title="_pauseCount (Var)"><strong>_pauseCount</strong></a>  as Lang.Number
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_pauseTime-var" title="_pauseTime (Var)"><strong>_pauseTime</strong></a>  as Lang.Number
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_pitchCount-var" title="_pitchCount (Var)"><strong>_pitchCount</strong></a>  as Lang.Number
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_session-var" title="_session (Var)"><strong>_session</strong></a>  as ActivityRecording.Session or <b>Null</b>
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_skipSample-var" title="_skipSample (Var)"><strong>_skipSample</strong></a>  as Lang.Number
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_x-var" title="_x (Var)"><strong>_x</strong></a>  as <span class='type'>Lang.Array</span>&lt;Lang.Float&gt;
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_y-var" title="_y (Var)"><strong>_y</strong></a>  as <span class='type'>Lang.Array</span>&lt;Lang.Number&gt;
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_z-var" title="_z (Var)"><strong>_z</strong></a>  as <span class='type'>Lang.Array</span>&lt;Lang.Number&gt;
+  </span>
+
+
+</li>
+</ul>
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature">
+      <a href="#accelCallback-instance_function" title="accelCallback (Instance Function)"><strong>accelCallback</strong></a>(sensorData as Sensor.SensorData)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Callback to receive accel data.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#getCount-instance_function" title="getCount (Instance Function)"><strong>getCount</strong></a>()    as Lang.Number
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Return current pitch count.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#getPeriod-instance_function" title="getPeriod (Instance Function)"><strong>getPeriod</strong></a>()    as Lang.Number or <b>Null</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the total number of seconds of logged data.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#getSamples-instance_function" title="getSamples (Instance Function)"><strong>getSamples</strong></a>()    as Lang.Number or <b>Null</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the total number of logged samples.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#initialize-instance_function" title="initialize (Instance Function)"><strong>initialize</strong></a>()
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Constructor.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#max-instance_function" title="max (Instance Function)"><strong>max</strong></a>(a as Lang.Float or Lang.Number, b as Lang.Float or Lang.Number)    as Lang.Float or Lang.Number
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Return max of two values.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#min-instance_function" title="min (Instance Function)"><strong>min</strong></a>(a as Lang.Float or Lang.Number, b as Lang.Float or Lang.Number)    as Lang.Float or Lang.Number
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Return min of two values.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#onAccelData-instance_function" title="onAccelData (Instance Function)"><strong>onAccelData</strong></a>()    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Process new accel data.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#onStart-instance_function" title="onStart (Instance Function)"><strong>onStart</strong></a>()    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Start pitch counter.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#onStop-instance_function" title="onStop (Instance Function)"><strong>onStop</strong></a>()    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Stop pitch counter.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+ <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    <dt id="_accX1-var" class="">
+<h3 class="signature " id="_accX1-var">
+
+var _accX1  as Lang.Float
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_accX2-var" class="">
+<h3 class="signature " id="_accX2-var">
+
+var _accX2  as Lang.Float
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_accZ1-var" class="">
+<h3 class="signature " id="_accZ1-var">
+
+var _accZ1  as Lang.Number
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_accZ2-var" class="">
+<h3 class="signature " id="_accZ2-var">
+
+var _accZ2  as Lang.Number
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_filter-var" class="">
+<h3 class="signature " id="_filter-var">
+
+var _filter  as Math.FirFilter or <b>Null</b>
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_logger-var" class="">
+<h3 class="signature " id="_logger-var">
+
+var _logger  as SensorLogging.SensorLogger or <b>Null</b>
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_maxX-var" class="">
+<h3 class="signature " id="_maxX-var">
+
+var _maxX  as Lang.Float or Lang.Number
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_maxZ-var" class="">
+<h3 class="signature " id="_maxZ-var">
+
+var _maxZ  as Lang.Float or Lang.Number
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_minX-var" class="">
+<h3 class="signature " id="_minX-var">
+
+var _minX  as Lang.Float or Lang.Number
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_minZ-var" class="">
+<h3 class="signature " id="_minZ-var">
+
+var _minZ  as Lang.Float or Lang.Number
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_pauseCount-var" class="">
+<h3 class="signature " id="_pauseCount-var">
+
+var _pauseCount  as Lang.Number
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_pauseTime-var" class="">
+<h3 class="signature " id="_pauseTime-var">
+
+var _pauseTime  as Lang.Number
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_pitchCount-var" class="">
+<h3 class="signature " id="_pitchCount-var">
+
+var _pitchCount  as Lang.Number
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_session-var" class="">
+<h3 class="signature " id="_session-var">
+
+var _session  as ActivityRecording.Session or <b>Null</b>
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_skipSample-var" class="">
+<h3 class="signature " id="_skipSample-var">
+
+var _skipSample  as Lang.Number
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_x-var" class="">
+<h3 class="signature " id="_x-var">
+
+var _x  as <span class='type'>Lang.Array</span>&lt;Lang.Float&gt;
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_y-var" class="">
+<h3 class="signature " id="_y-var">
+
+var _y  as <span class='type'>Lang.Array</span>&lt;Lang.Number&gt;
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_z-var" class="">
+<h3 class="signature " id="_z-var">
+
+var _z  as <span class='type'>Lang.Array</span>&lt;Lang.Number&gt;
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt>
+ </div>
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details">
+  <h3 class="signature" id="accelCallback-instance_function">
+    <strong>accelCallback(sensorData as Sensor.SensorData)</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Callback to receive accel data
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>sensorData</span>
+        &mdash;
+        <div class='inline'>
+<p>
+The Sensor Data object
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="getCount-instance_function">
+    <strong>getCount()</strong> <span class='type'> as Lang.Number</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Return current pitch count
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class='inline'>
+    <p>
+The number of pitches counted
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="getPeriod-instance_function">
+    <strong>getPeriod()</strong> <span class='type'> as Lang.Number or <b>Null</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the total number of seconds of logged data
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class='inline'>
+    <p>
+The number of seconds of logged data
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="getSamples-instance_function">
+    <strong>getSamples()</strong> <span class='type'> as Lang.Number or <b>Null</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the total number of logged samples
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class='inline'>
+    <p>
+The number of samples
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="initialize-instance_function">
+    <strong>initialize()</strong>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Constructor
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="max-instance_function">
+    <strong>max(a as Lang.Float or Lang.Number, b as Lang.Float or Lang.Number)</strong> <span class='type'> as Lang.Float or Lang.Number</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Return max of two values
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>a</span>
+        &mdash;
+        <div class='inline'>
+<p>
+First value
+</p>
+
+
+        </div>
+    </li><li>
+        <span class='name'>b</span>
+        &mdash;
+        <div class='inline'>
+<p>
+Second value
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class='inline'>
+    <p>
+The larger of the given values
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="min-instance_function">
+    <strong>min(a as Lang.Float or Lang.Number, b as Lang.Float or Lang.Number)</strong> <span class='type'> as Lang.Float or Lang.Number</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Return min of two values
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>a</span>
+        &mdash;
+        <div class='inline'>
+<p>
+First value
+</p>
+
+
+        </div>
+    </li><li>
+        <span class='name'>b</span>
+        &mdash;
+        <div class='inline'>
+<p>
+Second value
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class='inline'>
+    <p>
+The smaller of the given values
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="onAccelData-instance_function">
+    <strong>onAccelData()</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Process new accel data
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="onStart-instance_function">
+    <strong>onStart()</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Start pitch counter
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="onStop-instance_function">
+    <strong>onStop()</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Stop pitch counter
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Feb 8, 2022 2:56:14 PM
+</p>
+
+</body>

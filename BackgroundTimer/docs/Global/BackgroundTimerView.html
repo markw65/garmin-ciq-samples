@@ -1,0 +1,654 @@
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> $.BackgroundTimerView </title>
+
+    <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "$.BackgroundTimerView";
+      relpath = '../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: $.BackgroundTimerView</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">WatchUi.View</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class='inline'>
+    WatchUi.View
+  </div>
+</li>
+<li class="next">
+  <div class='inline'>
+    <a href="../Global/BackgroundTimerView.html">BackgroundTimerView</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+The main view for the timer application. This displays the
+remaining time on the countdown timer
+</p>
+
+
+    </div>
+  </div>
+
+
+
+
+<div class="tags">
+
+
+
+
+
+</div>
+
+
+
+
+
+<!-- Constants -->
+<h2>Constant Summary</h2>
+<dl class="constants">
+<h3>Constant Variables</h3>
+<table class='constTable'>
+    <tr>
+        <th class='constTableHeader'>Type</th>
+        <th class='constTableHeader'>Name</th>
+        <th class='constTableHeader'>Value</th>
+        <th class='constTableHeader'>Since</th>
+        <th class='constTableHeader'>Description</th>
+    </tr>
+    <tr class='enumTableOdd'>
+    <td class='constTableCell'>Type</td>
+    <td class='constTableCell'>TIMER_DURATION_DEFAULT</td>
+    <td class='constTableCell'>(5*60)</td>
+    <td class='constTableCell'></td>
+    <td class='constTableCell'></td>
+</tr>
+</table><dt id="TimerKeys-module" class="">
+    <h3>TimerKeys</h3>
+  </dt>
+<table class='enumTable'>
+  <tr>
+    <th class='enumTableHeader'>Name</th>
+    <th class='enumTableHeader'>Value</th>
+    <th class='enumTableHeader'>Since</th>
+    <th class='enumTableHeader'>Description</th>
+  </tr>
+  <tr class='enumTableOdd'>
+    <td class='enumTableCell'>TIMER_KEY_DURATION</td>
+      <td class='enumTableCell'>0</td>
+      <td class='enumTableCell'></td>
+      <td class='enumTableCell'></td>
+    </td>
+</tr><tr class='enumTableEven'>
+    <td class='enumTableCell'>TIMER_KEY_START_TIME</td>
+      <td class='enumTableCell'>1</td>
+      <td class='enumTableCell'></td>
+      <td class='enumTableCell'></td>
+    </td>
+</tr><tr class='enumTableOdd'>
+    <td class='enumTableCell'>TIMER_KEY_PAUSE_TIME</td>
+      <td class='enumTableCell'>2</td>
+      <td class='enumTableCell'></td>
+      <td class='enumTableCell'></td>
+    </td>
+</tr>
+</table>
+</dl>
+
+
+<h2>Instance Member Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+<ul class="summary">
+   <li class="public">
+  <span class="summary_signature">
+    <a href="#_timerDuration-var" title="_timerDuration (Var)"><strong>_timerDuration</strong></a>  as Lang.Number
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_timerPauseTime-var" title="_timerPauseTime (Var)"><strong>_timerPauseTime</strong></a>  as Lang.Number or <b>Null</b>
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_timerStartTime-var" title="_timerStartTime (Var)"><strong>_timerStartTime</strong></a>  as Lang.Number or <b>Null</b>
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_updateTimer-var" title="_updateTimer (Var)"><strong>_updateTimer</strong></a>  as Timer.Timer
+  </span>
+
+
+</li>
+</ul>
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature">
+      <a href="#backgroundEvent-instance_function" title="backgroundEvent (Instance Function)"><strong>backgroundEvent</strong></a>()    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+If we do receive a background event while the application is open, go ahead and reset to the default timer.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#deleteBackgroundEvent-instance_function" title="deleteBackgroundEvent (Instance Function)"><strong>deleteBackgroundEvent</strong></a>()    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Delete the background event.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#initialize-instance_function" title="initialize (Instance Function)"><strong>initialize</strong></a>(backgroundRan as Application.PersistableType or <b>Null</b>)
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Initialize variables for this view.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#onUpdate-instance_function" title="onUpdate (Instance Function)"><strong>onUpdate</strong></a>(dc as Graphics.Dc)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Draw the time remaining on the timer to the display.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#requestUpdate-instance_function" title="requestUpdate (Instance Function)"><strong>requestUpdate</strong></a>()    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+This is the callback method we use for our timer.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#resetTimer-instance_function" title="resetTimer (Instance Function)"><strong>resetTimer</strong></a>()    as Lang.Boolean
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+If the timer is paused, then go ahead and reset it back to the default time.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#saveProperties-instance_function" title="saveProperties (Instance Function)"><strong>saveProperties</strong></a>()    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Save all the persisted values into the object store.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#setBackgroundEvent-instance_function" title="setBackgroundEvent (Instance Function)"><strong>setBackgroundEvent</strong></a>()    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Set up a background event to occur when the timer expires.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#startStopTimer-instance_function" title="startStopTimer (Instance Function)"><strong>startStopTimer</strong></a>()    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+If the timer is running, pause it.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+ <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    <dt id="_timerDuration-var" class="">
+<h3 class="signature " id="_timerDuration-var">
+
+var _timerDuration  as Lang.Number
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_timerPauseTime-var" class="">
+<h3 class="signature " id="_timerPauseTime-var">
+
+var _timerPauseTime  as Lang.Number or <b>Null</b>
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_timerStartTime-var" class="">
+<h3 class="signature " id="_timerStartTime-var">
+
+var _timerStartTime  as Lang.Number or <b>Null</b>
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_updateTimer-var" class="">
+<h3 class="signature " id="_updateTimer-var">
+
+var _updateTimer  as Timer.Timer
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt>
+ </div>
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details">
+  <h3 class="signature" id="backgroundEvent-instance_function">
+    <strong>backgroundEvent()</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+If we do receive a background event while the application is open,
+go ahead and reset to the default timer.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="deleteBackgroundEvent-instance_function">
+    <strong>deleteBackgroundEvent()</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Delete the background event. We can get rid of this event when the
+application opens because now we can see exactly when the timer
+is going to expire. We will set it again when the application closes.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="initialize-instance_function">
+    <strong>initialize(backgroundRan as Application.PersistableType or <b>Null</b>)</strong>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Initialize variables for this view
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>backgroundRan</span>
+        &mdash;
+        <div class='inline'>
+<p>
+Contains background data if background ran
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="onUpdate-instance_function">
+    <strong>onUpdate(dc as Graphics.Dc)</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Draw the time remaining on the timer to the display
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>dc</span>
+        &mdash;
+        <div class='inline'>
+<p>
+Device Context
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="requestUpdate-instance_function">
+    <strong>requestUpdate()</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+This is the callback method we use for our timer. It is
+only needed to request display updates as the timer counts
+down so we see the updated time on the display.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="resetTimer-instance_function">
+    <strong>resetTimer()</strong> <span class='type'> as Lang.Boolean</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+If the timer is paused, then go ahead and reset it back to the default time.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class='inline'>
+    <p>
+true if timer is reset, false otherwise
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="saveProperties-instance_function">
+    <strong>saveProperties()</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Save all the persisted values into the object store. This gets
+called by the Application base before the application shuts down.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="setBackgroundEvent-instance_function">
+    <strong>setBackgroundEvent()</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Set up a background event to occur when the timer expires. This
+will alert the user that the timer has expired even if the
+application does not remain open.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="startStopTimer-instance_function">
+    <strong>startStopTimer()</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+If the timer is running, pause it. Otherwise, start it up.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Feb 8, 2022 2:56:08 PM
+</p>
+
+</body>

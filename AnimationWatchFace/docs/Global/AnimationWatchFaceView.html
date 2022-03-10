@@ -1,0 +1,875 @@
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> $.AnimationWatchFaceView </title>
+
+    <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "$.AnimationWatchFaceView";
+      relpath = '../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: $.AnimationWatchFaceView</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">WatchUi.WatchFace</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class='inline'>
+    WatchUi.WatchFace
+  </div>
+</li>
+<li class="next">
+  <div class='inline'>
+    <a href="../Global/AnimationWatchFaceView.html">AnimationWatchFaceView</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Displays the animated watch face
+</p>
+
+
+    </div>
+  </div>
+
+
+
+
+<div class="tags">
+
+
+
+
+
+</div>
+
+
+
+
+
+<!-- Constants -->
+<h2>Constant Summary</h2>
+<dl class="constants">
+<h3>Constant Variables</h3>
+<table class='constTable'>
+    <tr>
+        <th class='constTableHeader'>Type</th>
+        <th class='constTableHeader'>Name</th>
+        <th class='constTableHeader'>Value</th>
+        <th class='constTableHeader'>Since</th>
+        <th class='constTableHeader'>Description</th>
+    </tr>
+    <tr class='enumTableOdd'>
+    <td class='constTableCell'>Type</td>
+    <td class='constTableCell'>GAP</td>
+    <td class='constTableCell'>10</td>
+    <td class='constTableCell'></td>
+    <td class='constTableCell'></td>
+</tr><tr class='enumTableEven'>
+    <td class='constTableCell'>Type</td>
+    <td class='constTableCell'>MAJOR_FONT</td>
+    <td class='constTableCell'>Graphics.FONT_NUMBER_MEDIUM</td>
+    <td class='constTableCell'></td>
+    <td class='constTableCell'></td>
+</tr><tr class='enumTableOdd'>
+    <td class='constTableCell'>Type</td>
+    <td class='constTableCell'>MINOR_FONT</td>
+    <td class='constTableCell'>Graphics.FONT_NUMBER_MILD</td>
+    <td class='constTableCell'></td>
+    <td class='constTableCell'></td>
+</tr><tr class='enumTableEven'>
+    <td class='constTableCell'>Type</td>
+    <td class='constTableCell'>RAND_BASE</td>
+    <td class='constTableCell'>0x7FFFFFFF</td>
+    <td class='constTableCell'></td>
+    <td class='constTableCell'></td>
+</tr>
+</table>
+</dl>
+
+
+<h2>Instance Member Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+<ul class="summary">
+   <li class="public">
+  <span class="summary_signature">
+    <a href="#_backgroundAnimationLayer-var" title="_backgroundAnimationLayer (Var)"><strong>_backgroundAnimationLayer</strong></a>  as WatchUi.AnimationLayer
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_drawLayer-var" title="_drawLayer (Var)"><strong>_drawLayer</strong></a>  as WatchUi.Layer
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_drawLayerArea-var" title="_drawLayerArea (Var)"><strong>_drawLayerArea</strong></a>  as <span class='type'>Lang.Array</span>&lt;Lang.Number&gt;
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_foregroundAnimationLayer-var" title="_foregroundAnimationLayer (Var)"><strong>_foregroundAnimationLayer</strong></a>  as WatchUi.AnimationLayer
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_majorTextOffsetX-var" title="_majorTextOffsetX (Var)"><strong>_majorTextOffsetX</strong></a>  as Lang.Number
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_majorTextOffsetY-var" title="_majorTextOffsetY (Var)"><strong>_majorTextOffsetY</strong></a>  as Lang.Number
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_minorTextOffsetX-var" title="_minorTextOffsetX (Var)"><strong>_minorTextOffsetX</strong></a>  as Lang.Number
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_minorTextOffsetY-var" title="_minorTextOffsetY (Var)"><strong>_minorTextOffsetY</strong></a>  as Lang.Number
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_partialUpdateClip-var" title="_partialUpdateClip (Var)"><strong>_partialUpdateClip</strong></a>  as <span class='type'>Lang.Array</span>&lt;Lang.Number&gt;
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_playCount-var" title="_playCount (Var)"><strong>_playCount</strong></a>  as Lang.Number
+  </span>
+
+
+</li>
+</ul>
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature">
+      <a href="#getPlayCount-instance_function" title="getPlayCount (Instance Function)"><strong>getPlayCount</strong></a>()    as Lang.Number
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the play count.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#initialize-instance_function" title="initialize (Instance Function)"><strong>initialize</strong></a>()
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Constructor.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#onEnterSleep-instance_function" title="onEnterSleep (Instance Function)"><strong>onEnterSleep</strong></a>()    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+During sleep mode, stop the animation.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#onExitSleep-instance_function" title="onExitSleep (Instance Function)"><strong>onExitSleep</strong></a>()    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+When not in sleep mode, play the animation.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#onHide-instance_function" title="onHide (Instance Function)"><strong>onHide</strong></a>()    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Called when this View is removed from the screen.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#onLayout-instance_function" title="onLayout (Instance Function)"><strong>onLayout</strong></a>(dc as Graphics.Dc)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Set the layout and layers for the view.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#onPartialUpdate-instance_function" title="onPartialUpdate (Instance Function)"><strong>onPartialUpdate</strong></a>(dc as Graphics.Dc)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Handle the partial update event.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#onShow-instance_function" title="onShow (Instance Function)"><strong>onShow</strong></a>()    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Called when this View is brought to the foreground.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#onUpdate-instance_function" title="onUpdate (Instance Function)"><strong>onUpdate</strong></a>(dc as Graphics.Dc)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Update the view.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#play-instance_function" title="play (Instance Function)"><strong>play</strong></a>()    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Play the animation.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#updateWatchOverlay-instance_function" title="updateWatchOverlay (Instance Function)"><strong>updateWatchOverlay</strong></a>(isFullUpdate as Lang.Boolean)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Update the clock.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+ <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    <dt id="_backgroundAnimationLayer-var" class="">
+<h3 class="signature " id="_backgroundAnimationLayer-var">
+
+var _backgroundAnimationLayer  as WatchUi.AnimationLayer
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_drawLayer-var" class="">
+<h3 class="signature " id="_drawLayer-var">
+
+var _drawLayer  as WatchUi.Layer
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_drawLayerArea-var" class="">
+<h3 class="signature " id="_drawLayerArea-var">
+
+var _drawLayerArea  as <span class='type'>Lang.Array</span>&lt;Lang.Number&gt;
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_foregroundAnimationLayer-var" class="">
+<h3 class="signature " id="_foregroundAnimationLayer-var">
+
+var _foregroundAnimationLayer  as WatchUi.AnimationLayer
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_majorTextOffsetX-var" class="">
+<h3 class="signature " id="_majorTextOffsetX-var">
+
+var _majorTextOffsetX  as Lang.Number
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_majorTextOffsetY-var" class="">
+<h3 class="signature " id="_majorTextOffsetY-var">
+
+var _majorTextOffsetY  as Lang.Number
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_minorTextOffsetX-var" class="">
+<h3 class="signature " id="_minorTextOffsetX-var">
+
+var _minorTextOffsetX  as Lang.Number
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_minorTextOffsetY-var" class="">
+<h3 class="signature " id="_minorTextOffsetY-var">
+
+var _minorTextOffsetY  as Lang.Number
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_partialUpdateClip-var" class="">
+<h3 class="signature " id="_partialUpdateClip-var">
+
+var _partialUpdateClip  as <span class='type'>Lang.Array</span>&lt;Lang.Number&gt;
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_playCount-var" class="">
+<h3 class="signature " id="_playCount-var">
+
+var _playCount  as Lang.Number
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt>
+ </div>
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details">
+  <h3 class="signature" id="getPlayCount-instance_function">
+    <strong>getPlayCount()</strong> <span class='type'> as Lang.Number</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the play count
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class='inline'>
+    <p>
+The play count
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="initialize-instance_function">
+    <strong>initialize()</strong>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Constructor
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="onEnterSleep-instance_function">
+    <strong>onEnterSleep()</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+During sleep mode, stop the animation
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="onExitSleep-instance_function">
+    <strong>onExitSleep()</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+When not in sleep mode, play the animation
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="onHide-instance_function">
+    <strong>onHide()</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Called when this View is removed from the screen. Save the
+state of your app here.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="onLayout-instance_function">
+    <strong>onLayout(dc as Graphics.Dc)</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Set the layout and layers for the view
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>dc</span>
+        &mdash;
+        <div class='inline'>
+<p>
+Device context
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="onPartialUpdate-instance_function">
+    <strong>onPartialUpdate(dc as Graphics.Dc)</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Handle the partial update event
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>dc</span>
+        &mdash;
+        <div class='inline'>
+<p>
+Device Context
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="onShow-instance_function">
+    <strong>onShow()</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Called when this View is brought to the foreground. Restore
+the state of this View and prepare it to be shown. This includes
+loading resources into memory.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="onUpdate-instance_function">
+    <strong>onUpdate(dc as Graphics.Dc)</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Update the view
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>dc</span>
+        &mdash;
+        <div class='inline'>
+<p>
+Device Context
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="play-instance_function">
+    <strong>play()</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Play the animation
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="updateWatchOverlay-instance_function">
+    <strong>updateWatchOverlay(isFullUpdate as Lang.Boolean)</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Update the clock
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>isFullUpdate</span>
+        &mdash;
+        <div class='inline'>
+<p>
+True if updating everything, false if partial update
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Feb 8, 2022 2:56:04 PM
+</p>
+
+</body>

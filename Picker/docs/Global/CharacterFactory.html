@@ -1,0 +1,565 @@
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> $.CharacterFactory </title>
+
+    <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "$.CharacterFactory";
+      relpath = '../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: $.CharacterFactory</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">WatchUi.PickerFactory</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class='inline'>
+    WatchUi.PickerFactory
+  </div>
+</li>
+<li class="next">
+  <div class='inline'>
+    <a href="../Global/CharacterFactory.html">CharacterFactory</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Factory that controls which characters can be picked
+</p>
+
+
+    </div>
+  </div>
+
+
+
+
+<div class="tags">
+
+
+
+
+
+</div>
+
+
+
+
+
+<!-- Constants -->
+<h2>Constant Summary</h2>
+<dl class="constants">
+<h3>Constant Variables</h3>
+<table class='constTable'>
+    <tr>
+        <th class='constTableHeader'>Type</th>
+        <th class='constTableHeader'>Name</th>
+        <th class='constTableHeader'>Value</th>
+        <th class='constTableHeader'>Since</th>
+        <th class='constTableHeader'>Description</th>
+    </tr>
+    <tr class='enumTableOdd'>
+    <td class='constTableCell'>Type</td>
+    <td class='constTableCell'>DONE</td>
+    <td class='constTableCell'>-1</td>
+    <td class='constTableCell'></td>
+    <td class='constTableCell'></td>
+</tr>
+</table>
+</dl>
+
+
+<h2>Instance Member Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+<ul class="summary">
+   <li class="public">
+  <span class="summary_signature">
+    <a href="#_addOk-var" title="_addOk (Var)"><strong>_addOk</strong></a>  as Lang.Boolean
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_characterSet-var" title="_characterSet (Var)"><strong>_characterSet</strong></a>  as Lang.String
+  </span>
+
+
+</li>
+</ul>
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature">
+      <a href="#getDrawable-instance_function" title="getDrawable (Instance Function)"><strong>getDrawable</strong></a>(index as Lang.Number, selected as Lang.Boolean)    as WatchUi.Drawable or <b>Null</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Generate a Drawable instance for an item.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#getIndex-instance_function" title="getIndex (Instance Function)"><strong>getIndex</strong></a>(value as Lang.String)    as Lang.Number
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the index of a character item.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#getSize-instance_function" title="getSize (Instance Function)"><strong>getSize</strong></a>()    as Lang.Number
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the number of picker items.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#getValue-instance_function" title="getValue (Instance Function)"><strong>getValue</strong></a>(index as Lang.Number)    as Lang.Object or <b>Null</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the value of the item at the given index.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#initialize-instance_function" title="initialize (Instance Function)"><strong>initialize</strong></a>(characterSet as Lang.String, addOk as Lang.Boolean)
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Constructor.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#isDone-instance_function" title="isDone (Instance Function)"><strong>isDone</strong></a>(value as Lang.String or Lang.Number)    as Lang.Boolean
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get whether the user selected OK and is done picking.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+ <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    <dt id="_addOk-var" class="">
+<h3 class="signature " id="_addOk-var">
+
+var _addOk  as Lang.Boolean
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_characterSet-var" class="">
+<h3 class="signature " id="_characterSet-var">
+
+var _characterSet  as Lang.String
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt>
+ </div>
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details">
+  <h3 class="signature" id="getDrawable-instance_function">
+    <strong>getDrawable(index as Lang.Number, selected as Lang.Boolean)</strong> <span class='type'> as WatchUi.Drawable or <b>Null</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Generate a Drawable instance for an item
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>index</span>
+        &mdash;
+        <div class='inline'>
+<p>
+The item index
+</p>
+
+
+        </div>
+    </li><li>
+        <span class='name'>selected</span>
+        &mdash;
+        <div class='inline'>
+<p>
+true if the current item is selected, false otherwise
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class='inline'>
+    <p>
+Drawable for the item
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="getIndex-instance_function">
+    <strong>getIndex(value as Lang.String)</strong> <span class='type'> as Lang.Number</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the index of a character item
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>value</span>
+        &mdash;
+        <div class='inline'>
+<p>
+The character to get the index of
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class='inline'>
+    <p>
+The index of the character
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="getSize-instance_function">
+    <strong>getSize()</strong> <span class='type'> as Lang.Number</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the number of picker items
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class='inline'>
+    <p>
+Number of items
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="getValue-instance_function">
+    <strong>getValue(index as Lang.Number)</strong> <span class='type'> as Lang.Object or <b>Null</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the value of the item at the given index
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>index</span>
+        &mdash;
+        <div class='inline'>
+<p>
+Index of the item to get the value of
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class='inline'>
+    <p>
+Value of the item
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="initialize-instance_function">
+    <strong>initialize(characterSet as Lang.String, addOk as Lang.Boolean)</strong>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Constructor
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>characterSet</span>
+        &mdash;
+        <div class='inline'>
+<p>
+The characters to include in the Picker
+</p>
+
+
+        </div>
+    </li><li>
+        <span class='name'>addOk</span>
+        &mdash;
+        <div class='inline'>
+<p>
+true to add OK button, false otherwise
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="isDone-instance_function">
+    <strong>isDone(value as Lang.String or Lang.Number)</strong> <span class='type'> as Lang.Boolean</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get whether the user selected OK and is done picking
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>value</span>
+        &mdash;
+        <div class='inline'>
+<p>
+Value user selected
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class='inline'>
+    <p>
+true if user is done, false otherwise
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Feb 8, 2022 2:55:55 PM
+</p>
+
+</body>

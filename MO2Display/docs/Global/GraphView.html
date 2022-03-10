@@ -1,0 +1,449 @@
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> $.GraphView </title>
+
+    <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "$.GraphView";
+      relpath = '../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: $.GraphView</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">WatchUi.View</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class='inline'>
+    WatchUi.View
+  </div>
+</li>
+<li class="next">
+  <div class='inline'>
+    <a href="../Global/GraphView.html">GraphView</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Show line graphs for the hemoglobin concentration
+</p>
+
+
+    </div>
+  </div>
+
+
+
+
+<div class="tags">
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<h2>Instance Member Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+<ul class="summary">
+   <li class="public">
+  <span class="summary_signature">
+    <a href="#_currentGraph-var" title="_currentGraph (Var)"><strong>_currentGraph</strong></a>  as <span class='type'><a href="../Global/LineGraph.html">$.LineGraph</a></span>
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_fonts-var" title="_fonts (Var)"><strong>_fonts</strong></a>  as <span class='type'>Lang.Array</span>&lt;Graphics.FontDefinition&gt;
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_index-var" title="_index (Var)"><strong>_index</strong></a>  as Lang.Number
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_indicator-var" title="_indicator (Var)"><strong>_indicator</strong></a>  as <span class='type'><a href="../Global/PageIndicator.html">$.PageIndicator</a></span>
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_sensor-var" title="_sensor (Var)"><strong>_sensor</strong></a>  as <span class='type'><a href="../Global/MO2Sensor.html">$.MO2Sensor</a></span>
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_totalGraph-var" title="_totalGraph (Var)"><strong>_totalGraph</strong></a>  as <span class='type'><a href="../Global/LineGraph.html">$.LineGraph</a></span>
+  </span>
+
+
+</li>
+</ul>
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature">
+      <a href="#initialize-instance_function" title="initialize (Instance Function)"><strong>initialize</strong></a>(sensor as <span class='type'><a href="../Global/MO2Sensor.html">$.MO2Sensor</a></span>, index as Lang.Number)
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Constructor.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#onUpdate-instance_function" title="onUpdate (Instance Function)"><strong>onUpdate</strong></a>(dc as Graphics.Dc)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Update the view.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#pickFont-instance_function" title="pickFont (Instance Function)"><strong>pickFont</strong></a>(dc as Graphics.Dc, string as Lang.String, width as Lang.Number)    as Graphics.FontDefinition
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the font that will fit the given string in the given width.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+ <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    <dt id="_currentGraph-var" class="">
+<h3 class="signature " id="_currentGraph-var">
+
+var _currentGraph  as <span class='type'><a href="../Global/LineGraph.html">$.LineGraph</a></span>
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_fonts-var" class="">
+<h3 class="signature " id="_fonts-var">
+
+var _fonts  as <span class='type'>Lang.Array</span>&lt;Graphics.FontDefinition&gt;
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_index-var" class="">
+<h3 class="signature " id="_index-var">
+
+var _index  as Lang.Number
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_indicator-var" class="">
+<h3 class="signature " id="_indicator-var">
+
+var _indicator  as <span class='type'><a href="../Global/PageIndicator.html">$.PageIndicator</a></span>
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_sensor-var" class="">
+<h3 class="signature " id="_sensor-var">
+
+var _sensor  as <span class='type'><a href="../Global/MO2Sensor.html">$.MO2Sensor</a></span>
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_totalGraph-var" class="">
+<h3 class="signature " id="_totalGraph-var">
+
+var _totalGraph  as <span class='type'><a href="../Global/LineGraph.html">$.LineGraph</a></span>
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt>
+ </div>
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details">
+  <h3 class="signature" id="initialize-instance_function">
+    <strong>initialize(sensor as <span class='type'><a href="../Global/MO2Sensor.html">$.MO2Sensor</a></span>, index as Lang.Number)</strong>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Constructor
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>sensor</span>
+        &mdash;
+        <div class='inline'>
+<p>
+ANT channel and data
+</p>
+
+
+        </div>
+    </li><li>
+        <span class='name'>index</span>
+        &mdash;
+        <div class='inline'>
+<p>
+Index corresponding to this view
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="onUpdate-instance_function">
+    <strong>onUpdate(dc as Graphics.Dc)</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Update the view
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>dc</span>
+        &mdash;
+        <div class='inline'>
+<p>
+Device Context
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="pickFont-instance_function">
+    <strong>pickFont(dc as Graphics.Dc, string as Lang.String, width as Lang.Number)</strong> <span class='type'> as Graphics.FontDefinition</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the font that will fit the given string in the given width
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>dc</span>
+        &mdash;
+        <div class='inline'>
+<p>
+Device context
+</p>
+
+
+        </div>
+    </li><li>
+        <span class='name'>string</span>
+        &mdash;
+        <div class='inline'>
+<p>
+String that will use the font
+</p>
+
+
+        </div>
+    </li><li>
+        <span class='name'>width</span>
+        &mdash;
+        <div class='inline'>
+<p>
+Width to fit the string inside
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class='inline'>
+    <p>
+Font to use
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Feb 8, 2022 2:55:52 PM
+</p>
+
+</body>

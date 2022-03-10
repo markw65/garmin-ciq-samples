@@ -1,0 +1,682 @@
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> $.MO2Sensor </title>
+
+    <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "$.MO2Sensor";
+      relpath = '../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: $.MO2Sensor</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">Ant.GenericChannel</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class='inline'>
+    Ant.GenericChannel
+  </div>
+</li>
+<li class="next">
+  <div class='inline'>
+    <a href="../Global/MO2Sensor.html">MO2Sensor</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+
+
+
+
+<div class="tags">
+
+
+
+
+
+</div>
+
+
+
+<!-- Child Classes -->
+<h2>Classes Under Namespace</h2>
+<p class="children">
+<strong class="classes">Classes:</strong> <span class='type'><a href="../Global/MO2Sensor/MO2Data.html">MO2Data</a></span>
+</p>
+
+
+<!-- Constants -->
+<h2>Constant Summary</h2>
+<dl class="constants">
+<h3>Constant Variables</h3>
+<table class='constTable'>
+    <tr>
+        <th class='constTableHeader'>Type</th>
+        <th class='constTableHeader'>Name</th>
+        <th class='constTableHeader'>Value</th>
+        <th class='constTableHeader'>Since</th>
+        <th class='constTableHeader'>Description</th>
+    </tr>
+    <tr class='enumTableOdd'>
+    <td class='constTableCell'>Type</td>
+    <td class='constTableCell'>DEVICE_TYPE</td>
+    <td class='constTableCell'>31</td>
+    <td class='constTableCell'></td>
+    <td class='constTableCell'></td>
+</tr><tr class='enumTableEven'>
+    <td class='constTableCell'>Type</td>
+    <td class='constTableCell'>MO2_FIELD_ID</td>
+    <td class='constTableCell'>0</td>
+    <td class='constTableCell'></td>
+    <td class='constTableCell'></td>
+</tr><tr class='enumTableOdd'>
+    <td class='constTableCell'>Type</td>
+    <td class='constTableCell'>PAGE_NUMBER</td>
+    <td class='constTableCell'>1</td>
+    <td class='constTableCell'></td>
+    <td class='constTableCell'><p>
+Page number for the message type we care about
+</p>
+
+</td>
+</tr><tr class='enumTableEven'>
+    <td class='constTableCell'>Type</td>
+    <td class='constTableCell'>PERIOD</td>
+    <td class='constTableCell'>8192</td>
+    <td class='constTableCell'></td>
+    <td class='constTableCell'></td>
+</tr>
+</table>
+</dl>
+
+
+<h2>Instance Member Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+<ul class="summary">
+   <li class="public">
+  <span class="summary_signature">
+    <a href="#_chanAssign-var" title="_chanAssign (Var)"><strong>_chanAssign</strong></a>  as Ant.ChannelAssignment
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_data-var" title="_data (Var)"><strong>_data</strong></a>  as <span class='type'><a href="../Global/MO2Sensor/MO2Data.html">MO2Sensor.MO2Data</a></span>
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_deviceCfg-var" title="_deviceCfg (Var)"><strong>_deviceCfg</strong></a>  as Ant.DeviceConfig
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_fitField-var" title="_fitField (Var)"><strong>_fitField</strong></a>  as FitContributor.Field or <b>Null</b>
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_pastEventCount-var" title="_pastEventCount (Var)"><strong>_pastEventCount</strong></a>  as Lang.Number or <b>Null</b>
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_searching-var" title="_searching (Var)"><strong>_searching</strong></a>  as Lang.Boolean
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_session-var" title="_session (Var)"><strong>_session</strong></a>  as ActivityRecording.Session
+  </span>
+
+
+</li>
+</ul>
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature">
+      <a href="#closeSensor-instance_function" title="closeSensor (Instance Function)"><strong>closeSensor</strong></a>()    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Close the ANT sensor and save the session.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#getData-instance_function" title="getData (Instance Function)"><strong>getData</strong></a>()    as <span class='type'><a href="../Global/MO2Sensor/MO2Data.html">MO2Sensor.MO2Data</a></span>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the data for this sensor.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#getDeviceConfig-instance_function" title="getDeviceConfig (Instance Function)"><strong>getDeviceConfig</strong></a>()    as Ant.DeviceConfig
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the device config for this channel.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#initialize-instance_function" title="initialize (Instance Function)"><strong>initialize</strong></a>()
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Constructor.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#isSearching-instance_function" title="isSearching (Instance Function)"><strong>isSearching</strong></a>()    as Lang.Boolean
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get whether the channel is searching.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#onMessage-instance_function" title="onMessage (Instance Function)"><strong>onMessage</strong></a>(msg as Ant.Message)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Update when a message is received.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#open-instance_function" title="open (Instance Function)"><strong>open</strong></a>()    as Lang.Boolean
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Open an ANT channel.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#setTime-instance_function" title="setTime (Instance Function)"><strong>setTime</strong></a>()    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Set the current time.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+ <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    <dt id="_chanAssign-var" class="">
+<h3 class="signature " id="_chanAssign-var">
+
+var _chanAssign  as Ant.ChannelAssignment
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_data-var" class="">
+<h3 class="signature " id="_data-var">
+
+var _data  as <span class='type'><a href="../Global/MO2Sensor/MO2Data.html">MO2Sensor.MO2Data</a></span>
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_deviceCfg-var" class="">
+<h3 class="signature " id="_deviceCfg-var">
+
+var _deviceCfg  as Ant.DeviceConfig
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_fitField-var" class="">
+<h3 class="signature " id="_fitField-var">
+
+var _fitField  as FitContributor.Field or <b>Null</b>
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_pastEventCount-var" class="">
+<h3 class="signature " id="_pastEventCount-var">
+
+var _pastEventCount  as Lang.Number or <b>Null</b>
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_searching-var" class="">
+<h3 class="signature " id="_searching-var">
+
+var _searching  as Lang.Boolean
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_session-var" class="">
+<h3 class="signature " id="_session-var">
+
+var _session  as ActivityRecording.Session
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt>
+ </div>
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details">
+  <h3 class="signature" id="closeSensor-instance_function">
+    <strong>closeSensor()</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Close the ANT sensor and save the session
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="getData-instance_function">
+    <strong>getData()</strong> <span class='type'> as <span class='type'><a href="../Global/MO2Sensor/MO2Data.html">MO2Sensor.MO2Data</a></span></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the data for this sensor
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class='inline'>
+    <p>
+Data object
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="getDeviceConfig-instance_function">
+    <strong>getDeviceConfig()</strong> <span class='type'> as Ant.DeviceConfig</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the device config for this channel
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class='inline'>
+    <p>
+Device config object
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="initialize-instance_function">
+    <strong>initialize()</strong>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Constructor
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="isSearching-instance_function">
+    <strong>isSearching()</strong> <span class='type'> as Lang.Boolean</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get whether the channel is searching
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class='inline'>
+    <p>
+true if searching, false otherwise
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="onMessage-instance_function">
+    <strong>onMessage(msg as Ant.Message)</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Update when a message is received
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>msg</span>
+        &mdash;
+        <div class='inline'>
+<p>
+The ANT message
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="open-instance_function">
+    <strong>open()</strong> <span class='type'> as Lang.Boolean</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Open an ANT channel
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class='inline'>
+    <p>
+true if channel opened successfully, false otherwise
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="setTime-instance_function">
+    <strong>setTime()</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Set the current time
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Feb 8, 2022 2:55:52 PM
+</p>
+
+</body>

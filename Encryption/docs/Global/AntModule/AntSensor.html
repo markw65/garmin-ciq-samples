@@ -1,0 +1,869 @@
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> $.AntModule.AntSensor </title>
+
+    <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "$.AntModule.AntSensor";
+      relpath = '../../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: $.AntModule.AntSensor</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">Ant.GenericChannel</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class='inline'>
+    Ant.GenericChannel
+  </div>
+</li>
+<li class="next">
+  <div class='inline'>
+    <a href="../../Global/AntModule/AntSensor.html">AntModule.AntSensor</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+
+
+
+
+<div class="tags">
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<h2>Instance Member Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+<ul class="summary">
+   <li class="public">
+  <span class="summary_signature">
+    <a href="#_cryptoConfig-var" title="_cryptoConfig (Var)"><strong>_cryptoConfig</strong></a>  as Ant.CryptoConfig
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_data-var" title="_data (Var)"><strong>_data</strong></a>  as Lang.String
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_deviceCfg-var" title="_deviceCfg (Var)"><strong>_deviceCfg</strong></a>  as Ant.DeviceConfig
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_encrypted-var" title="_encrypted (Var)"><strong>_encrypted</strong></a>  as Lang.Boolean
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_index-var" title="_index (Var)"><strong>_index</strong></a>  as Lang.Number
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_isMaster-var" title="_isMaster (Var)"><strong>_isMaster</strong></a>  as Lang.Boolean
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_searching-var" title="_searching (Var)"><strong>_searching</strong></a>  as Lang.Boolean
+  </span>
+
+
+</li>
+</ul>
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature">
+      <a href="#DecodeByteToASCII-instance_function" title="DecodeByteToASCII (Instance Function)"><strong>DecodeByteToASCII</strong></a>(bytes as <span class='type'>Lang.Array</span>&lt;Lang.Number&gt;)    as Lang.String
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Decode an array and return its ascii string equivalent.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#disableEncryption-instance_function" title="disableEncryption (Instance Function)"><strong>disableEncryption</strong></a>()    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Disables encryption for master and decryption for slave.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#enableChannelEncryption-instance_function" title="enableChannelEncryption (Instance Function)"><strong>enableChannelEncryption</strong></a>()    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Enables encryption for master and decryption for slave.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#getData-instance_function" title="getData (Instance Function)"><strong>getData</strong></a>()    as Lang.String
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the sensor data.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#getDeviceConfig-instance_function" title="getDeviceConfig (Instance Function)"><strong>getDeviceConfig</strong></a>()    as Ant.DeviceConfig
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the device configuration.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#initialize-instance_function" title="initialize (Instance Function)"><strong>initialize</strong></a>(isChannelTypeMaster as Lang.Boolean)
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Constructor, initializes AntSensor and configures and opens channel.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#isEncrypted-instance_function" title="isEncrypted (Instance Function)"><strong>isEncrypted</strong></a>()    as Lang.Boolean
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get whether the sensor is encrypted.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#isMaster-instance_function" title="isMaster (Instance Function)"><strong>isMaster</strong></a>()    as Lang.Boolean
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get whether the channel is master.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#isSearching-instance_function" title="isSearching (Instance Function)"><strong>isSearching</strong></a>()    as Lang.Boolean
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get whether the sensor is searching.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#onMessage-instance_function" title="onMessage (Instance Function)"><strong>onMessage</strong></a>(msg as Ant.Message)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+On Ant Message, parses message.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#open-instance_function" title="open (Instance Function)"><strong>open</strong></a>()    as Lang.Boolean
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Opens the generic channel.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#updateData-instance_function" title="updateData (Instance Function)"><strong>updateData</strong></a>(bArray as <span class='type'>Lang.Array</span>&lt;Lang.Number&gt;)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Adds the new message to data Maintains data stays within MAX_DATA_LENGTH.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+ <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    <dt id="_cryptoConfig-var" class="">
+<h3 class="signature " id="_cryptoConfig-var">
+
+var _cryptoConfig  as Ant.CryptoConfig
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_data-var" class="">
+<h3 class="signature " id="_data-var">
+
+var _data  as Lang.String
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_deviceCfg-var" class="">
+<h3 class="signature " id="_deviceCfg-var">
+
+var _deviceCfg  as Ant.DeviceConfig
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_encrypted-var" class="">
+<h3 class="signature " id="_encrypted-var">
+
+var _encrypted  as Lang.Boolean
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_index-var" class="">
+<h3 class="signature " id="_index-var">
+
+var _index  as Lang.Number
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_isMaster-var" class="">
+<h3 class="signature " id="_isMaster-var">
+
+var _isMaster  as Lang.Boolean
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_searching-var" class="">
+<h3 class="signature " id="_searching-var">
+
+var _searching  as Lang.Boolean
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt>
+ </div>
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details">
+  <h3 class="signature" id="DecodeByteToASCII-instance_function">
+    <strong>DecodeByteToASCII(bytes as <span class='type'>Lang.Array</span>&lt;Lang.Number&gt;)</strong> <span class='type'> as Lang.String</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Decode an array and return its ascii string equivalent
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>bytes</span>
+        &mdash;
+        <div class='inline'>
+<p>
+Array of integers representing the bytes to decode
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class='inline'>
+    <p>
+an ascii string equivalent to the given array
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="disableEncryption-instance_function">
+    <strong>disableEncryption()</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Disables encryption for master and decryption for slave
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="enableChannelEncryption-instance_function">
+    <strong>enableChannelEncryption()</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Enables encryption for master and decryption for slave
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="getData-instance_function">
+    <strong>getData()</strong> <span class='type'> as Lang.String</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the sensor data
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class='inline'>
+    <p>
+The data
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="getDeviceConfig-instance_function">
+    <strong>getDeviceConfig()</strong> <span class='type'> as Ant.DeviceConfig</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the device configuration
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class='inline'>
+    <p>
+The device configuration
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="initialize-instance_function">
+    <strong>initialize(isChannelTypeMaster as Lang.Boolean)</strong>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Constructor, initializes AntSensor and configures and opens channel
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>isChannelTypeMaster</span>
+        &mdash;
+        <div class='inline'>
+<p>
+Boolean that indicates if the channel should be a master or a slave
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="isEncrypted-instance_function">
+    <strong>isEncrypted()</strong> <span class='type'> as Lang.Boolean</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get whether the sensor is encrypted
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class='inline'>
+    <p>
+true if encrypted, false otherwise
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="isMaster-instance_function">
+    <strong>isMaster()</strong> <span class='type'> as Lang.Boolean</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get whether the channel is master
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class='inline'>
+    <p>
+true if master, false otherwise
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="isSearching-instance_function">
+    <strong>isSearching()</strong> <span class='type'> as Lang.Boolean</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get whether the sensor is searching
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class='inline'>
+    <p>
+true if searching, false otherwise
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="onMessage-instance_function">
+    <strong>onMessage(msg as Ant.Message)</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+On Ant Message, parses message
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>msg</span>
+        &mdash;
+        <div class='inline'>
+<p>
+Ant.Message object
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="open-instance_function">
+    <strong>open()</strong> <span class='type'> as Lang.Boolean</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Opens the generic channel
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class='inline'>
+    <p>
+true if channel is successfully opened, false otherwise
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="updateData-instance_function">
+    <strong>updateData(bArray as <span class='type'>Lang.Array</span>&lt;Lang.Number&gt;)</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Adds the new message to data
+Maintains data stays within MAX_DATA_LENGTH
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>bArray</span>
+        &mdash;
+        <div class='inline'>
+<p>
+Array with the message you want to add to data
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Feb 8, 2022 2:55:45 PM
+</p>
+
+</body>

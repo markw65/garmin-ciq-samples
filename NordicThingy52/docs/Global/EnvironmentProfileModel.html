@@ -1,0 +1,1026 @@
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> $.EnvironmentProfileModel </title>
+
+    <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "$.EnvironmentProfileModel";
+      relpath = '../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: $.EnvironmentProfileModel</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">Toybox.Lang.Object</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class='inline'>
+    Toybox.Lang.Object
+  </div>
+</li>
+<li class="next">
+  <div class='inline'>
+    <a href="../Global/EnvironmentProfileModel.html">EnvironmentProfileModel</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+
+
+
+
+<div class="tags">
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<h2>Instance Member Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+<ul class="summary">
+   <li class="public">
+  <span class="summary_signature">
+    <a href="#_eco2-var" title="_eco2 (Var)"><strong>_eco2</strong></a>  as Lang.Numeric or <b>Null</b>
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_humidity-var" title="_humidity (Var)"><strong>_humidity</strong></a>  as Lang.Numeric or <b>Null</b>
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_pendingNotifies-var" title="_pendingNotifies (Var)"><strong>_pendingNotifies</strong></a>  as <span class='type'>Lang.Array</span>&lt;BluetoothLowEnergy.Characteristic&gt;
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_pressure-var" title="_pressure (Var)"><strong>_pressure</strong></a>  as Lang.Numeric or <b>Null</b>
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_profileManager-var" title="_profileManager (Var)"><strong>_profileManager</strong></a>  as <span class='type'><a href="../Global/ProfileManager.html">$.ProfileManager</a></span>
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_service-var" title="_service (Var)"><strong>_service</strong></a>  as BluetoothLowEnergy.Service or <b>Null</b>
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_temperature-var" title="_temperature (Var)"><strong>_temperature</strong></a>  as Lang.Numeric or <b>Null</b>
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_tvoc-var" title="_tvoc (Var)"><strong>_tvoc</strong></a>  as Lang.Numeric or <b>Null</b>
+  </span>
+
+
+</li>
+</ul>
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature">
+      <a href="#activateNextNotification-instance_function" title="activateNextNotification (Instance Function)"><strong>activateNextNotification</strong></a>()    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Write the next notification to the descriptor.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#getEco2-instance_function" title="getEco2 (Instance Function)"><strong>getEco2</strong></a>()    as Lang.Numeric or <b>Null</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the ECO2 value.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#getHumidity-instance_function" title="getHumidity (Instance Function)"><strong>getHumidity</strong></a>()    as Lang.Numeric or <b>Null</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the humidity.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#getPressure-instance_function" title="getPressure (Instance Function)"><strong>getPressure</strong></a>()    as Lang.Numeric or <b>Null</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the pressure.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#getTemperature-instance_function" title="getTemperature (Instance Function)"><strong>getTemperature</strong></a>()    as Lang.Numeric or <b>Null</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the temperature.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#getTvoc-instance_function" title="getTvoc (Instance Function)"><strong>getTvoc</strong></a>()    as Lang.Numeric or <b>Null</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the TVOC value.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#initialize-instance_function" title="initialize (Instance Function)"><strong>initialize</strong></a>(delegate as <span class='type'><a href="../Global/ThingyDelegate.html">$.ThingyDelegate</a></span>, profileManager as <span class='type'><a href="../Global/ProfileManager.html">$.ProfileManager</a></span>, device as BluetoothLowEnergy.Device)
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Constructor.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#onCharacteristicChanged-instance_function" title="onCharacteristicChanged (Instance Function)"><strong>onCharacteristicChanged</strong></a>(char as BluetoothLowEnergy.Characteristic, value as Lang.ByteArray)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Handle a characteristic being changed.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#onDescriptorWrite-instance_function" title="onDescriptorWrite (Instance Function)"><strong>onDescriptorWrite</strong></a>(descriptor as BluetoothLowEnergy.Descriptor, status as BluetoothLowEnergy.Status)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Handle the completion of a write operation on a descriptor.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#processAirQualityValue-instance_function" title="processAirQualityValue (Instance Function)"><strong>processAirQualityValue</strong></a>(value as Lang.ByteArray)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Process and set the air quality values.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#processCccdWrite-instance_function" title="processCccdWrite (Instance Function)"><strong>processCccdWrite</strong></a>()    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Process a CCCD write operation.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#processHumidityValue-instance_function" title="processHumidityValue (Instance Function)"><strong>processHumidityValue</strong></a>(value as Lang.ByteArray)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Process and set the humidity value.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#processPressureValue-instance_function" title="processPressureValue (Instance Function)"><strong>processPressureValue</strong></a>(value as Lang.ByteArray)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Process and set the pressure value.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#processTemperatureValue-instance_function" title="processTemperatureValue (Instance Function)"><strong>processTemperatureValue</strong></a>(value as Lang.ByteArray)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Process and set the temperature value.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+ <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    <dt id="_eco2-var" class="">
+<h3 class="signature " id="_eco2-var">
+
+var _eco2  as Lang.Numeric or <b>Null</b>
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_humidity-var" class="">
+<h3 class="signature " id="_humidity-var">
+
+var _humidity  as Lang.Numeric or <b>Null</b>
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_pendingNotifies-var" class="">
+<h3 class="signature " id="_pendingNotifies-var">
+
+var _pendingNotifies  as <span class='type'>Lang.Array</span>&lt;BluetoothLowEnergy.Characteristic&gt;
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_pressure-var" class="">
+<h3 class="signature " id="_pressure-var">
+
+var _pressure  as Lang.Numeric or <b>Null</b>
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_profileManager-var" class="">
+<h3 class="signature " id="_profileManager-var">
+
+var _profileManager  as <span class='type'><a href="../Global/ProfileManager.html">$.ProfileManager</a></span>
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_service-var" class="">
+<h3 class="signature " id="_service-var">
+
+var _service  as BluetoothLowEnergy.Service or <b>Null</b>
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_temperature-var" class="">
+<h3 class="signature " id="_temperature-var">
+
+var _temperature  as Lang.Numeric or <b>Null</b>
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_tvoc-var" class="">
+<h3 class="signature " id="_tvoc-var">
+
+var _tvoc  as Lang.Numeric or <b>Null</b>
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt>
+ </div>
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details">
+  <h3 class="signature" id="activateNextNotification-instance_function">
+    <strong>activateNextNotification()</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Write the next notification to the descriptor
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="getEco2-instance_function">
+    <strong>getEco2()</strong> <span class='type'> as Lang.Numeric or <b>Null</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the ECO2 value
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class='inline'>
+    <p>
+The ECO2 value
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="getHumidity-instance_function">
+    <strong>getHumidity()</strong> <span class='type'> as Lang.Numeric or <b>Null</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the humidity
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class='inline'>
+    <p>
+The humidity
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="getPressure-instance_function">
+    <strong>getPressure()</strong> <span class='type'> as Lang.Numeric or <b>Null</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the pressure
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class='inline'>
+    <p>
+The pressure
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="getTemperature-instance_function">
+    <strong>getTemperature()</strong> <span class='type'> as Lang.Numeric or <b>Null</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the temperature
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class='inline'>
+    <p>
+The temperature
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="getTvoc-instance_function">
+    <strong>getTvoc()</strong> <span class='type'> as Lang.Numeric or <b>Null</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the TVOC value
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class='inline'>
+    <p>
+The TVOC value
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="initialize-instance_function">
+    <strong>initialize(delegate as <span class='type'><a href="../Global/ThingyDelegate.html">$.ThingyDelegate</a></span>, profileManager as <span class='type'><a href="../Global/ProfileManager.html">$.ProfileManager</a></span>, device as BluetoothLowEnergy.Device)</strong>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Constructor
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>delegate</span>
+        &mdash;
+        <div class='inline'>
+<p>
+The BLE delegate for the model
+</p>
+
+
+        </div>
+    </li><li>
+        <span class='name'>profileManager</span>
+        &mdash;
+        <div class='inline'>
+<p>
+The profile manager for this model
+</p>
+
+
+        </div>
+    </li><li>
+        <span class='name'>device</span>
+        &mdash;
+        <div class='inline'>
+<p>
+The current device
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="onCharacteristicChanged-instance_function">
+    <strong>onCharacteristicChanged(char as BluetoothLowEnergy.Characteristic, value as Lang.ByteArray)</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Handle a characteristic being changed
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>char</span>
+        &mdash;
+        <div class='inline'>
+<p>
+The characteristic that changed
+</p>
+
+
+        </div>
+    </li><li>
+        <span class='name'>value</span>
+        &mdash;
+        <div class='inline'>
+<p>
+The updated value of the characteristic
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="onDescriptorWrite-instance_function">
+    <strong>onDescriptorWrite(descriptor as BluetoothLowEnergy.Descriptor, status as BluetoothLowEnergy.Status)</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Handle the completion of a write operation on a descriptor
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>descriptor</span>
+        &mdash;
+        <div class='inline'>
+<p>
+The descriptor that was written
+</p>
+
+
+        </div>
+    </li><li>
+        <span class='name'>status</span>
+        &mdash;
+        <div class='inline'>
+<p>
+The BluetoothLowEnergy status indicating the result of the operation
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="processAirQualityValue-instance_function">
+    <strong>processAirQualityValue(value as Lang.ByteArray)</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Process and set the air quality values
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>value</span>
+        &mdash;
+        <div class='inline'>
+<p>
+The new air quality value
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="processCccdWrite-instance_function">
+    <strong>processCccdWrite()</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Process a CCCD write operation
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="processHumidityValue-instance_function">
+    <strong>processHumidityValue(value as Lang.ByteArray)</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Process and set the humidity value
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>value</span>
+        &mdash;
+        <div class='inline'>
+<p>
+The new humidity value
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="processPressureValue-instance_function">
+    <strong>processPressureValue(value as Lang.ByteArray)</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Process and set the pressure value
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>value</span>
+        &mdash;
+        <div class='inline'>
+<p>
+The new pressure value
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="processTemperatureValue-instance_function">
+    <strong>processTemperatureValue(value as Lang.ByteArray)</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Process and set the temperature value
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>value</span>
+        &mdash;
+        <div class='inline'>
+<p>
+The new temperature value
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Feb 8, 2022 2:55:47 PM
+</p>
+
+</body>

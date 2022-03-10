@@ -1,0 +1,539 @@
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> $.DeviceDataModel </title>
+
+    <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "$.DeviceDataModel";
+      relpath = '../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: $.DeviceDataModel</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">Toybox.Lang.Object</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class='inline'>
+    Toybox.Lang.Object
+  </div>
+</li>
+<li class="next">
+  <div class='inline'>
+    <a href="../Global/DeviceDataModel.html">DeviceDataModel</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+
+
+
+
+<div class="tags">
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<h2>Instance Member Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+<ul class="summary">
+   <li class="public">
+  <span class="summary_signature">
+    <a href="#_dataModelFactory-var" title="_dataModelFactory (Var)"><strong>_dataModelFactory</strong></a>  as <span class='type'><a href="../Global/DataModelFactory.html">$.DataModelFactory</a></span>
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_device-var" title="_device (Var)"><strong>_device</strong></a>  as BluetoothLowEnergy.Device or <b>Null</b>
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_environmentProfile-var" title="_environmentProfile (Var)"><strong>_environmentProfile</strong></a>  as <span class='type'><a href="../Global/EnvironmentProfileModel.html">$.EnvironmentProfileModel</a></span> or <b>Null</b>
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_scanResult-var" title="_scanResult (Var)"><strong>_scanResult</strong></a>  as BluetoothLowEnergy.ScanResult
+  </span>
+
+
+</li>
+</ul>
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature">
+      <a href="#getActiveProfile-instance_function" title="getActiveProfile (Instance Function)"><strong>getActiveProfile</strong></a>()    as <span class='type'><a href="../Global/EnvironmentProfileModel.html">$.EnvironmentProfileModel</a></span> or <b>Null</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the active profile.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#initialize-instance_function" title="initialize (Instance Function)"><strong>initialize</strong></a>(bleDelegate as <span class='type'><a href="../Global/ThingyDelegate.html">$.ThingyDelegate</a></span>, dataModelFactory as <span class='type'><a href="../Global/DataModelFactory.html">$.DataModelFactory</a></span>, scanResult as BluetoothLowEnergy.ScanResult)
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Constructor.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#isConnected-instance_function" title="isConnected (Instance Function)"><strong>isConnected</strong></a>()    as Lang.Boolean
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get whether a device is connected.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#pair-instance_function" title="pair (Instance Function)"><strong>pair</strong></a>()    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Pair the device associated with the current scan result.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#procConnection-instance_function" title="procConnection (Instance Function)"><strong>procConnection</strong></a>(device as BluetoothLowEnergy.Device)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Process a new device connection.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#procDeviceConnected-instance_function" title="procDeviceConnected (Instance Function)"><strong>procDeviceConnected</strong></a>()    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Update the profile after a is device connected.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#unpair-instance_function" title="unpair (Instance Function)"><strong>unpair</strong></a>()    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Unpair the current device.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+ <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    <dt id="_dataModelFactory-var" class="">
+<h3 class="signature " id="_dataModelFactory-var">
+
+var _dataModelFactory  as <span class='type'><a href="../Global/DataModelFactory.html">$.DataModelFactory</a></span>
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_device-var" class="">
+<h3 class="signature " id="_device-var">
+
+var _device  as BluetoothLowEnergy.Device or <b>Null</b>
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_environmentProfile-var" class="">
+<h3 class="signature " id="_environmentProfile-var">
+
+var _environmentProfile  as <span class='type'><a href="../Global/EnvironmentProfileModel.html">$.EnvironmentProfileModel</a></span> or <b>Null</b>
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_scanResult-var" class="">
+<h3 class="signature " id="_scanResult-var">
+
+var _scanResult  as BluetoothLowEnergy.ScanResult
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt>
+ </div>
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details">
+  <h3 class="signature" id="getActiveProfile-instance_function">
+    <strong>getActiveProfile()</strong> <span class='type'> as <span class='type'><a href="../Global/EnvironmentProfileModel.html">$.EnvironmentProfileModel</a></span> or <b>Null</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the active profile
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class='inline'>
+    <p>
+The current profile, or null if no device connected
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="initialize-instance_function">
+    <strong>initialize(bleDelegate as <span class='type'><a href="../Global/ThingyDelegate.html">$.ThingyDelegate</a></span>, dataModelFactory as <span class='type'><a href="../Global/DataModelFactory.html">$.DataModelFactory</a></span>, scanResult as BluetoothLowEnergy.ScanResult)</strong>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Constructor
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>bleDelegate</span>
+        &mdash;
+        <div class='inline'>
+<p>
+The BLE delegate for the model
+</p>
+
+
+        </div>
+    </li><li>
+        <span class='name'>dataModelFactory</span>
+        &mdash;
+        <div class='inline'>
+<p>
+The factory to create models
+</p>
+
+
+        </div>
+    </li><li>
+        <span class='name'>scanResult</span>
+        &mdash;
+        <div class='inline'>
+<p>
+The device scan result
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="isConnected-instance_function">
+    <strong>isConnected()</strong> <span class='type'> as Lang.Boolean</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get whether a device is connected
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class='inline'>
+    <p>
+true if connected, false otherwise
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="pair-instance_function">
+    <strong>pair()</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Pair the device associated with the current scan result
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="procConnection-instance_function">
+    <strong>procConnection(device as BluetoothLowEnergy.Device)</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Process a new device connection
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>device</span>
+        &mdash;
+        <div class='inline'>
+<p>
+The device that was connected
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="procDeviceConnected-instance_function">
+    <strong>procDeviceConnected()</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Update the profile after a is device connected
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="unpair-instance_function">
+    <strong>unpair()</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Unpair the current device
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Feb 8, 2022 2:55:47 PM
+</p>
+
+</body>

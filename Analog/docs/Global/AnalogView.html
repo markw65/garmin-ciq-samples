@@ -1,0 +1,988 @@
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> $.AnalogView </title>
+
+    <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "$.AnalogView";
+      relpath = '../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: $.AnalogView</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">WatchUi.WatchFace</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class='inline'>
+    WatchUi.WatchFace
+  </div>
+</li>
+<li class="next">
+  <div class='inline'>
+    <a href="../Global/AnalogView.html">AnalogView</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+This implements an analog watch face
+Original design by Austen Harbour
+</p>
+
+
+    </div>
+  </div>
+
+
+
+
+<div class="tags">
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<h2>Instance Member Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+<ul class="summary">
+   <li class="public">
+  <span class="summary_signature">
+    <a href="#_dateBuffer-var" title="_dateBuffer (Var)"><strong>_dateBuffer</strong></a>  as Graphics.BufferedBitmap or <b>Null</b>
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_dndIcon-var" title="_dndIcon (Var)"><strong>_dndIcon</strong></a>  as WatchUi.BitmapResource or <b>Null</b>
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_font-var" title="_font (Var)"><strong>_font</strong></a>  as WatchUi.FontResource or <b>Null</b>
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_fullScreenRefresh-var" title="_fullScreenRefresh (Var)"><strong>_fullScreenRefresh</strong></a>  as Lang.Boolean
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_isAwake-var" title="_isAwake (Var)"><strong>_isAwake</strong></a>  as Lang.Boolean or <b>Null</b>
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_offscreenBuffer-var" title="_offscreenBuffer (Var)"><strong>_offscreenBuffer</strong></a>  as Graphics.BufferedBitmap or <b>Null</b>
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_partialUpdatesAllowed-var" title="_partialUpdatesAllowed (Var)"><strong>_partialUpdatesAllowed</strong></a>  as Lang.Boolean
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_screenCenterPoint-var" title="_screenCenterPoint (Var)"><strong>_screenCenterPoint</strong></a>  as <span class='type'>Lang.Array</span>&lt;Lang.Number&gt; or <b>Null</b>
+  </span>
+
+
+</li><li class="public">
+  <span class="summary_signature">
+    <a href="#_screenShape-var" title="_screenShape (Var)"><strong>_screenShape</strong></a>  as System.ScreenShape
+  </span>
+
+
+</li>
+</ul>
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature">
+      <a href="#drawBackground-instance_function" title="drawBackground (Instance Function)"><strong>drawBackground</strong></a>(dc as Graphics.Dc)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Draw the watch face background onUpdate uses this method to transfer newly rendered Buffered Bitmaps to the main display.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#drawDateString-instance_function" title="drawDateString (Instance Function)"><strong>drawDateString</strong></a>(dc as Graphics.Dc, x as Lang.Number, y as Lang.Number)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Draw the date string into the provided buffer at the specified location.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#drawHashMarks-instance_function" title="drawHashMarks (Instance Function)"><strong>drawHashMarks</strong></a>(dc as Graphics.Dc)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Draws the clock tick marks around the outside edges of the screen.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#generateHandCoordinates-instance_function" title="generateHandCoordinates (Instance Function)"><strong>generateHandCoordinates</strong></a>(centerPoint as <span class='type'>Lang.Array</span>&lt;Lang.Number&gt;, angle as Lang.Float, handLength as Lang.Number, tailLength as Lang.Number, width as Lang.Number)    as <span class='type'>Lang.Array</span>&lt;<span class='type'>Lang.Array</span>&lt;Lang.Float&gt;&gt;
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+This function is used to generate the coordinates of the 4 corners of the polygon used to draw a watch hand.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#getBoundingBox-instance_function" title="getBoundingBox (Instance Function)"><strong>getBoundingBox</strong></a>(points as <span class='type'>Lang.Array</span>&lt;<span class='type'>Lang.Array</span>&lt;Lang.Number or Lang.Float&gt;&gt;)    as <span class='type'>Lang.Array</span>&lt;<span class='type'>Lang.Array</span>&lt;Lang.Number or Lang.Float&gt;&gt;
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Compute a bounding box from the passed in points.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#initialize-instance_function" title="initialize (Instance Function)"><strong>initialize</strong></a>()
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Initialize variables for this view.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#onEnterSleep-instance_function" title="onEnterSleep (Instance Function)"><strong>onEnterSleep</strong></a>()    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+This method is called when the device re-enters sleep mode.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#onExitSleep-instance_function" title="onExitSleep (Instance Function)"><strong>onExitSleep</strong></a>()    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+This method is called when the device exits sleep mode.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#onLayout-instance_function" title="onLayout (Instance Function)"><strong>onLayout</strong></a>(dc as Graphics.Dc)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Configure the layout of the watchface for this device.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#onPartialUpdate-instance_function" title="onPartialUpdate (Instance Function)"><strong>onPartialUpdate</strong></a>(dc as Graphics.Dc)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Handle the partial update event.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#onUpdate-instance_function" title="onUpdate (Instance Function)"><strong>onUpdate</strong></a>(dc as Graphics.Dc)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Handle the update event.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature">
+      <a href="#turnPartialUpdatesOff-instance_function" title="turnPartialUpdatesOff (Instance Function)"><strong>turnPartialUpdatesOff</strong></a>()    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Turn off partial updates.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+ <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    <dt id="_dateBuffer-var" class="">
+<h3 class="signature " id="_dateBuffer-var">
+
+var _dateBuffer  as Graphics.BufferedBitmap or <b>Null</b>
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_dndIcon-var" class="">
+<h3 class="signature " id="_dndIcon-var">
+
+var _dndIcon  as WatchUi.BitmapResource or <b>Null</b>
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_font-var" class="">
+<h3 class="signature " id="_font-var">
+
+var _font  as WatchUi.FontResource or <b>Null</b>
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_fullScreenRefresh-var" class="">
+<h3 class="signature " id="_fullScreenRefresh-var">
+
+var _fullScreenRefresh  as Lang.Boolean
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_isAwake-var" class="">
+<h3 class="signature " id="_isAwake-var">
+
+var _isAwake  as Lang.Boolean or <b>Null</b>
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_offscreenBuffer-var" class="">
+<h3 class="signature " id="_offscreenBuffer-var">
+
+var _offscreenBuffer  as Graphics.BufferedBitmap or <b>Null</b>
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_partialUpdatesAllowed-var" class="">
+<h3 class="signature " id="_partialUpdatesAllowed-var">
+
+var _partialUpdatesAllowed  as Lang.Boolean
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_screenCenterPoint-var" class="">
+<h3 class="signature " id="_screenCenterPoint-var">
+
+var _screenCenterPoint  as <span class='type'>Lang.Array</span>&lt;Lang.Number&gt; or <b>Null</b>
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt><dt id="_screenShape-var" class="">
+<h3 class="signature " id="_screenShape-var">
+
+var _screenShape  as System.ScreenShape
+
+</h3>
+
+
+
+<div class="tags">
+
+
+
+
+</div>
+
+</dt>
+ </div>
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details">
+  <h3 class="signature" id="drawBackground-instance_function">
+    <strong>drawBackground(dc as Graphics.Dc)</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Draw the watch face background
+onUpdate uses this method to transfer newly rendered Buffered Bitmaps
+to the main display.
+onPartialUpdate uses this to blank the second hand from the previous
+second before outputting the new one.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>dc</span>
+        &mdash;
+        <div class='inline'>
+<p>
+Device context
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="drawDateString-instance_function">
+    <strong>drawDateString(dc as Graphics.Dc, x as Lang.Number, y as Lang.Number)</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Draw the date string into the provided buffer at the specified location
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>dc</span>
+        &mdash;
+        <div class='inline'>
+<p>
+Device context
+</p>
+
+
+        </div>
+    </li><li>
+        <span class='name'>x</span>
+        &mdash;
+        <div class='inline'>
+<p>
+The x location of the text
+</p>
+
+
+        </div>
+    </li><li>
+        <span class='name'>y</span>
+        &mdash;
+        <div class='inline'>
+<p>
+The y location of the text
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="drawHashMarks-instance_function">
+    <strong>drawHashMarks(dc as Graphics.Dc)</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Draws the clock tick marks around the outside edges of the screen.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>dc</span>
+        &mdash;
+        <div class='inline'>
+<p>
+Device context
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="generateHandCoordinates-instance_function">
+    <strong>generateHandCoordinates(centerPoint as <span class='type'>Lang.Array</span>&lt;Lang.Number&gt;, angle as Lang.Float, handLength as Lang.Number, tailLength as Lang.Number, width as Lang.Number)</strong> <span class='type'> as <span class='type'>Lang.Array</span>&lt;<span class='type'>Lang.Array</span>&lt;Lang.Float&gt;&gt;</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+This function is used to generate the coordinates of the 4 corners of the polygon
+used to draw a watch hand. The coordinates are generated with specified length,
+tail length, and width and rotated around the center point at the provided angle.
+0 degrees is at the 12 o'clock position, and increases in the clockwise direction.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>centerPoint</span>
+        &mdash;
+        <div class='inline'>
+<p>
+The center of the clock
+</p>
+
+
+        </div>
+    </li><li>
+        <span class='name'>angle</span>
+        &mdash;
+        <div class='inline'>
+<p>
+Angle of the hand in radians
+</p>
+
+
+        </div>
+    </li><li>
+        <span class='name'>handLength</span>
+        &mdash;
+        <div class='inline'>
+<p>
+The length of the hand from the center to point
+</p>
+
+
+        </div>
+    </li><li>
+        <span class='name'>tailLength</span>
+        &mdash;
+        <div class='inline'>
+<p>
+The length of the tail of the hand
+</p>
+
+
+        </div>
+    </li><li>
+        <span class='name'>width</span>
+        &mdash;
+        <div class='inline'>
+<p>
+The width of the watch hand
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class='inline'>
+    <p>
+The coordinates of the watch hand
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="getBoundingBox-instance_function">
+    <strong>getBoundingBox(points as <span class='type'>Lang.Array</span>&lt;<span class='type'>Lang.Array</span>&lt;Lang.Number or Lang.Float&gt;&gt;)</strong> <span class='type'> as <span class='type'>Lang.Array</span>&lt;<span class='type'>Lang.Array</span>&lt;Lang.Number or Lang.Float&gt;&gt;</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Compute a bounding box from the passed in points
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>points</span>
+        &mdash;
+        <div class='inline'>
+<p>
+Points to include in bounding box
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class='inline'>
+    <p>
+The bounding box points
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="initialize-instance_function">
+    <strong>initialize()</strong>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Initialize variables for this view
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="onEnterSleep-instance_function">
+    <strong>onEnterSleep()</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+This method is called when the device re-enters sleep mode.
+Set the isAwake flag to let onUpdate know it should stop rendering the second hand.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="onExitSleep-instance_function">
+    <strong>onExitSleep()</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+This method is called when the device exits sleep mode.
+Set the isAwake flag to let onUpdate know it should render the second hand.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="onLayout-instance_function">
+    <strong>onLayout(dc as Graphics.Dc)</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Configure the layout of the watchface for this device
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>dc</span>
+        &mdash;
+        <div class='inline'>
+<p>
+Device context
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="onPartialUpdate-instance_function">
+    <strong>onPartialUpdate(dc as Graphics.Dc)</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Handle the partial update event
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>dc</span>
+        &mdash;
+        <div class='inline'>
+<p>
+Device context
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="onUpdate-instance_function">
+    <strong>onUpdate(dc as Graphics.Dc)</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Handle the update event
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class='name'>dc</span>
+        &mdash;
+        <div class='inline'>
+<p>
+Device context
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details">
+  <h3 class="signature" id="turnPartialUpdatesOff-instance_function">
+    <strong>turnPartialUpdatesOff()</strong> <span class='type'> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Turn off partial updates
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Feb 8, 2022 2:55:46 PM
+</p>
+
+</body>

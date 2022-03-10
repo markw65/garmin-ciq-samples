@@ -1,0 +1,4 @@
+<menu id="AuxMenu" title="@Strings.AuxMenuTitle">
+    <menu-item id="AuxItem1" label="@Strings.AuxMenuLabel1"/>
+    <menu-item id="AuxItem2" label="@Strings.AuxMenuLabel2"/>
+</menu>
