@@ -17,14 +17,13 @@ import Toybox.WatchUi;
 //! remaining time on the countdown timer
 (:typecheck(disableBackgroundCheck))
 class BackgroundTimerView extends WatchUi.View {
-
     private enum TimerKeys {
         TIMER_KEY_DURATION,
         TIMER_KEY_START_TIME,
-        TIMER_KEY_PAUSE_TIME
+        TIMER_KEY_PAUSE_TIME,
     }
 
-    private const TIMER_DURATION_DEFAULT = (5 * 60);    // 5 minutes
+    private const TIMER_DURATION_DEFAULT = 5 * 60; // 5 minutes
 
     private var _timerDuration as Number;
     private var _timerStartTime as Number?;
@@ -58,7 +57,7 @@ class BackgroundTimerView extends WatchUi.View {
         _updateTimer = new Timer.Timer();
 
         // If the timer is running, we need to start the timer up now.
-        if ((_timerStartTime != null) && (_timerPauseTime == null)) {
+        if (_timerStartTime != null && _timerPauseTime == null) {
             // Update the display each second.
             _updateTimer.start(method(:requestUpdate), 1000, true);
         }
@@ -123,7 +122,7 @@ class BackgroundTimerView extends WatchUi.View {
                 _updateTimer.stop();
                 WatchUi.requestUpdate();
             } else {
-                if ((timerPauseTime - timerStartTime) < _timerDuration) {
+                if (timerPauseTime - timerStartTime < _timerDuration) {
                     _timerStartTime = timerStartTime + (now - timerPauseTime);
                     _timerPauseTime = null;
                     _updateTimer.start(method(:requestUpdate), 1000, true);
@@ -157,7 +156,7 @@ class BackgroundTimerView extends WatchUi.View {
     //! application does not remain open.
     public function setBackgroundEvent() as Void {
         var timerStartTime = _timerStartTime;
-        if ((timerStartTime != null) && (_timerPauseTime == null)) {
+        if (timerStartTime != null && _timerPauseTime == null) {
             var time = new Time.Moment(timerStartTime);
             time = time.add(new Time.Duration(_timerDuration));
             try {

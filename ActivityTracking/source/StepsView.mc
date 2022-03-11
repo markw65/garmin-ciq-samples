@@ -12,7 +12,6 @@ import Toybox.WatchUi;
 
 //! Show the steps summary
 class StepsView extends WatchUi.View {
-
     private var _timer as Timer.Timer;
     private var _screenShape as ScreenShape;
 
@@ -33,7 +32,7 @@ class StepsView extends WatchUi.View {
     }
 
     //! Handle view being hidden
-    public function onHide() as Void{
+    public function onHide() as Void {
         _timer.stop();
     }
 
@@ -41,13 +40,14 @@ class StepsView extends WatchUi.View {
     //! @param dc Draw context
     public function onUpdate(dc as Dc) as Void {
         var clockTime = System.getClockTime();
-        var timeOfDay = ((clockTime.hour * 60) + clockTime.min) * 60 + clockTime.sec;
+        var timeOfDay =
+            (clockTime.hour * 60 + clockTime.min) * 60 + clockTime.sec;
         var stepsFromGoal = 0;
         var progress = 1;
         var goalProgress = 1;
 
         // Get wake and sleep time from user profile
-        timeOfDay -= (6 * 60 * 60); // Assume 6am Start of day.
+        timeOfDay -= 6 * 60 * 60; // Assume 6am Start of day.
         var daySeconds = 57600; // 16 * 60 * 60 assume 16 hour day
 
         dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_BLACK);
@@ -59,7 +59,7 @@ class StepsView extends WatchUi.View {
         var steps = activityInfo.steps;
 
         // Prevent divide by 0 if stepGoal is 0
-        if ((stepGoal == 0) || (stepGoal == null)) {
+        if (stepGoal == 0 || stepGoal == null) {
             stepGoal = 5000;
         }
 
@@ -67,8 +67,8 @@ class StepsView extends WatchUi.View {
             // Compute goal
             var goalPace = stepGoal;
             if (timeOfDay < daySeconds) {
-                goalPace = (stepGoal * timeOfDay / daySeconds);
-                goalProgress = goalPace * 170 / stepGoal;
+                goalPace = (stepGoal * timeOfDay) / daySeconds;
+                goalProgress = (goalPace * 170) / stepGoal;
             } else {
                 goalProgress = 170;
             }
@@ -79,12 +79,11 @@ class StepsView extends WatchUi.View {
 
             // Compute progress
             if (steps < stepGoal) {
-                progress = steps * 170 / stepGoal;
+                progress = (steps * 170) / stepGoal;
             } else {
                 progress = 170;
             }
         }
-
 
         // Draw progress bar outline
         dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
@@ -119,12 +118,24 @@ class StepsView extends WatchUi.View {
         // Draw Goal Progress
         if (steps != null) {
             var string = steps.toString() + " / " + stepGoal.toString();
-            dc.drawText(dc.getWidth() / 2, 18, Graphics.FONT_SMALL, string , Graphics.TEXT_JUSTIFY_CENTER);
+            dc.drawText(
+                dc.getWidth() / 2,
+                18,
+                Graphics.FONT_SMALL,
+                string,
+                Graphics.TEXT_JUSTIFY_CENTER
+            );
         }
 
         // Draw step offset
         stepsFromGoal = stepsFromGoal * -1;
-        dc.drawText(dc.getWidth() / 2, (dc.getHeight() - Graphics.getFontAscent(Graphics.FONT_LARGE)) / 2, Graphics.FONT_LARGE, stepsFromGoal.toString() , Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(
+            dc.getWidth() / 2,
+            (dc.getHeight() - Graphics.getFontAscent(Graphics.FONT_LARGE)) / 2,
+            Graphics.FONT_LARGE,
+            stepsFromGoal.toString(),
+            Graphics.TEXT_JUSTIFY_CENTER
+        );
 
         // Indicate sleep mode
         if (activityInfo has :isSleepMode) {
@@ -134,7 +145,14 @@ class StepsView extends WatchUi.View {
             } else {
                 string = "Sleep mode: false";
             }
-            dc.drawText(dc.getWidth() / 2, (dc.getHeight() / 2) + Graphics.getFontHeight(Graphics.FONT_SMALL), Graphics.FONT_SMALL, string, Graphics.TEXT_JUSTIFY_CENTER);
+            dc.drawText(
+                dc.getWidth() / 2,
+                dc.getHeight() / 2 +
+                    Graphics.getFontHeight(Graphics.FONT_SMALL),
+                Graphics.FONT_SMALL,
+                string,
+                Graphics.TEXT_JUSTIFY_CENTER
+            );
         }
 
         // Draw distance...
@@ -144,9 +162,24 @@ class StepsView extends WatchUi.View {
             var string = distMiles.format("%.02f");
             string += "mi";
             if (System.SCREEN_SHAPE_RECTANGLE == _screenShape) {
-                dc.drawText(5, dc.getHeight() - 5 - Graphics.getFontHeight(Graphics.FONT_SMALL), Graphics.FONT_SMALL, string, Graphics.TEXT_JUSTIFY_LEFT);
+                dc.drawText(
+                    5,
+                    dc.getHeight() -
+                        5 -
+                        Graphics.getFontHeight(Graphics.FONT_SMALL),
+                    Graphics.FONT_SMALL,
+                    string,
+                    Graphics.TEXT_JUSTIFY_LEFT
+                );
             } else {
-                dc.drawText(dc.getWidth() / 2, dc.getHeight() - 2 * Graphics.getFontHeight(Graphics.FONT_SMALL), Graphics.FONT_SMALL, string, Graphics.TEXT_JUSTIFY_CENTER);
+                dc.drawText(
+                    dc.getWidth() / 2,
+                    dc.getHeight() -
+                        2 * Graphics.getFontHeight(Graphics.FONT_SMALL),
+                    Graphics.FONT_SMALL,
+                    string,
+                    Graphics.TEXT_JUSTIFY_CENTER
+                );
             }
         }
 
@@ -155,21 +188,47 @@ class StepsView extends WatchUi.View {
         if (calories != null) {
             var string = calories.toString() + "kcal";
             if (System.SCREEN_SHAPE_RECTANGLE == _screenShape) {
-                dc.drawText(dc.getWidth() - 5, dc.getHeight() - 5 - Graphics.getFontHeight(Graphics.FONT_SMALL), Graphics.FONT_SMALL, string, Graphics.TEXT_JUSTIFY_RIGHT);
+                dc.drawText(
+                    dc.getWidth() - 5,
+                    dc.getHeight() -
+                        5 -
+                        Graphics.getFontHeight(Graphics.FONT_SMALL),
+                    Graphics.FONT_SMALL,
+                    string,
+                    Graphics.TEXT_JUSTIFY_RIGHT
+                );
             } else {
-                dc.drawText(dc.getWidth() / 2, dc.getHeight() - Graphics.getFontHeight(Graphics.FONT_SMALL), Graphics.FONT_SMALL, string, Graphics.TEXT_JUSTIFY_CENTER);
+                dc.drawText(
+                    dc.getWidth() / 2,
+                    dc.getHeight() -
+                        Graphics.getFontHeight(Graphics.FONT_SMALL),
+                    Graphics.FONT_SMALL,
+                    string,
+                    Graphics.TEXT_JUSTIFY_CENTER
+                );
             }
         }
 
         // Draw Move text
         var moveBarLevel = activityInfo.moveBarLevel;
-        if ((moveBarLevel != null) && (moveBarLevel != ActivityMonitor.MOVE_BAR_LEVEL_MIN)) {
+        if (
+            moveBarLevel != null &&
+            moveBarLevel != ActivityMonitor.MOVE_BAR_LEVEL_MIN
+        ) {
             var string = "MOVE";
             for (var i = 0; i < moveBarLevel; i++) {
                 string += "!";
             }
 
-            dc.drawText(dc.getWidth() / 2, dc.getHeight() - 5 - Graphics.getFontHeight(Graphics.FONT_MEDIUM), Graphics.FONT_MEDIUM, string, Graphics.TEXT_JUSTIFY_CENTER);
+            dc.drawText(
+                dc.getWidth() / 2,
+                dc.getHeight() -
+                    5 -
+                    Graphics.getFontHeight(Graphics.FONT_MEDIUM),
+                Graphics.FONT_MEDIUM,
+                string,
+                Graphics.TEXT_JUSTIFY_CENTER
+            );
         }
     }
 

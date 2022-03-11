@@ -76,5 +76,4 @@ class AttentionDelegate extends WatchUi.InputDelegate {
         WatchUi.requestUpdate();
         return true;
     }
-
 }

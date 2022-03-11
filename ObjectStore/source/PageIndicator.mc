@@ -14,7 +14,7 @@ enum Align {
     ALIGN_BOTTOM_RIGHT,
     ALIGN_BOTTOM_LEFT,
     ALIGN_TOP_RIGHT,
-    ALIGN_TOP_LEFT
+    ALIGN_TOP_LEFT,
 }
 
 //! Draws a graphic indicating which page the user is currently on
@@ -31,7 +31,13 @@ class PageIndicator {
     //! @param notSelectedColor Color to use for non-selected pages
     //! @param alignment How to align the graphic
     //! @param margin Amount of margin for the graphic
-    public function initialize(size as Number, selectedColor as ColorValue, notSelectedColor as ColorValue, alignment as Align, margin as Number) {
+    public function initialize(
+        size as Number,
+        selectedColor as ColorValue,
+        notSelectedColor as ColorValue,
+        alignment as Align,
+        margin as Number
+    ) {
         _size = size;
         _selectedColor = selectedColor;
         _notSelectedColor = notSelectedColor;
@@ -50,16 +56,16 @@ class PageIndicator {
 
         if (_alignment == $.ALIGN_BOTTOM_RIGHT) {
             x = dc.getWidth() - width - _margin;
-            y = dc.getHeight() - (height / 2) - _margin;
+            y = dc.getHeight() - height / 2 - _margin;
         } else if (_alignment == $.ALIGN_BOTTOM_LEFT) {
             x = 0 + _margin;
-            y = dc.getHeight() - (height / 2) - _margin;
-        } else if (_alignment == $. ALIGN_TOP_RIGHT) {
+            y = dc.getHeight() - height / 2 - _margin;
+        } else if (_alignment == $.ALIGN_TOP_RIGHT) {
             x = dc.getWidth() - width - _margin;
-            y = 0 + _margin + (height / 2);
+            y = 0 + _margin + height / 2;
         } else if (_alignment == $.ALIGN_TOP_LEFT) {
             x = 0 + _margin;
-            y = 0 + _margin + (height / 2);
+            y = 0 + _margin + height / 2;
         } else {
             x = 0;
             y = 0;
@@ -72,9 +78,8 @@ class PageIndicator {
                 dc.setColor(_notSelectedColor, Graphics.COLOR_TRANSPARENT);
             }
 
-            var tempX = (x + (i * height)) + height / 2;
+            var tempX = x + i * height + height / 2;
             dc.fillCircle(tempX, y, height / 2);
         }
     }
-
 }

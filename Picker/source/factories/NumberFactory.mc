@@ -23,10 +23,12 @@ class NumberFactory extends WatchUi.PickerFactory {
     //! @param options Dictionary of options
     //! @option options :font The font to use
     //! @option options :format The number format to display
-    public function initialize(start as Number, stop as Number, increment as Number, options as {
-        :font as FontDefinition,
-        :format as String
-    }) {
+    public function initialize(
+        start as Number,
+        stop as Number,
+        increment as Number,
+        options as { :font as FontDefinition, :format as String }
+    ) {
         PickerFactory.initialize();
 
         _start = start;
@@ -52,28 +54,36 @@ class NumberFactory extends WatchUi.PickerFactory {
     //! @param value The number to get the index of
     //! @return The index of the number
     public function getIndex(value as Number) as Number {
-        return (value / _increment) - _start;
+        return value / _increment - _start;
     }
 
     //! Generate a Drawable instance for an item
     //! @param index The item index
     //! @param selected true if the current item is selected, false otherwise
     //! @return Drawable for the item
-    public function getDrawable(index as Number, selected as Boolean) as Drawable? {
+    public function getDrawable(
+        index as Number,
+        selected as Boolean
+    ) as Drawable? {
         var value = getValue(index);
         var text = "No item";
         if (value instanceof Number) {
             text = value.format(_formatString);
         }
-        return new WatchUi.Text({:text=>text, :color=>Graphics.COLOR_WHITE, :font=>_font,
-            :locX=>WatchUi.LAYOUT_HALIGN_CENTER, :locY=>WatchUi.LAYOUT_VALIGN_CENTER});
+        return new WatchUi.Text({
+            :text => text,
+            :color => Graphics.COLOR_WHITE,
+            :font => _font,
+            :locX => WatchUi.LAYOUT_HALIGN_CENTER,
+            :locY => WatchUi.LAYOUT_VALIGN_CENTER,
+        });
     }
 
     //! Get the value of the item at the given index
     //! @param index Index of the item to get the value of
     //! @return Value of the item
     public function getValue(index as Number) as Object? {
-        return _start + (index * _increment);
+        return _start + index * _increment;
     }
 
     //! Get the number of picker items
@@ -81,5 +91,4 @@ class NumberFactory extends WatchUi.PickerFactory {
     public function getSize() as Number {
         return (_stop - _start) / _increment + 1;
     }
-
 }

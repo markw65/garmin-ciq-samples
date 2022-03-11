@@ -21,7 +21,8 @@ class CommExample extends Application.AppBase {
     private var _crashOnMessage as Boolean = false;
     private var _view as CommView;
 
-    private const _strings as Array<String> = ["","","","",""] as Array<String>;
+    private
+    const _strings as Array<String> = ["", "", "", "", ""] as Array<String>;
 
     //! Constructor
     public function initialize() {
@@ -40,13 +41,11 @@ class CommExample extends Application.AppBase {
 
     //! Handle app startup
     //! @param state Startup arguments
-    public function onStart(state as Dictionary?) as Void {
-    }
+    public function onStart(state as Dictionary?) as Void {}
 
     //! Handle app shutdown
     //! @param state Shutdown arguments
-    public function onStop(state as Dictionary?) as Void {
-    }
+    public function onStop(state as Dictionary?) as Void {}
 
     //! Return the initial view for the app
     //! @return Array Pair [View, Delegate]
@@ -60,8 +59,8 @@ class CommExample extends Application.AppBase {
         var mail = mailIter.next();
 
         while (mail != null) {
-            for (var i = (_strings.size() - 1); i > 0; i--) {
-                _strings[i] = _strings[i-1];
+            for (var i = _strings.size() - 1; i > 0; i--) {
+                _strings[i] = _strings[i - 1];
             }
             _strings[0] = mail.toString();
             _view.changePage($.PAGE_MESSAGES);
@@ -76,15 +75,15 @@ class CommExample extends Application.AppBase {
     //! @param msg The message
     public function onPhone(msg as PhoneAppMessage) as Void {
         var data = msg.data;
-        if ((_crashOnMessage == true) && (data != null)) {
+        if (_crashOnMessage == true && data != null) {
             if (data.equals("Hi")) {
                 System.error("crash on message");
             }
         }
 
         if (data != null) {
-            for (var i = (_strings.size() - 1); i > 0; i--) {
-                _strings[i] = _strings[i-1];
+            for (var i = _strings.size() - 1; i > 0; i--) {
+                _strings[i] = _strings[i - 1];
             }
             _strings[0] = data.toString();
         }

@@ -32,15 +32,56 @@ class DeviceView extends WatchUi.View {
         dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_WHITE);
         dc.clear();
 
-        dc.drawText(dc.getWidth() / 2, 15, Graphics.FONT_SMALL, statusString, Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(
+            dc.getWidth() / 2,
+            15,
+            Graphics.FONT_SMALL,
+            statusString,
+            Graphics.TEXT_JUSTIFY_CENTER
+        );
 
         var profile = _dataModel.getActiveProfile();
-        if (_dataModel.isConnected() && (profile != null)) {
-            drawIndicator(dc, $.Rez.Drawables.TempInd, profile.getTemperature(), "%.2f", "°C", 0);
-            drawIndicator(dc, $.Rez.Drawables.PressureInd, profile.getPressure(), "%.2f", "hPa", 1);
-            drawIndicator(dc, $.Rez.Drawables.HumidityInd, profile.getHumidity(), "%d", "%", 2);
-            drawIndicator(dc, $.Rez.Drawables.Co2Ind, profile.getEco2(), "%d", "ppm", 3);
-            drawIndicator(dc, $.Rez.Drawables.LeafInd, profile.getTvoc(), "%d", "ppb", 4);
+        if (_dataModel.isConnected() && profile != null) {
+            drawIndicator(
+                dc,
+                $.Rez.Drawables.TempInd,
+                profile.getTemperature(),
+                "%.2f",
+                "°C",
+                0
+            );
+            drawIndicator(
+                dc,
+                $.Rez.Drawables.PressureInd,
+                profile.getPressure(),
+                "%.2f",
+                "hPa",
+                1
+            );
+            drawIndicator(
+                dc,
+                $.Rez.Drawables.HumidityInd,
+                profile.getHumidity(),
+                "%d",
+                "%",
+                2
+            );
+            drawIndicator(
+                dc,
+                $.Rez.Drawables.Co2Ind,
+                profile.getEco2(),
+                "%d",
+                "ppm",
+                3
+            );
+            drawIndicator(
+                dc,
+                $.Rez.Drawables.LeafInd,
+                profile.getTvoc(),
+                "%d",
+                "ppb",
+                4
+            );
         }
     }
 
@@ -51,9 +92,16 @@ class DeviceView extends WatchUi.View {
     //! @param format Formatting string for the value
     //! @param units The units for the value
     //! @param cell Which cell to place the indicator in
-    private function drawIndicator(dc as Dc, bitmap as Symbol, value as Numeric, format as String, units as String, cell as Number) as Void {
+    private function drawIndicator(
+        dc as Dc,
+        bitmap as Symbol,
+        value as Numeric,
+        format as String,
+        units as String,
+        cell as Number
+    ) as Void {
         var gridOffset = dc.getFontHeight(Graphics.FONT_SMALL) + 15;
-        var cellHeight = (dc.getHeight() - (2 * gridOffset)) / 2;
+        var cellHeight = (dc.getHeight() - 2 * gridOffset) / 2;
 
         var cellWidth;
         var cellY;
@@ -66,11 +114,11 @@ class DeviceView extends WatchUi.View {
         } else {
             cell -= 3;
             cellXOffset = dc.getWidth() / 6;
-            cellWidth = (dc.getWidth() - (2 * cellXOffset)) / 2;
+            cellWidth = (dc.getWidth() - 2 * cellXOffset) / 2;
             cellY = gridOffset + cellHeight;
         }
 
-        var cellX = cellXOffset + (cellWidth * cell);
+        var cellX = cellXOffset + cellWidth * cell;
 
         var image = WatchUi.loadResource(bitmap) as BitmapType;
         var label = "";
@@ -78,12 +126,26 @@ class DeviceView extends WatchUi.View {
             label += value.format(format);
         }
 
-        var centerCellX = cellX + (cellWidth / 2);
-        var imageOffset = centerCellX - (image.getWidth() / 2);
+        var centerCellX = cellX + cellWidth / 2;
+        var imageOffset = centerCellX - image.getWidth() / 2;
 
         dc.drawBitmap(imageOffset, cellY, image);
-        dc.drawText(centerCellX, cellY + image.getHeight() - 5, Graphics.FONT_SYSTEM_XTINY, label, Graphics.TEXT_JUSTIFY_CENTER);
-        dc.drawText(centerCellX, cellY + image.getHeight() + dc.getFontHeight(Graphics.FONT_SYSTEM_XTINY) - 8,
-            Graphics.FONT_SYSTEM_XTINY, units, Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(
+            centerCellX,
+            cellY + image.getHeight() - 5,
+            Graphics.FONT_SYSTEM_XTINY,
+            label,
+            Graphics.TEXT_JUSTIFY_CENTER
+        );
+        dc.drawText(
+            centerCellX,
+            cellY +
+                image.getHeight() +
+                dc.getFontHeight(Graphics.FONT_SYSTEM_XTINY) -
+                8,
+            Graphics.FONT_SYSTEM_XTINY,
+            units,
+            Graphics.TEXT_JUSTIFY_CENTER
+        );
     }
 }

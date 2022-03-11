@@ -13,7 +13,6 @@ import Toybox.WatchUi;
 //! The field will pair with the first Thingy it encounters and will
 //! play a Coin Collection sample every 2 seconds.
 class Thingy52CoinCollectorApp extends Application.AppBase {
-
     private var _profileManager as ProfileManager?;
     private var _bleDelegate as ThingyDelegate?;
     private var _deviceManager as DeviceManager?;
@@ -28,7 +27,10 @@ class Thingy52CoinCollectorApp extends Application.AppBase {
     public function onStart(state as Dictionary?) as Void {
         _profileManager = new $.ProfileManager();
         _bleDelegate = new $.ThingyDelegate(_profileManager as ProfileManager);
-        _deviceManager = new $.DeviceManager(_bleDelegate as ThingyDelegate, _profileManager as ProfileManager);
+        _deviceManager = new $.DeviceManager(
+            _bleDelegate as ThingyDelegate,
+            _profileManager as ProfileManager
+        );
 
         BluetoothLowEnergy.setDelegate(_bleDelegate as ThingyDelegate);
         (_profileManager as ProfileManager).registerProfiles();

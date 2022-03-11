@@ -9,7 +9,6 @@ import Toybox.WatchUi;
 
 //! Input handler to respond to menu selections
 class MapSampleMenuDelegate extends WatchUi.MenuInputDelegate {
-
     //! Constructor
     public function initialize() {
         MenuInputDelegate.initialize();
@@ -20,10 +19,18 @@ class MapSampleMenuDelegate extends WatchUi.MenuInputDelegate {
     public function onMenuItem(item as Symbol) as Void {
         if (item == :view_map) {
             var mapView = new $.MapSampleMapView();
-            WatchUi.pushView(mapView, new $.MapSampleMapDelegate(mapView), WatchUi.SLIDE_UP);
+            WatchUi.pushView(
+                mapView,
+                new $.MapSampleMapDelegate(mapView),
+                WatchUi.SLIDE_UP
+            );
         } else if (item == :track_map) {
             var trackView = new $.MapSampleTrackView();
-            WatchUi.pushView(trackView, new $.MapSampleMapDelegate(trackView), WatchUi.SLIDE_UP);
+            WatchUi.pushView(
+                trackView,
+                new $.MapSampleMapDelegate(trackView),
+                WatchUi.SLIDE_UP
+            );
         } else {
             WatchUi.requestUpdate();
         }

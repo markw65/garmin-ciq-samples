@@ -12,7 +12,6 @@ import Toybox.WatchUi;
 
 //! Shows the options and processes the current action
 class AttentionView extends WatchUi.View {
-
     private var _selectedIndex as Number = 0;
     private var _currentTone as String?;
     private var _currentVibe as String?;
@@ -20,15 +19,35 @@ class AttentionView extends WatchUi.View {
     private var _backlightOn as Boolean = false;
     private var _toneIdx as Number = 0;
     private var _mainText as Array<Drawable>?;
-    private var _toneNames as Array<String> = ["Key", "Start", "Stop", "Message", "Alert Hi", "Alert Lo",
-                    "Loud Beep", "Interval Alert", "Alarm", "Reset", "Lap", "Canary", "Time Alert", "Distance Alert",
-                    "Failure", "Success", "Power", "Low Battery", "Error", "Custom"] as Array<String>;
+    private
+    var _toneNames as Array<String> = [
+        "Key",
+        "Start",
+        "Stop",
+        "Message",
+        "Alert Hi",
+        "Alert Lo",
+        "Loud Beep",
+        "Interval Alert",
+        "Alarm",
+        "Reset",
+        "Lap",
+        "Canary",
+        "Time Alert",
+        "Distance Alert",
+        "Failure",
+        "Success",
+        "Power",
+        "Low Battery",
+        "Error",
+        "Custom",
+    ] as Array<String>;
 
     private enum Actions {
         ACTION_BACKLIGHT,
         ACTION_TONE,
         ACTION_VIBRATE,
-        ACTION_COUNT
+        ACTION_COUNT,
     }
 
     //! Constructor
@@ -44,8 +63,7 @@ class AttentionView extends WatchUi.View {
     }
 
     //! Restore the state of the app and prepare the view to be shown
-    public function onShow() as Void {
-    }
+    public function onShow() as Void {}
 
     //! Update the view
     //! @param dc Device Context
@@ -57,12 +75,22 @@ class AttentionView extends WatchUi.View {
 
         // Draw selected box
         dc.setColor(Graphics.COLOR_DK_GRAY, Graphics.COLOR_TRANSPARENT);
-        dc.fillRectangle(0, _selectedIndex * height / ACTION_COUNT, width, height / ACTION_COUNT);
+        dc.fillRectangle(
+            0,
+            (_selectedIndex * height) / ACTION_COUNT,
+            width,
+            height / ACTION_COUNT
+        );
         dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
 
         // Draw frames
         dc.drawLine(0, height / ACTION_COUNT, width, height / ACTION_COUNT);
-        dc.drawLine(0, 2 * height / ACTION_COUNT, width, 2 * height / ACTION_COUNT);
+        dc.drawLine(
+            0,
+            (2 * height) / ACTION_COUNT,
+            width,
+            (2 * height) / ACTION_COUNT
+        );
 
         var backlightLabel = View.findDrawableById("BacklightLabel") as Text;
         var vibrateLabel = View.findDrawableById("VibeLabel") as Text;
@@ -93,8 +121,7 @@ class AttentionView extends WatchUi.View {
 
     //! Called when this View is removed from the screen. Save the
     //! state of your app here.
-    public function onHide() as Void {
-    }
+    public function onHide() as Void {}
 
     //! Take a tap coordinate and correspond it to one of three sections
     //! @param yVal Y-coordinate of tap
@@ -129,17 +156,21 @@ class AttentionView extends WatchUi.View {
 
                 _toneIdx = (_toneIdx + 1) % _toneNames.size();
                 if (_toneIdx == 0) {
-                    if ((Attention has :ToneProfile) && ($.Rez.JsonData has :id_birthday)) {
+                    if (
+                        Attention has :ToneProfile &&
+                        $.Rez.JsonData has :id_birthday
+                    ) {
                         Attention.playTone({
-                            :toneProfile => loadSong($.Rez.JsonData.id_birthday as Symbol)
+                            :toneProfile
+                            =>
+                            loadSong($.Rez.JsonData.id_birthday as Symbol),
                         });
                     } else {
-                       _currentTone = "Not supported";
+                        _currentTone = "Not supported";
                     }
                 } else {
                     Attention.playTone(currentToneIdx as Tone);
                 }
-
             } else {
                 _currentTone = "Not supported";
             }
@@ -149,14 +180,14 @@ class AttentionView extends WatchUi.View {
             _currentTone = null;
             if (Attention has :vibrate) {
                 var vibrateData = [
-                        new Attention.VibeProfile(25, 100),
-                        new Attention.VibeProfile(50, 100),
-                        new Attention.VibeProfile(75, 100),
-                        new Attention.VibeProfile(100, 100),
-                        new Attention.VibeProfile(75, 100),
-                        new Attention.VibeProfile(50, 100),
-                        new Attention.VibeProfile(25, 100)
-                      ] as Array<VibeProfile>;
+                    new Attention.VibeProfile(25, 100),
+                    new Attention.VibeProfile(50, 100),
+                    new Attention.VibeProfile(75, 100),
+                    new Attention.VibeProfile(100, 100),
+                    new Attention.VibeProfile(75, 100),
+                    new Attention.VibeProfile(50, 100),
+                    new Attention.VibeProfile(25, 100),
+                ] as Array<VibeProfile>;
 
                 Attention.vibrate(vibrateData);
             } else {
@@ -170,7 +201,7 @@ class AttentionView extends WatchUi.View {
     //! @param rezId Resource id for the song
     //! @return Array of tone profile objects
     private function loadSong(rezId as Symbol) as Array<ToneProfile> {
-        var song = WatchUi.loadResource(rezId) as Array< Array<Number> >;
+        var song = WatchUi.loadResource(rezId) as Array<Array<Number> >;
         var songTones = new Array<ToneProfile>[song.size()];
 
         // convert array of [frequency, duration] into array of ToneProfile
@@ -180,5 +211,4 @@ class AttentionView extends WatchUi.View {
 
         return songTones;
     }
-
 }

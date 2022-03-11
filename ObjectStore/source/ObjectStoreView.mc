@@ -19,12 +19,11 @@ enum Keys {
     KEY_BOOLEAN,
     KEY_ARRAY,
     KEY_DICTIONARY,
-    KEY_COUNT
+    KEY_COUNT,
 }
 
 //! Show the object store properties
 class ObjectStoreView extends WatchUi.View {
-
     private var _indicator as PageIndicator;
 
     //! Constructor
@@ -36,7 +35,13 @@ class ObjectStoreView extends WatchUi.View {
         var notSelected = Graphics.COLOR_LT_GRAY;
         var alignment = $.ALIGN_TOP_RIGHT;
         var margin = 3;
-        _indicator = new $.PageIndicator(size, selected, notSelected, alignment, margin);
+        _indicator = new $.PageIndicator(
+            size,
+            selected,
+            notSelected,
+            alignment,
+            margin
+        );
     }
 
     //! Load the resources here
@@ -58,27 +63,27 @@ class ObjectStoreView extends WatchUi.View {
         var dictionary = app.getProperty($.KEY_DICTIONARY);
 
         if (null == int) {
-            int="Not set";
+            int = "Not set";
         }
 
         if (null == float) {
-            float="Not set";
+            float = "Not set";
         }
 
         if (null == string) {
-            string="Not set";
+            string = "Not set";
         }
 
         if (null == boolean) {
-            boolean="Not set";
+            boolean = "Not set";
         }
 
         if (null == array) {
-            array="Not set";
+            array = "Not set";
         }
 
         if (null == dictionary) {
-            dictionary="Not set";
+            dictionary = "Not set";
         }
 
         var intLabel = View.findDrawableById("IntLabel") as Text;
@@ -119,14 +124,22 @@ class ObjectStoreViewDelegate extends WatchUi.BehaviorDelegate {
     //! Handle going to the next view
     //! @return true if handled, false otherwise
     public function onNextPage() as Boolean {
-        WatchUi.switchToView(new $.DefaultPropertiesView(), new $.DefaultPropertiesViewDelegate(), WatchUi.SLIDE_LEFT);
+        WatchUi.switchToView(
+            new $.DefaultPropertiesView(),
+            new $.DefaultPropertiesViewDelegate(),
+            WatchUi.SLIDE_LEFT
+        );
         return true;
     }
 
     //! Handle going to the previous view
     //! @return true if handled, false otherwise
     public function onPreviousPage() as Boolean {
-        WatchUi.switchToView(new $.DefaultPropertiesView(), new $.DefaultPropertiesViewDelegate(), WatchUi.SLIDE_RIGHT);
+        WatchUi.switchToView(
+            new $.DefaultPropertiesView(),
+            new $.DefaultPropertiesViewDelegate(),
+            WatchUi.SLIDE_RIGHT
+        );
         return true;
     }
 
@@ -159,14 +172,17 @@ class ObjectStoreViewDelegate extends WatchUi.BehaviorDelegate {
         } else if ($.KEY_ARRAY == _count) {
             app.setProperty($.KEY_ARRAY, [1, 2, 3, null] as Array<Number?>);
         } else if ($.KEY_DICTIONARY == _count) {
-            app.setProperty($.KEY_DICTIONARY, {1=>"one", "two"=>2, "null"=>null} as Dictionary<Number or String, Number or String or Null>);
+            app.setProperty(
+                $.KEY_DICTIONARY,
+                { 1 => "one", "two" => 2, "null" => null } as Dictionary<Number or String, Number or String or Null>
+            );
         } else {
             app.deleteProperty(_count - $.KEY_COUNT);
         }
 
         _count++;
 
-        if (_count == (2 * $.KEY_COUNT)) {
+        if (_count == 2 * $.KEY_COUNT) {
             _count = 0;
         }
 
@@ -185,5 +201,4 @@ class ObjectStoreViewDelegate extends WatchUi.BehaviorDelegate {
         WatchUi.requestUpdate();
         return true;
     }
-
 }

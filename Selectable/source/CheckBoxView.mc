@@ -28,17 +28,13 @@ class CheckBox extends WatchUi.Selectable {
     //! @option options :stateDisabled The Drawable or color to display in disabled state
     //! @option options :stateHighlightedSelected The Drawable or color to display in the
     //!  selected and highlighted state
-    public function initialize(options as {
-                :locX as Number,
-                :locY as Number,
-                :width as Number,
-                :height as Number,
-                :stateDefault as Graphics.ColorType or Drawable,
-                :stateHighlighted as Graphics.ColorType or Drawable,
-                :stateSelected as Graphics.ColorType or Drawable,
-                :stateDisabled as Graphics.ColorType or Drawable,
-                :stateHighlightedSelected as Bitmap
-            }) {
+    public function initialize(
+        options as { :locX as Number, :locY as Number, :width as Number, :height
+                    as Number, :stateDefault as Graphics.ColorType or Drawable, :stateHighlighted
+                    as Graphics.ColorType or Drawable, :stateSelected as Graphics.ColorType or Drawable, :stateDisabled
+                    as Graphics.ColorType or Drawable, :stateHighlightedSelected
+                    as Bitmap }
+    ) {
         Selectable.initialize(options);
 
         // Set each state value to a Drawable, color/number, or null
@@ -111,10 +107,18 @@ class CheckBoxList {
         var BORDER_PAD = 2;
 
         // Define our states for each CheckBox
-        var checkBoxDefault = new WatchUi.Bitmap({:rezId=>$.Rez.Drawables.checkBoxDefault});
-        var checkBoxHighlighted = new WatchUi.Bitmap({:rezId=>$.Rez.Drawables.checkBoxHighlighted});
-        var checkBoxSelected = new WatchUi.Bitmap({:rezId=>$.Rez.Drawables.checkBoxSelected});
-        var checkBoxHighlightedSelected = new WatchUi.Bitmap({:rezId=>$.Rez.Drawables.checkBoxHighlightedSelected});
+        var checkBoxDefault = new WatchUi.Bitmap({
+            :rezId => $.Rez.Drawables.checkBoxDefault,
+        });
+        var checkBoxHighlighted = new WatchUi.Bitmap({
+            :rezId => $.Rez.Drawables.checkBoxHighlighted,
+        });
+        var checkBoxSelected = new WatchUi.Bitmap({
+            :rezId => $.Rez.Drawables.checkBoxSelected,
+        });
+        var checkBoxHighlightedSelected = new WatchUi.Bitmap({
+            :rezId => $.Rez.Drawables.checkBoxHighlightedSelected,
+        });
         var checkBoxDisabled = Graphics.COLOR_BLACK;
 
         // Create our array of Selectables
@@ -124,30 +128,30 @@ class CheckBoxList {
         var slideSymbol, spacing, offset, initX, initY;
         if (dc.getHeight() > dc.getWidth()) {
             slideSymbol = :locY;
-            spacing = (dc.getHeight() / 4);
-            offset = (dims[1] / 2);
+            spacing = dc.getHeight() / 4;
+            offset = dims[1] / 2;
             initY = spacing - offset - BORDER_PAD;
-            initX = (dc.getWidth() / 2) - (dims[0] / 2);
+            initX = dc.getWidth() / 2 - dims[0] / 2;
         } else {
             slideSymbol = :locX;
-            spacing = (dc.getWidth() / 4);
-            offset = (dims[0] / 2);
+            spacing = dc.getWidth() / 4;
+            offset = dims[0] / 2;
             initX = spacing - offset - BORDER_PAD;
-            initY = (dc.getHeight() / 2) - (dims[1] / 2);
+            initY = dc.getHeight() / 2 - dims[1] / 2;
         }
 
         // Create the first check-box
         var options = {
-            :stateDefault=>checkBoxDefault,
-            :stateHighlighted=>checkBoxHighlighted,
-            :stateSelected=>checkBoxSelected,
-            :stateDisabled=>checkBoxDisabled,
-            :stateHighlightedSelected=>checkBoxHighlightedSelected,
-            :locX=>initX,
-            :locY=>initY,
-            :width=>dims[0],
-            :height=>dims[1]
-            };
+            :stateDefault => checkBoxDefault,
+            :stateHighlighted => checkBoxHighlighted,
+            :stateSelected => checkBoxSelected,
+            :stateDisabled => checkBoxDisabled,
+            :stateHighlightedSelected => checkBoxHighlightedSelected,
+            :locX => initX,
+            :locY => initY,
+            :width => dims[0],
+            :height => dims[1],
+        };
         _list[0] = new CheckBox(options);
 
         // Create the second check-box
@@ -168,7 +172,10 @@ class CheckBoxList {
     //! General handler for onSelectable() events
     //! @param instance The check box
     //! @param previousState The previous check box state
-    public function handleEvent(instance as CheckBox, previousState as Symbol) as Void {
+    public function handleEvent(
+        instance as CheckBox,
+        previousState as Symbol
+    ) as Void {
         // Handle all cases except disabled (handled implicitly)
         if (instance.getState() == :stateHighlighted) {
             // Only one CheckBox may be highlighted
@@ -192,7 +199,6 @@ class CheckBoxList {
 
 //! Display the check boxes
 class CheckBoxView extends WatchUi.View {
-
     // Storage for our CheckBoxList
     private var _checkBoxes as CheckBoxList?;
 

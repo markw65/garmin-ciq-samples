@@ -9,7 +9,6 @@ import Toybox.WatchUi;
 
 //! Shows a fact about apes
 class ApesView extends WatchUi.View {
-
     private var _color as ColorType;
 
     //! Constructor
@@ -31,15 +30,44 @@ class ApesView extends WatchUi.View {
         var x = dc.getWidth() / 2;
         var y = 20;
 
-        dc.drawText(x, y, Graphics.FONT_MEDIUM, "Apes", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(
+            x,
+            y,
+            Graphics.FONT_MEDIUM,
+            "Apes",
+            Graphics.TEXT_JUSTIFY_CENTER
+        );
         y += dc.getFontHeight(Graphics.FONT_MEDIUM);
-        dc.drawText(x, y, Graphics.FONT_SMALL, "Apes are usually", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(
+            x,
+            y,
+            Graphics.FONT_SMALL,
+            "Apes are usually",
+            Graphics.TEXT_JUSTIFY_CENTER
+        );
         y += dc.getFontHeight(Graphics.FONT_SMALL);
-        dc.drawText(x, y, Graphics.FONT_SMALL, "larger and heavier", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(
+            x,
+            y,
+            Graphics.FONT_SMALL,
+            "larger and heavier",
+            Graphics.TEXT_JUSTIFY_CENTER
+        );
         y += dc.getFontHeight(Graphics.FONT_SMALL);
-        dc.drawText(x, y, Graphics.FONT_SMALL, "than monkeys and", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(
+            x,
+            y,
+            Graphics.FONT_SMALL,
+            "than monkeys and",
+            Graphics.TEXT_JUSTIFY_CENTER
+        );
         y += dc.getFontHeight(Graphics.FONT_SMALL);
-        dc.drawText(x, y, Graphics.FONT_SMALL, "have no tail.", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(
+            x,
+            y,
+            Graphics.FONT_SMALL,
+            "have no tail.",
+            Graphics.TEXT_JUSTIFY_CENTER
+        );
     }
-
 }

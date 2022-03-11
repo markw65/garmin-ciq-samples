@@ -18,7 +18,11 @@ class DeviceDataModel {
     //! @param bleDelegate The BLE delegate for the model
     //! @param dataModelFactory The factory to create models
     //! @param scanResult The device scan result
-    public function initialize(bleDelegate as ThingyDelegate, dataModelFactory as DataModelFactory, scanResult as ScanResult) {
+    public function initialize(
+        bleDelegate as ThingyDelegate,
+        dataModelFactory as DataModelFactory,
+        scanResult as ScanResult
+    ) {
         _scanResult = scanResult;
         _dataModelFactory = dataModelFactory;
 

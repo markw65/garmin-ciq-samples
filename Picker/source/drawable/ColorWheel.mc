@@ -11,7 +11,6 @@ import Toybox.WatchUi;
 
 //! Draws a color wheel for the color picker
 class ColorWheel extends WatchUi.Drawable {
-
     private var _colors as Array<ColorType>;
     private var _index as Number;
 
@@ -30,7 +29,7 @@ class ColorWheel extends WatchUi.Drawable {
     public function draw(dc as Dc) as Void {
         var index = _index;
         var angle = (Math.PI * 2) / _colors.size();
-        var startAngle = Math.PI * (3 / 2.0) - (angle / 2.0);
+        var startAngle = Math.PI * (3 / 2.0) - angle / 2.0;
 
         // draw the wheel
         for (var i = 0; i < _colors.size(); ++i) {
@@ -38,13 +37,27 @@ class ColorWheel extends WatchUi.Drawable {
                 index = 0;
             }
             dc.setColor(_colors[index], _colors[index]);
-            drawArc(dc, dc.getHeight() / 2, dc.getWidth() / 2, (i * angle) + startAngle, ((i + 1) * angle) + startAngle, true);
+            drawArc(
+                dc,
+                dc.getHeight() / 2,
+                dc.getWidth() / 2,
+                i * angle + startAngle,
+                (i + 1) * angle + startAngle,
+                true
+            );
             index++;
         }
 
         // highlight the selected one
         dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_WHITE);
-        drawArc(dc, dc.getHeight() / 2, dc.getWidth() / 2, startAngle, startAngle + angle, false);
+        drawArc(
+            dc,
+            dc.getHeight() / 2,
+            dc.getWidth() / 2,
+            startAngle,
+            startAngle + angle,
+            false
+        );
     }
 
     //! Draw an arc that is a section of the color wheel
@@ -54,15 +67,26 @@ class ColorWheel extends WatchUi.Drawable {
     //! @param startAngle Angle for the start of the arc
     //! @param endAngle Angle for the end of the arc
     //! @param fill Whether to fill the section drawn
-    public function drawArc(dc as Dc, centerX as Number, centerY as Number, startAngle as Float, endAngle as Float, fill as Boolean) as Void {
-        var points = new Array< Array<Number or Float> >[NUM_POINTS];
+    public function drawArc(
+        dc as Dc,
+        centerX as Number,
+        centerY as Number,
+        startAngle as Float,
+        endAngle as Float,
+        fill as Boolean
+    ) as Void {
+        var points = new Array<Array<Number or Float> >[NUM_POINTS];
         var halfHeight = dc.getHeight() / 2;
         var halfWidth = dc.getWidth() / 2;
-        var radius = (halfHeight > halfWidth) ? halfWidth : halfHeight;
+        var radius = halfHeight > halfWidth ? halfWidth : halfHeight;
         var arcSize = NUM_POINTS - 2;
         for (var i = arcSize; i >= 0; --i) {
-            var angle = (i / arcSize.toFloat()) * (endAngle - startAngle) + startAngle;
-            points[i] = [halfWidth + radius * Math.cos(angle), halfHeight + radius * Math.sin(angle)] as Array<Float>;
+            var angle =
+                (i / arcSize.toFloat()) * (endAngle - startAngle) + startAngle;
+            points[i] = [
+                halfWidth + radius * Math.cos(angle),
+                halfHeight + radius * Math.sin(angle),
+            ] as Array<Float>;
         }
         points[NUM_POINTS - 1] = [halfWidth, halfHeight] as Array<Number>;
 
@@ -70,9 +94,19 @@ class ColorWheel extends WatchUi.Drawable {
             dc.fillPolygon(points);
         } else {
             for (var i = 0; i < NUM_POINTS - 1; ++i) {
-                dc.drawLine(points[i][0], points[i][1], points[i+1][0], points[i+1][1]);
+                dc.drawLine(
+                    points[i][0],
+                    points[i][1],
+                    points[i + 1][0],
+                    points[i + 1][1]
+                );
             }
-            dc.drawLine(points[NUM_POINTS-1][0], points[NUM_POINTS-1][1], points[0][0], points[0][1]);
+            dc.drawLine(
+                points[NUM_POINTS - 1][0],
+                points[NUM_POINTS - 1][1],
+                points[0][0],
+                points[0][1]
+            );
         }
     }
 

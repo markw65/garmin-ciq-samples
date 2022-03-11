@@ -32,9 +32,19 @@ class MainView extends WatchUi.View {
         var selected = Graphics.COLOR_DK_GRAY;
         var notSelected = Graphics.COLOR_LT_GRAY;
         var alignment = $.ALIGN_BOTTOM_RIGHT;
-        _indicator = new $.PageIndicator(size, selected, notSelected, alignment, 0);
+        _indicator = new $.PageIndicator(
+            size,
+            selected,
+            notSelected,
+            alignment,
+            0
+        );
 
-        _iconY = System.getDeviceSettings().screenShape == System.SCREEN_SHAPE_RECTANGLE ? 0 : 10;
+        _iconY =
+            System.getDeviceSettings().screenShape ==
+            System.SCREEN_SHAPE_RECTANGLE
+                ? 0
+                : 10;
     }
 
     //! Update the view
@@ -47,26 +57,37 @@ class MainView extends WatchUi.View {
         var height = dc.getHeight();
         var margin = 20;
         var font = Graphics.FONT_SMALL;
-        var textY = (_iconY + _icon.getHeight());
+        var textY = _iconY + _icon.getHeight();
         // Show icon
-        dc.drawBitmap((width / 2 - _icon.getWidth() / 2), _iconY, _icon);
+        dc.drawBitmap(width / 2 - _icon.getWidth() / 2, _iconY, _icon);
 
         // Update status
         if (true == _sensor.isSearching()) {
             var status = "searching...";
             var fWidth = dc.getTextWidthInPixels(status, font);
             dc.setColor(Graphics.COLOR_RED, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(width / 2, textY, font, status, Graphics.TEXT_JUSTIFY_CENTER);
+            dc.drawText(
+                width / 2,
+                textY,
+                font,
+                status,
+                Graphics.TEXT_JUSTIFY_CENTER
+            );
         } else {
             var deviceNumber = _sensor.getDeviceConfig().deviceNumber;
             var status = "tracking - " + deviceNumber.toString();
             var fWidth = dc.getTextWidthInPixels(status, font);
             dc.setColor(Graphics.COLOR_GREEN, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(width / 2, textY, font, status, Graphics.TEXT_JUSTIFY_CENTER);
+            dc.drawText(
+                width / 2,
+                textY,
+                font,
+                status,
+                Graphics.TEXT_JUSTIFY_CENTER
+            );
         }
 
         // Draw page indicator
         _indicator.draw(dc, _index);
     }
-
 }

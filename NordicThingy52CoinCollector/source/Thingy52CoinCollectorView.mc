@@ -25,7 +25,9 @@ class Thingy52CoinCollectorView extends WatchUi.SimpleDataField {
     //! Play the sample every two seconds
     //! @param info The updated Activity.Info object
     //! @return Value to display in the data field
-    public function compute(info as Info) as Numeric or Duration or String or Null {
+    public function compute(
+        info as Info
+    ) as Numeric or Duration or String or Null {
         _tick++;
 
         if (_tick > 1) {
@@ -36,5 +38,4 @@ class Thingy52CoinCollectorView extends WatchUi.SimpleDataField {
         // See Activity.Info in the documentation for available information.
         return 0.0;
     }
-
 }

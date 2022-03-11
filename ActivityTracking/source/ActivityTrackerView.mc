@@ -12,7 +12,6 @@ import Toybox.WatchUi;
 
 //! Main view for the tracker app
 class ActivityTrackerView extends WatchUi.View {
-
     //! Update timer
     private var _timer as Timer.Timer;
 
@@ -43,49 +42,88 @@ class ActivityTrackerView extends WatchUi.View {
 
         var info = ActivityMonitor.getInfo();
 
-        if ((info has :stepGoal) && (info has :steps)) {
+        if (info has :stepGoal && info has :steps) {
             if (info.stepGoal == 0) {
                 info.stepGoal = 5000;
             }
 
             var steps = info.steps;
             var stepGoal = info.stepGoal;
-            if ((steps != null) && (stepGoal != null)) {
+            if (steps != null && stepGoal != null) {
                 var stepsPercent = steps.toFloat() / stepGoal.toNumber();
-                drawBar(dc, "Steps", dc.getHeight() / 4, stepsPercent, Graphics.COLOR_GREEN);
+                drawBar(
+                    dc,
+                    "Steps",
+                    dc.getHeight() / 4,
+                    stepsPercent,
+                    Graphics.COLOR_GREEN
+                );
             }
         } else {
-            dc.drawText(20, dc.getHeight() / 4, Graphics.FONT_SMALL, "Steps not supported!", Graphics.TEXT_JUSTIFY_LEFT);
+            dc.drawText(
+                20,
+                dc.getHeight() / 4,
+                Graphics.FONT_SMALL,
+                "Steps not supported!",
+                Graphics.TEXT_JUSTIFY_LEFT
+            );
         }
 
-        if ((info has :floorsClimbed) && (info has :floorsClimbedGoal)) {
+        if (info has :floorsClimbed && info has :floorsClimbedGoal) {
             if (info.floorsClimbedGoal == 0) {
                 info.floorsClimbedGoal = 10;
             }
 
             var floorsClimbed = info.floorsClimbed;
             var floorsClimbedGoal = info.floorsClimbedGoal;
-            if ((floorsClimbed != null) && (floorsClimbedGoal != null)) {
-                var floorsPercent = floorsClimbed.toFloat() / floorsClimbedGoal.toNumber();
-                drawBar(dc, "Floors", dc.getHeight() / 2, floorsPercent, Graphics.COLOR_BLUE);
+            if (floorsClimbed != null && floorsClimbedGoal != null) {
+                var floorsPercent =
+                    floorsClimbed.toFloat() / floorsClimbedGoal.toNumber();
+                drawBar(
+                    dc,
+                    "Floors",
+                    dc.getHeight() / 2,
+                    floorsPercent,
+                    Graphics.COLOR_BLUE
+                );
             }
         } else {
-            dc.drawText(20, dc.getHeight() / 2, Graphics.FONT_SMALL, "Floors not supported!", Graphics.TEXT_JUSTIFY_LEFT);
+            dc.drawText(
+                20,
+                dc.getHeight() / 2,
+                Graphics.FONT_SMALL,
+                "Floors not supported!",
+                Graphics.TEXT_JUSTIFY_LEFT
+            );
         }
 
-        if ((info has :activeMinutesWeek) && (info has :activeMinutesWeekGoal)) {
+        if (info has :activeMinutesWeek && info has :activeMinutesWeekGoal) {
             if (info.activeMinutesWeekGoal == 0) {
                 info.activeMinutesWeekGoal = 150;
             }
 
             var activeMinutesWeek = info.activeMinutesWeek;
             var activeMinutesWeekGoal = info.activeMinutesWeekGoal;
-            if ((activeMinutesWeek != null) && (activeMinutesWeekGoal != null)) {
-                var activePercent = activeMinutesWeek.total.toFloat() / activeMinutesWeekGoal.toNumber();
-                drawBar(dc, "Minutes", dc.getHeight() / 4 * 3, activePercent, Graphics.COLOR_ORANGE);
+            if (activeMinutesWeek != null && activeMinutesWeekGoal != null) {
+                var activePercent =
+                    activeMinutesWeek.total.toFloat() /
+                    activeMinutesWeekGoal.toNumber();
+                drawBar(
+                    dc,
+                    "Minutes",
+                    (dc.getHeight() / 4) * 3,
+                    activePercent,
+                    Graphics.COLOR_ORANGE
+                );
             }
         } else {
-            dc.drawText(20, dc.getHeight() / 4 * 3, Graphics.FONT_SMALL, "Minutes not supported!", Graphics.TEXT_JUSTIFY_LEFT);
+            dc.drawText(
+                20,
+                (dc.getHeight() / 4) * 3,
+                Graphics.FONT_SMALL,
+                "Minutes not supported!",
+                Graphics.TEXT_JUSTIFY_LEFT
+            );
         }
     }
 
@@ -95,8 +133,14 @@ class ActivityTrackerView extends WatchUi.View {
     //! @param y y position on string to draw
     //! @param percent Percent of the bar to fill (0 - 1.0)
     //! @param color Color to use
-    private function drawBar(dc as Dc, string as String, y as Numeric, percent as Numeric, color as ColorType) as Void {
-        var width = dc.getWidth() / 5 * 4;
+    private function drawBar(
+        dc as Dc,
+        string as String,
+        y as Numeric,
+        percent as Numeric,
+        color as ColorType
+    ) as Void {
+        var width = (dc.getWidth() / 5) * 4;
         var x = dc.getWidth() / 10;
 
         if (percent > 1) {
@@ -111,7 +155,13 @@ class ActivityTrackerView extends WatchUi.View {
 
         var font = Graphics.FONT_SMALL;
 
-        dc.drawText(x, y - Graphics.getFontHeight(font) - 3, font, string, Graphics.TEXT_JUSTIFY_LEFT);
+        dc.drawText(
+            x,
+            y - Graphics.getFontHeight(font) - 3,
+            font,
+            string,
+            Graphics.TEXT_JUSTIFY_LEFT
+        );
     }
 
     //! Timer callback

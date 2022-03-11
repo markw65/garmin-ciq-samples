@@ -20,7 +20,11 @@ class LineGraph {
     //! @param size Number of points in the graph
     //! @param minRange Smallest range to use for the graph
     //! @param color Color to use to draw the graph
-    public function initialize(size as Number, minRange as Number, color as ColorType) {
+    public function initialize(
+        size as Number,
+        minRange as Number,
+        color as ColorType
+    ) {
         _graphIndex = 0;
         _graphRange = [null, null] as Array<Number or Float or Null>;
 
@@ -38,7 +42,7 @@ class LineGraph {
         var updateMin = false;
         var updateMax = false;
 
-        if ((value instanceof Number) || (value instanceof Float)) {
+        if (value instanceof Number || value instanceof Float) {
             if (_graphRange[0] == null) {
                 // This is our first value, save as min and max
                 _graphRange[0] = value;
@@ -77,7 +81,7 @@ class LineGraph {
                 var min = _graphArray[0];
                 for (var i = 1; i < _graphArray.size(); i++) {
                     var curPoint = _graphArray[i];
-                    if ((curPoint != null) && (min != null)) {
+                    if (curPoint != null && min != null) {
                         if (curPoint < min) {
                             min = curPoint;
                         }
@@ -90,7 +94,7 @@ class LineGraph {
                 var max = _graphArray[0];
                 for (var i = 1; i < _graphArray.size(); i++) {
                     var curPoint = _graphArray[i];
-                    if ((curPoint != null) && (max != null)) {
+                    if (curPoint != null && max != null) {
                         if (curPoint > max) {
                             max = curPoint;
                         }
@@ -101,14 +105,17 @@ class LineGraph {
         } else {
             // This isn't allowed
         }
-
     }
 
     //! Draw the line graph
     //! @param dc Device context
     //! @param topLeft Array [x, y] of the top left corner
     //! @param bottomRight Array [x, y] of the bottom right corner
-    public function draw(dc as Dc, topLeft as Array<Number>, bottomRight as Array<Number>) as Void {
+    public function draw(
+        dc as Dc,
+        topLeft as Array<Number>,
+        bottomRight as Array<Number>
+    ) as Void {
         var drawExtentsX = bottomRight[0] - topLeft[0] + 1;
         var drawExtentsY = bottomRight[1] - topLeft[1] + 1;
         var draw_idx = 1;
@@ -116,7 +123,7 @@ class LineGraph {
         // If the graph range is null, no values have been added yet
         var graphMin = _graphRange[0];
         var graphMax = _graphRange[1];
-        if ((graphMin != null) && (graphMax != null)) {
+        if (graphMin != null && graphMax != null) {
             // Set Graph color
             dc.setColor(_graphColor, _graphColor);
 
@@ -131,20 +138,27 @@ class LineGraph {
             }
 
             var prev_x = topLeft[0];
-            var x = topLeft[0] + drawExtentsX * draw_idx / (_graphArray.size() - 1);
+            var x =
+                topLeft[0] +
+                (drawExtentsX * draw_idx) / (_graphArray.size() - 1);
             var y = null;
             for (var i = _graphIndex; i < _graphArray.size(); i++) {
                 var curPoint = _graphArray[i];
                 if (curPoint != null) {
                     var prev_y = y;
-                    y = bottomRight[1] - ((curPoint - min) * drawExtentsY / range);
+                    y =
+                        bottomRight[1] -
+                        ((curPoint - min) * drawExtentsY) / range;
                     y = y.toNumber();
 
                     if (prev_y != null) {
                         dc.drawLine(prev_x, prev_y as Number, x, y);
                         prev_x = x;
                         draw_idx++;
-                        x = topLeft[0] + drawExtentsX * draw_idx / (_graphArray.size() - 1);
+                        x =
+                            topLeft[0] +
+                            (drawExtentsX * draw_idx) /
+                                (_graphArray.size() - 1);
                     }
                 }
             }
@@ -153,14 +167,19 @@ class LineGraph {
                 var curPoint = _graphArray[i];
                 if (curPoint != null) {
                     var prev_y = y;
-                    y = bottomRight[1] - ((curPoint - min) * drawExtentsY / range);
+                    y =
+                        bottomRight[1] -
+                        ((curPoint - min) * drawExtentsY) / range;
                     y = y.toNumber();
 
                     if (prev_y != null) {
                         dc.drawLine(prev_x, prev_y, x, y);
                         prev_x = x;
                         draw_idx++;
-                        x = topLeft[0] + drawExtentsX * draw_idx / (_graphArray.size() - 1);
+                        x =
+                            topLeft[0] +
+                            (drawExtentsX * draw_idx) /
+                                (_graphArray.size() - 1);
                     }
                 }
             }

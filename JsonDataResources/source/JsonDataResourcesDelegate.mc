@@ -14,15 +14,15 @@ class BaseInputDelegate extends WatchUi.BehaviorDelegate {
     // An array of all defined JSON resource record IDs
     // Note that these do not get loaded into memory until
     // WatchUi.loadResource is called on one of them.
-    private const _jsonResourceIds =
-        [
+    private
+    const _jsonResourceIds = [
         $.Rez.JsonData.arrayResource,
         $.Rez.JsonData.dictionaryResource,
         $.Rez.JsonData.mixedArrayResource,
         $.Rez.JsonData.singleValue,
         $.Rez.JsonData.dictionaryFromFile,
-        $.Rez.JsonData.arrayFromFile
-        ] as Array<Symbol>;
+        $.Rez.JsonData.arrayFromFile,
+    ] as Array<Symbol>;
 
     private var _view as JsonDataResourcesView;
 
@@ -36,7 +36,7 @@ class BaseInputDelegate extends WatchUi.BehaviorDelegate {
     //! Handle the menu event
     //! @return true if handled, false otherwise
     public function onMenu() as Boolean {
-        if (_jsonRecordIndex == (_jsonResourceIds.size() - 1)) {
+        if (_jsonRecordIndex == _jsonResourceIds.size() - 1) {
             _jsonRecordIndex = 0;
         } else {
             _jsonRecordIndex++;

@@ -9,7 +9,6 @@ import Toybox.WatchUi;
 
 //! Menu delegate for the main view
 class EncryptionMenuDelegate extends WatchUi.MenuInputDelegate {
-
     //! Constructor
     public function initialize() {
         MenuInputDelegate.initialize();
@@ -27,6 +26,10 @@ class EncryptionMenuDelegate extends WatchUi.MenuInputDelegate {
             sensor = new $.AntModule.AntSensor(false);
         }
         // Pushes view that displays AntSensor data
-        WatchUi.pushView(new $.AntView(sensor), new $.AntDelegate(sensor), WatchUi.SLIDE_RIGHT);
+        WatchUi.pushView(
+            new $.AntView(sensor),
+            new $.AntDelegate(sensor),
+            WatchUi.SLIDE_RIGHT
+        );
     }
 }

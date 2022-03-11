@@ -21,22 +21,12 @@ class BulkDownloadDelegate extends Communications.SyncDelegate {
 
         var colors = Storage.getValue($.ID_COLORS_TO_DOWNLOAD);
         if (colors != null) {
-             _colors = colors as Array<Number>;
+            _colors = colors as Array<Number>;
         } else {
             _colors = [
-                0xFFFFFF,
-                0xAAAAAA,
-                0x555555,
-                0xFF0000,
-                0xAA0000,
-                0xFF5500,
-                0xFFAA00,
-                0x00FF00,
-                0x00AA00,
-                0x00AAFF,
-                0x0000FF,
-                0xAA00FF,
-                0xFF00FF,
+                0xffffff, 0xaaaaaa, 0x555555, 0xff0000, 0xaa0000, 0xff5500,
+                0xffaa00, 0x00ff00, 0x00aa00, 0x00aaff, 0x0000ff, 0xaa00ff,
+                0xff00ff,
             ] as Array<Number>;
         }
 
@@ -78,20 +68,25 @@ class BulkDownloadDelegate extends Communications.SyncDelegate {
         var params = {};
 
         var options = {
-            :dithering => Communications.IMAGE_DITHERING_NONE
+            :dithering => Communications.IMAGE_DITHERING_NONE,
         };
 
         var deviceSettings = System.getDeviceSettings();
 
-        var downloadUrl = Lang.format("https://dummyimage.com/$1$x$2$/$3$.png", [
-            deviceSettings.screenWidth,
-            deviceSettings.screenHeight,
-            colorId.format("%06X")
-        ]);
+        var downloadUrl = Lang.format(
+            "https://dummyimage.com/$1$x$2$/$3$.png",
+            [
+                deviceSettings.screenWidth,
+                deviceSettings.screenHeight,
+                colorId.format("%06X"),
+            ]
+        );
 
         // create a request delegate so we can associate colorId with the
         // downloaded image
-        var requestDelegate = new $.BulkDownloadRequestDelegate(self.method(:onDownloadComplete));
+        var requestDelegate = new $.BulkDownloadRequestDelegate(
+            self.method(:onDownloadComplete)
+        );
         requestDelegate.makeImageRequest(downloadUrl, params, options);
     }
 
@@ -99,26 +94,34 @@ class BulkDownloadDelegate extends Communications.SyncDelegate {
     //! @param code The server response code or BLE error
     public function onDownloadComplete(code as Number) as Void {
         if (code == 200) {
-
             // download was successful, so remove it from the pending list
             _colors = _colors.slice(1, null);
             Storage.setValue($.ID_COLORS_TO_DOWNLOAD, _colors);
 
             // cache the count of successful downloads
-            var successfulDownloads = Storage.getValue($.ID_TOTAL_SUCCESSFUL_DOWNLOADS);
+            var successfulDownloads = Storage.getValue(
+                $.ID_TOTAL_SUCCESSFUL_DOWNLOADS
+            );
             if (successfulDownloads instanceof Number) {
                 ++successfulDownloads;
-                Storage.setValue($.ID_TOTAL_SUCCESSFUL_DOWNLOADS, successfulDownloads);
+                Storage.setValue(
+                    $.ID_TOTAL_SUCCESSFUL_DOWNLOADS,
+                    successfulDownloads
+                );
             }
 
             // update the progress indicator
             ++_colorsDownloaded;
-            Communications.notifySyncProgress((100 * _colorsDownloaded) / _colorsToDownload);
+            Communications.notifySyncProgress(
+                (100 * _colorsDownloaded) / _colorsToDownload
+            );
 
             // start the next download, or terminate syncing
             startNextDownload();
         } else {
-            Communications.notifySyncComplete(Lang.format("Error: $1$", [code]));
+            Communications.notifySyncComplete(
+                Lang.format("Error: $1$", [code])
+            );
         }
     }
 }

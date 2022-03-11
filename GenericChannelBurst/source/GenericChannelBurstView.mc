@@ -8,7 +8,6 @@ import Toybox.Graphics;
 import Toybox.WatchUi;
 
 class GenericChannelBurstView extends WatchUi.View {
-
     private var _channelManager as BurstChannelManager;
     private var _rxFailCountLabel as Text?;
     private var _rxSuccessCountLabel as Text?;
@@ -43,26 +42,33 @@ class GenericChannelBurstView extends WatchUi.View {
 
         var rxFailCountLabel = _rxFailCountLabel;
         if (rxFailCountLabel != null) {
-            rxFailCountLabel.setText(burstStatistics.getRxFailCount().toString());
+            rxFailCountLabel.setText(
+                burstStatistics.getRxFailCount().toString()
+            );
         }
 
         var rxSuccessCountLabel = _rxSuccessCountLabel;
         if (rxSuccessCountLabel != null) {
-            rxSuccessCountLabel.setText(burstStatistics.getRxSuccessCount().toString());
+            rxSuccessCountLabel.setText(
+                burstStatistics.getRxSuccessCount().toString()
+            );
         }
 
         var txFailCountLabel = _txFailCountLabel;
         if (txFailCountLabel != null) {
-            txFailCountLabel.setText(burstStatistics.getTxFailCount().toString());
+            txFailCountLabel.setText(
+                burstStatistics.getTxFailCount().toString()
+            );
         }
 
         var txSuccessCountLabel = _txSuccessCountLabel;
         if (txSuccessCountLabel != null) {
-            txSuccessCountLabel.setText(burstStatistics.getTxSuccessCount().toString());
+            txSuccessCountLabel.setText(
+                burstStatistics.getTxSuccessCount().toString()
+            );
         }
 
         // Call the parent onUpdate function to redraw the layout
         View.onUpdate(dc);
     }
-
 }

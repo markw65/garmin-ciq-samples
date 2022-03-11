@@ -9,7 +9,6 @@ import Toybox.WatchUi;
 
 //! Draws a filled rectangle
 class Rectangle extends WatchUi.Drawable {
-
     private var _color as ColorType;
 
     //! Constructor

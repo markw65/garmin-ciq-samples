@@ -24,7 +24,6 @@ class BulkDownloadBehaviorDelegate extends WatchUi.BehaviorDelegate {
     //! Handle selection request
     //! @return true if handled, false otherwise
     public function onSelect() as Boolean {
-
         var hasWiFiSupport = false;
         var hasLteSupport = false;
 

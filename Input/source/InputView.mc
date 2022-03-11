@@ -10,7 +10,6 @@ import Toybox.WatchUi;
 
 //! Displays information about which behavior / input events are triggered
 class InputView extends WatchUi.View {
-
     private var _action as Action;
     private var _statusString as String;
     private var _behavior as Behavior;
@@ -40,13 +39,37 @@ class InputView extends WatchUi.View {
         var y = dc.getHeight() / 2;
         y -= (4 * dy) / 2;
 
-        dc.drawText(x, y, Graphics.FONT_SMALL, _action.toString(), Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(
+            x,
+            y,
+            Graphics.FONT_SMALL,
+            _action.toString(),
+            Graphics.TEXT_JUSTIFY_CENTER
+        );
         y += dy;
-        dc.drawText(x, y, Graphics.FONT_SMALL, _behavior.toString(), Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(
+            x,
+            y,
+            Graphics.FONT_SMALL,
+            _behavior.toString(),
+            Graphics.TEXT_JUSTIFY_CENTER
+        );
         y += dy;
-        dc.drawText(x, y, Graphics.FONT_SMALL, _statusString, Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(
+            x,
+            y,
+            Graphics.FONT_SMALL,
+            _statusString,
+            Graphics.TEXT_JUSTIFY_CENTER
+        );
         y += dy;
-        dc.drawText(x, y, Graphics.FONT_SMALL, _button.toString(), Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(
+            x,
+            y,
+            Graphics.FONT_SMALL,
+            _button.toString(),
+            Graphics.TEXT_JUSTIFY_CENTER
+        );
     }
 
     //! Set the status string

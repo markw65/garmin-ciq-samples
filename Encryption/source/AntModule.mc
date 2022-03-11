@@ -19,17 +19,19 @@ module AntModule {
 
     // Range Constants
     const MIN_BYTE_VALUE = 0x00;
-    const MAX_BYTE_VALUE = 0xFF;
+    const MAX_BYTE_VALUE = 0xff;
     const SEND_DATA_MAX_INDEX = 3;
     const MAX_DATA_LENGTH = 24;
     const NEW_MESSAGE_LENGTH = 8;
 
     // Encryption-related constants
     const ENCRYPTION_DECIMATION_RATE = 1;
-    const ENCRYPTION_ID_SLAVE = 0xAAAAAAAA;
+    const ENCRYPTION_ID_SLAVE = 0xaaaaaaaa;
     const ENCRYPTION_ID_MASTER = 0x11111111;
-    const ENCRYPTION_KEY = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1] as Array<Number>;
-    const ENCRYPTION_USER_INFO_STRING = [1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1] as Array<Number>;
+    const ENCRYPTION_KEY = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] as Array<Number>;
+    const ENCRYPTION_USER_INFO_STRING = [
+        1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1,
+    ] as Array<Number>;
 
     // Message indexes
     const MESSAGE_ID_INDEX = 0;
@@ -37,36 +39,277 @@ module AntModule {
 
     // See the commented data below for the text representation
     const SEND_DATA = [
-        [0x1,0x48,0x65,0x6c,0x6c,0x6f,0x5f,0x5f] as Array<Number>,
-        [0x2,0x57,0x6f,0x72,0x6c,0x64,0x21,0x5f] as Array<Number>,
-        [0x3,0x43,0x6f,0x6e,0x6e,0x65,0x63,0x74] as Array<Number>,
-        [0x4,0x49,0x51,0x5f,0x5f,0x5f,0x5f,0x5f] as Array<Number>] as Array< Array<Number> >;
-     // [0x01,"H","e","l","l","o","_","_"],
-     // [0x02,"W","o","r","l","d","!","_"],
-     // [0x03,"C","o","n","n","e","c","t"],
-     // [0x04,"I","Q","_","_","_","_","_"]];
+        [0x1, 0x48, 0x65, 0x6c, 0x6c, 0x6f, 0x5f, 0x5f] as Array<Number>,
+        [0x2, 0x57, 0x6f, 0x72, 0x6c, 0x64, 0x21, 0x5f] as Array<Number>,
+        [0x3, 0x43, 0x6f, 0x6e, 0x6e, 0x65, 0x63, 0x74] as Array<Number>,
+        [0x4, 0x49, 0x51, 0x5f, 0x5f, 0x5f, 0x5f, 0x5f] as Array<Number>,
+    ] as Array<Array<Number> >;
+    // [0x01,"H","e","l","l","o","_","_"],
+    // [0x02,"W","o","r","l","d","!","_"],
+    // [0x03,"C","o","n","n","e","c","t"],
+    // [0x04,"I","Q","_","_","_","_","_"]];
 
     // ASCII Table needed for showing Data byte values.
     const HEX_TO_ASCII = [
-        " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ",
-        " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ",
-        " ", "!", "\"", "#","$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/",
-        "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", ":", ";", "<", "=", ">", "?",
-        "@", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O",
-        "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "[", "\\", "]", "^", "_",
-        "`", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o",
-        "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "{", "|", "}", "~", "",
-        " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ",
-        " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ",
-        " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ",
-        " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ",
-        " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ",
-        " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ",
-        " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ",
-        " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "] as Array<String>;
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        "!",
+        "\"",
+        "#",
+        "$",
+        "%",
+        "&",
+        "'",
+        "(",
+        ")",
+        "*",
+        "+",
+        ",",
+        "-",
+        ".",
+        "/",
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        ":",
+        ";",
+        "<",
+        "=",
+        ">",
+        "?",
+        "@",
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S",
+        "T",
+        "U",
+        "V",
+        "W",
+        "X",
+        "Y",
+        "Z",
+        "[",
+        "\\",
+        "]",
+        "^",
+        "_",
+        "`",
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "j",
+        "k",
+        "l",
+        "m",
+        "n",
+        "o",
+        "p",
+        "q",
+        "r",
+        "s",
+        "t",
+        "u",
+        "v",
+        "w",
+        "x",
+        "y",
+        "z",
+        "{",
+        "|",
+        "}",
+        "~",
+        "",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+    ] as Array<String>;
 
     class AntSensor extends Ant.GenericChannel {
-
         private var _cryptoConfig as CryptoConfig;
         private var _data as String;
         private var _deviceCfg as DeviceConfig;
@@ -89,34 +332,41 @@ module AntModule {
             _searching = !_isMaster;
 
             // Try to create crypto configs and channel assignments
-             try {
+            try {
                 var chanAssign;
                 if (_isMaster) {
                     // Create master crypto config
                     _cryptoConfig = new Ant.CryptoConfig({
                         :encryptionId => $.AntModule.ENCRYPTION_ID_MASTER,
                         :encryptionKey => $.AntModule.ENCRYPTION_KEY,
-                        :decimationRate => $.AntModule.ENCRYPTION_DECIMATION_RATE
+                        :decimationRate
+                        =>
+                        $.AntModule.ENCRYPTION_DECIMATION_RATE,
                     });
 
                     // Create master channel assignment
                     chanAssign = new Ant.ChannelAssignment(
                         Ant.CHANNEL_TYPE_TX_NOT_RX,
-                        Ant.NETWORK_PUBLIC);
-
+                        Ant.NETWORK_PUBLIC
+                    );
                 } else {
                     // Create slave crypto config
                     _cryptoConfig = new Ant.CryptoConfig({
                         :encryptionId => $.AntModule.ENCRYPTION_ID_SLAVE,
                         :encryptionKey => $.AntModule.ENCRYPTION_KEY,
-                        :userInfoString => $.AntModule.ENCRYPTION_USER_INFO_STRING,
-                        :decimationRate => $.AntModule.ENCRYPTION_DECIMATION_RATE
+                        :userInfoString
+                        =>
+                        $.AntModule.ENCRYPTION_USER_INFO_STRING,
+                        :decimationRate
+                        =>
+                        $.AntModule.ENCRYPTION_DECIMATION_RATE,
                     });
 
                     // Create slave channel assignment
                     chanAssign = new Ant.ChannelAssignment(
                         Ant.CHANNEL_TYPE_RX_NOT_TX,
-                        Ant.NETWORK_PUBLIC);
+                        Ant.NETWORK_PUBLIC
+                    );
                 }
 
                 // Initialize Channel
@@ -128,11 +378,10 @@ module AntModule {
                     :deviceType => $.AntModule.DEVICE_TYPE,
                     :transmissionType => $.AntModule.TRANSMISSION_TYPE,
                     :messagePeriod => $.AntModule.CHANNEL_PERIOD,
-                    :radioFrequency => $.AntModule.RADIO_FREQUENCY
+                    :radioFrequency => $.AntModule.RADIO_FREQUENCY,
                 });
                 GenericChannel.setDeviceConfig(_deviceCfg);
-
-            } catch(ex) {
+            } catch (ex) {
                 System.println("Error creating the crypto config");
             }
         }
@@ -146,16 +395,22 @@ module AntModule {
         //! Enables encryption for master and decryption for slave
         public function enableChannelEncryption() as Void {
             try {
-                if (!_searching && !_encrypted){
+                if (!_searching && !_encrypted) {
                     GenericChannel.enableEncryption(_cryptoConfig);
                     _encrypted = true;
                 } else {
-                    System.println("Failed to enable encryption, still searching");
+                    System.println(
+                        "Failed to enable encryption, still searching"
+                    );
                 }
             } catch (ex instanceof EncryptionInvalidSettingsException) {
-                System.println("Failed to enable encryption, cryptoConfig has an invalid parameter");
+                System.println(
+                    "Failed to enable encryption, cryptoConfig has an invalid parameter"
+                );
             } catch (ex instanceof UnableToAcquireEncryptedChannelException) {
-                System.println("Failed to enable encryption, please ensure you are not using more encrypted channels than are available");
+                System.println(
+                    "Failed to enable encryption, please ensure you are not using more encrypted channels than are available"
+                );
             } catch (ex) {
                 System.println("Failed to enable encryption, reason unknown");
             }
@@ -169,7 +424,9 @@ module AntModule {
                     _encrypted = false;
                 }
             } catch (ex instanceof EncryptionInvalidSettingsException) {
-                System.println("Failed to disable encryption as cryptoConfig has an invalid parameter");
+                System.println(
+                    "Failed to disable encryption as cryptoConfig has an invalid parameter"
+                );
             } catch (ex) {
                 System.println("Failed to disable encryption, reason unknown");
             }
@@ -181,7 +438,9 @@ module AntModule {
             // Parse the payload
             var payload = msg.getPayload();
             if (Ant.MSG_ID_CHANNEL_RESPONSE_EVENT == msg.messageId) {
-                if (Ant.MSG_ID_RF_EVENT == payload[$.AntModule.MESSAGE_ID_INDEX]) {
+                if (
+                    Ant.MSG_ID_RF_EVENT == payload[$.AntModule.MESSAGE_ID_INDEX]
+                ) {
                     switch (payload[$.AntModule.MESSAGE_CODE_INDEX]) {
                         case Ant.MSG_CODE_EVENT_CHANNEL_CLOSED:
                             // Channel closed, re-open
@@ -193,21 +452,21 @@ module AntModule {
                         case Ant.MSG_CODE_EVENT_CRYPTO_NEGOTIATION_FAIL:
                             _encrypted = false;
                             break;
-                         case Ant.MSG_CODE_EVENT_CRYPTO_NEGOTIATION_SUCCESS:
+                        case Ant.MSG_CODE_EVENT_CRYPTO_NEGOTIATION_SUCCESS:
                             _encrypted = true;
                             break;
-                         case Ant.MSG_CODE_EVENT_TX:
+                        case Ant.MSG_CODE_EVENT_TX:
                             // Update data and send out the next part of the message
-                             var message = new Ant.Message();
-                             _index++;
-                             if ($.AntModule.SEND_DATA_MAX_INDEX < _index) {
-                                 _index = 0;
-                             }
-                             var toSend = $.AntModule.SEND_DATA[_index];
-                             updateData(toSend);
-                             message.setPayload(toSend);
-                             GenericChannel.sendBroadcast(message);
-                             break;
+                            var message = new Ant.Message();
+                            _index++;
+                            if ($.AntModule.SEND_DATA_MAX_INDEX < _index) {
+                                _index = 0;
+                            }
+                            var toSend = $.AntModule.SEND_DATA[_index];
+                            updateData(toSend);
+                            message.setPayload(toSend);
+                            GenericChannel.sendBroadcast(message);
+                            break;
                     }
                 }
             } else if (Ant.MSG_ID_BROADCAST_DATA == msg.messageId) {
@@ -256,7 +515,10 @@ module AntModule {
         //! @param bArray Array with the message you want to add to data
         private function updateData(bArray as Array<Number>) as Void {
             if (_data.length() >= $.AntModule.MAX_DATA_LENGTH) {
-                var newData = _data.substring($.AntModule.NEW_MESSAGE_LENGTH, $.AntModule.MAX_DATA_LENGTH);
+                var newData = _data.substring(
+                    $.AntModule.NEW_MESSAGE_LENGTH,
+                    $.AntModule.MAX_DATA_LENGTH
+                );
                 if (newData != null) {
                     _data = newData;
                 } else {
@@ -274,7 +536,10 @@ module AntModule {
             var str = "";
             for (var i = 0; i < bytes.size(); i++) {
                 var curByte = bytes[i];
-                if (($.AntModule.MIN_BYTE_VALUE <= curByte) && (curByte <= $.AntModule.MAX_BYTE_VALUE)) {
+                if (
+                    $.AntModule.MIN_BYTE_VALUE <= curByte &&
+                    curByte <= $.AntModule.MAX_BYTE_VALUE
+                ) {
                     str += $.AntModule.HEX_TO_ASCII[curByte];
                 } else {
                     str += "-";

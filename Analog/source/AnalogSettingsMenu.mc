@@ -10,16 +10,14 @@ import Toybox.WatchUi;
 
 //! The app settings menu
 class AnalogSettingsMenu extends WatchUi.Menu2 {
-
     //! Constructor
     public function initialize() {
-        Menu2.initialize({:title=>"Settings"});
+        Menu2.initialize({ :title => "Settings" });
     }
 }
 
 //! Input handler for the app settings menu
 class AnalogSettingsMenuDelegate extends WatchUi.Menu2InputDelegate {
-
     //! Constructor
     public function initialize() {
         Menu2InputDelegate.initialize();
@@ -31,4 +29,3 @@ class AnalogSettingsMenuDelegate extends WatchUi.Menu2InputDelegate {
         Storage.setValue(menuItem.getId() as Number, menuItem.isEnabled());
     }
 }
-

@@ -11,7 +11,6 @@ import Toybox.WatchUi;
 
 //! Show the activity monitor history
 class HistoryView extends WatchUi.View {
-
     //! Constructor
     public function initialize() {
         View.initialize();
@@ -37,20 +36,38 @@ class HistoryView extends WatchUi.View {
             dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
             // Loop through array of history items
             for (var i = 0; i < actHistArray.size(); i += 1) {
-                dc.drawText(padding, padding + fontHeight * (i + 2), Graphics.FONT_TINY, (i + 1).toString(), Graphics.TEXT_JUSTIFY_LEFT);
+                dc.drawText(
+                    padding,
+                    padding + fontHeight * (i + 2),
+                    Graphics.FONT_TINY,
+                    (i + 1).toString(),
+                    Graphics.TEXT_JUSTIFY_LEFT
+                );
                 var curHistory = actHistArray[i];
                 // Validate that each element is non-null
                 if (null != curHistory) {
                     var steps = curHistory.steps;
                     var stepGoal = curHistory.stepGoal;
-                    if ((null != steps) && (null != stepGoal)) {
+                    if (null != steps && null != stepGoal) {
                         string = steps.toString() + " / " + stepGoal.toString();
-                        dc.drawText(dc.getWidth() / 2, padding + fontHeight * (i + 2), Graphics.FONT_TINY, string, Graphics.TEXT_JUSTIFY_CENTER);
+                        dc.drawText(
+                            dc.getWidth() / 2,
+                            padding + fontHeight * (i + 2),
+                            Graphics.FONT_TINY,
+                            string,
+                            Graphics.TEXT_JUSTIFY_CENTER
+                        );
                         // Check if the device supports floors climbed info and validate that element is non-null
                         if (curHistory has :floorsClimbed) {
                             var floorsClimbed = curHistory.floorsClimbed;
                             if (null != floorsClimbed) {
-                                dc.drawText(dc.getWidth(), padding + fontHeight * (i + 2), Graphics.FONT_TINY, floorsClimbed.toString(), Graphics.TEXT_JUSTIFY_RIGHT);
+                                dc.drawText(
+                                    dc.getWidth(),
+                                    padding + fontHeight * (i + 2),
+                                    Graphics.FONT_TINY,
+                                    floorsClimbed.toString(),
+                                    Graphics.TEXT_JUSTIFY_RIGHT
+                                );
                             }
                         }
                     }

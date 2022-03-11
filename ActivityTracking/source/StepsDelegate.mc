@@ -9,7 +9,6 @@ import Toybox.WatchUi;
 
 //! Handle input for the steps view
 class StepsDelegate extends WatchUi.BehaviorDelegate {
-
     //! Constructor
     public function initialize() {
         BehaviorDelegate.initialize();
@@ -25,14 +24,22 @@ class StepsDelegate extends WatchUi.BehaviorDelegate {
     //! Handle the next page event
     //! @return true if handled, false otherwise
     public function onNextPage() as Boolean {
-        WatchUi.switchToView(new $.HistoryView(), new $.HistoryDelegate(), WatchUi.SLIDE_UP);
+        WatchUi.switchToView(
+            new $.HistoryView(),
+            new $.HistoryDelegate(),
+            WatchUi.SLIDE_UP
+        );
         return true;
     }
 
     //! Handle the previous page event
     //! @return true if handled, false otherwise
     public function onPreviousPage() as Boolean {
-        WatchUi.switchToView(new $.HistoryView(), new $.HistoryDelegate(), WatchUi.SLIDE_DOWN);
+        WatchUi.switchToView(
+            new $.HistoryView(),
+            new $.HistoryDelegate(),
+            WatchUi.SLIDE_DOWN
+        );
         return true;
     }
 }

@@ -11,7 +11,6 @@ import Toybox.WatchUi;
 
 //! This app displays information about the user's position
 class PositionSampleApp extends Application.AppBase {
-
     private var _positionView as PositionSampleView;
 
     //! Constructor
@@ -23,13 +22,19 @@ class PositionSampleApp extends Application.AppBase {
     //! Handle app startup
     //! @param state Startup arguments
     public function onStart(state as Dictionary?) as Void {
-        Position.enableLocationEvents(Position.LOCATION_CONTINUOUS, method(:onPosition));
+        Position.enableLocationEvents(
+            Position.LOCATION_CONTINUOUS,
+            method(:onPosition)
+        );
     }
 
     //! Handle app shutdown
     //! @param state Shutdown arguments
     public function onStop(state as Dictionary?) as Void {
-        Position.enableLocationEvents(Position.LOCATION_DISABLE, method(:onPosition));
+        Position.enableLocationEvents(
+            Position.LOCATION_DISABLE,
+            method(:onPosition)
+        );
     }
 
     //! Update the current position
@@ -43,5 +48,4 @@ class PositionSampleApp extends Application.AppBase {
     public function getInitialView() as Array<Views or InputDelegates>? {
         return [_positionView] as Array<Views>;
     }
-
 }

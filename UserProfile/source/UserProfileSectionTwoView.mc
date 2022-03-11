@@ -12,7 +12,6 @@ import Toybox.WatchUi;
 
 //! Shows user information about sleep time, step length, and heart rate
 class UserProfileSectionTwoView extends WatchUi.View {
-
     private var _sleepTimePrefixStr as String;
     private var _runStepLengthPrefixStr as String;
     private var _walkStepLengthPrefixStr as String;
@@ -25,10 +24,18 @@ class UserProfileSectionTwoView extends WatchUi.View {
     public function initialize() {
         View.initialize();
 
-        _sleepTimePrefixStr = WatchUi.loadResource($.Rez.Strings.SleepTimePrefix) as String;
-        _runStepLengthPrefixStr = WatchUi.loadResource($.Rez.Strings.RunningStepLengthPrefix) as String;
-        _walkStepLengthPrefixStr = WatchUi.loadResource($.Rez.Strings.WalkingStepLengthPrefix) as String;
-        _restingHeartRatePrefixStr = WatchUi.loadResource($.Rez.Strings.RestingHeartRatePrefix) as String;
+        _sleepTimePrefixStr = WatchUi.loadResource(
+            $.Rez.Strings.SleepTimePrefix
+        ) as String;
+        _runStepLengthPrefixStr = WatchUi.loadResource(
+            $.Rez.Strings.RunningStepLengthPrefix
+        ) as String;
+        _walkStepLengthPrefixStr = WatchUi.loadResource(
+            $.Rez.Strings.WalkingStepLengthPrefix
+        ) as String;
+        _restingHeartRatePrefixStr = WatchUi.loadResource(
+            $.Rez.Strings.RestingHeartRatePrefix
+        ) as String;
         _stepLengthUnitsStr = WatchUi.loadResource($.Rez.Strings.MMUnits) as String;
         _notSetStr = WatchUi.loadResource($.Rez.Strings.ItemNotSet) as String;
         _heartRateUnitsStr = WatchUi.loadResource($.Rez.Strings.BPMUnits) as String;
@@ -50,11 +57,23 @@ class UserProfileSectionTwoView extends WatchUi.View {
 
             var sleepTime = profile.sleepTime;
             if (sleepTime != null) {
-                var hours = sleepTime.divide(Gregorian.SECONDS_PER_HOUR).value();
+                var hours = sleepTime
+                    .divide(Gregorian.SECONDS_PER_HOUR)
+                    .value();
                 var sleepTimeValue = sleepTime.value();
-                var minutes = (sleepTimeValue - (hours * Gregorian.SECONDS_PER_HOUR)) / Gregorian.SECONDS_PER_MINUTE;
-                var seconds = sleepTimeValue - (hours * Gregorian.SECONDS_PER_HOUR) - (minutes * Gregorian.SECONDS_PER_MINUTE);
-                string += hours.format("%02u") + ":" + minutes.format("%02u") + ":" + seconds.format("%02u");
+                var minutes =
+                    (sleepTimeValue - hours * Gregorian.SECONDS_PER_HOUR) /
+                    Gregorian.SECONDS_PER_MINUTE;
+                var seconds =
+                    sleepTimeValue -
+                    hours * Gregorian.SECONDS_PER_HOUR -
+                    minutes * Gregorian.SECONDS_PER_MINUTE;
+                string +=
+                    hours.format("%02u") +
+                    ":" +
+                    minutes.format("%02u") +
+                    ":" +
+                    seconds.format("%02u");
             } else {
                 string += _notSetStr;
             }

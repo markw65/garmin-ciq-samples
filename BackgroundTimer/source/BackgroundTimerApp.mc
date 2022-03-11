@@ -24,8 +24,7 @@ class BackgroundTimer extends Application.AppBase {
 
     //! Handle app startup
     //! @param state Startup arguments
-    public function onStart(state as Dictionary?) as Void {
-    }
+    public function onStart(state as Dictionary?) as Void {}
 
     //! Handle app shutdown
     //! @param state Shutdown arguments
@@ -76,5 +75,9 @@ class BackgroundTimer extends Application.AppBase {
 
 (:typecheck(disableBackgroundCheck))
 function handleStorageUpdate() as Void {
-    WatchUi.pushView(new $.BackgroundTimerStorageChangedAlertView(), null, WatchUi.SLIDE_IMMEDIATE);
+    WatchUi.pushView(
+        new $.BackgroundTimerStorageChangedAlertView(),
+        null,
+        WatchUi.SLIDE_IMMEDIATE
+    );
 }

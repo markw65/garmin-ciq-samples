@@ -10,15 +10,25 @@ import Toybox.WatchUi;
 
 //! Main picker that shows all the other pickers
 class PickerChooser extends WatchUi.Picker {
-
     //! Constructor
     public function initialize() {
-        var title = new WatchUi.Text({:text=>$.Rez.Strings.pickerChooserTitle, :locX=>WatchUi.LAYOUT_HALIGN_CENTER,
-            :locY=>WatchUi.LAYOUT_VALIGN_BOTTOM, :color=>Graphics.COLOR_WHITE});
-        var factory = new $.WordFactory([$.Rez.Strings.pickerChooserColor, $.Rez.Strings.pickerChooserDate,
-            $.Rez.Strings.pickerChooserString, $.Rez.Strings.pickerChooserTime, $.Rez.Strings.pickerChooserLayout] as Array<Symbol>,
-            {:font=>Graphics.FONT_MEDIUM});
-        Picker.initialize({:title=>title, :pattern=>[factory]});
+        var title = new WatchUi.Text({
+            :text => $.Rez.Strings.pickerChooserTitle,
+            :locX => WatchUi.LAYOUT_HALIGN_CENTER,
+            :locY => WatchUi.LAYOUT_VALIGN_BOTTOM,
+            :color => Graphics.COLOR_WHITE,
+        });
+        var factory = new $.WordFactory(
+            [
+                $.Rez.Strings.pickerChooserColor,
+                $.Rez.Strings.pickerChooserDate,
+                $.Rez.Strings.pickerChooserString,
+                $.Rez.Strings.pickerChooserTime,
+                $.Rez.Strings.pickerChooserLayout,
+            ] as Array<Symbol>,
+            { :font => Graphics.FONT_MEDIUM }
+        );
+        Picker.initialize({ :title => title, :pattern => [factory] });
     }
 
     //! Update the view
@@ -32,7 +42,6 @@ class PickerChooser extends WatchUi.Picker {
 
 //! Responds to a picker selection or cancellation
 class PickerChooserDelegate extends WatchUi.PickerDelegate {
-
     //! Constructor
     public function initialize() {
         PickerDelegate.initialize();
@@ -50,18 +59,37 @@ class PickerChooserDelegate extends WatchUi.PickerDelegate {
     //! @return true if handled, false otherwise
     public function onAccept(values as Array) as Boolean {
         if (values[0] == $.Rez.Strings.pickerChooserColor) {
-            WatchUi.pushView(new $.ColorPicker(), new $.ColorPickerDelegate(), WatchUi.SLIDE_IMMEDIATE);
+            WatchUi.pushView(
+                new $.ColorPicker(),
+                new $.ColorPickerDelegate(),
+                WatchUi.SLIDE_IMMEDIATE
+            );
         } else if (values[0] == $.Rez.Strings.pickerChooserDate) {
-            WatchUi.pushView(new $.DatePicker(), new $.DatePickerDelegate(), WatchUi.SLIDE_IMMEDIATE);
+            WatchUi.pushView(
+                new $.DatePicker(),
+                new $.DatePickerDelegate(),
+                WatchUi.SLIDE_IMMEDIATE
+            );
         } else if (values[0] == $.Rez.Strings.pickerChooserString) {
             var picker = new $.StringPicker();
-            WatchUi.pushView(picker, new $.StringPickerDelegate(picker), WatchUi.SLIDE_IMMEDIATE);
+            WatchUi.pushView(
+                picker,
+                new $.StringPickerDelegate(picker),
+                WatchUi.SLIDE_IMMEDIATE
+            );
         } else if (values[0] == $.Rez.Strings.pickerChooserTime) {
-            WatchUi.pushView(new $.TimePicker(), new $.TimePickerDelegate(), WatchUi.SLIDE_IMMEDIATE);
+            WatchUi.pushView(
+                new $.TimePicker(),
+                new $.TimePickerDelegate(),
+                WatchUi.SLIDE_IMMEDIATE
+            );
         } else if (values[0] == $.Rez.Strings.pickerChooserLayout) {
-            WatchUi.pushView(new $.LayoutPicker(), new $.LayoutPickerDelegate(), WatchUi.SLIDE_IMMEDIATE);
+            WatchUi.pushView(
+                new $.LayoutPicker(),
+                new $.LayoutPickerDelegate(),
+                WatchUi.SLIDE_IMMEDIATE
+            );
         }
         return true;
     }
-
 }

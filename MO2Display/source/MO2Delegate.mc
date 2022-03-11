@@ -96,5 +96,4 @@ class MO2Delegate extends WatchUi.InputDelegate {
         var delegate = new $.MO2Delegate(_sensor, _index);
         return delegate;
     }
-
 }

@@ -9,7 +9,6 @@ import Toybox.WatchUi;
 
 //! Input handler for the confirmation dialog
 class ConfirmationDialogDelegate extends WatchUi.ConfirmationDelegate {
-
     private var _confirmString as String;
     private var _cancelString as String;
     private var _view as ConfirmationDialogView;
@@ -38,7 +37,6 @@ class ConfirmationDialogDelegate extends WatchUi.ConfirmationDelegate {
 
 //! Input handler to push confirmation dialog
 class BaseInputDelegate extends WatchUi.BehaviorDelegate {
-
     private var _dialogHeaderString as String;
     private var _view as ConfirmationDialogView;
 
@@ -46,7 +44,8 @@ class BaseInputDelegate extends WatchUi.BehaviorDelegate {
     //! @param view The app view
     public function initialize(view as ConfirmationDialogView) {
         BehaviorDelegate.initialize();
-        _dialogHeaderString = WatchUi.loadResource($.Rez.Strings.DialogHeader) as String;
+        _dialogHeaderString = WatchUi.loadResource($.Rez.Strings.DialogHeader) as
+            String;
         _view = view;
     }
 
@@ -66,8 +65,11 @@ class BaseInputDelegate extends WatchUi.BehaviorDelegate {
     //! @return true if handled, false otherwise
     private function pushDialog() as Boolean {
         var dialog = new WatchUi.Confirmation(_dialogHeaderString);
-        WatchUi.pushView(dialog, new $.ConfirmationDialogDelegate(_view), WatchUi.SLIDE_IMMEDIATE);
+        WatchUi.pushView(
+            dialog,
+            new $.ConfirmationDialogDelegate(_view),
+            WatchUi.SLIDE_IMMEDIATE
+        );
         return true;
     }
-
 }

@@ -14,7 +14,9 @@ class WebRequestDelegate extends WatchUi.BehaviorDelegate {
 
     //! Set up the callback to the view
     //! @param handler Callback method for when data is received
-    public function initialize(handler as Method(args as Dictionary or String or Null) as Void) {
+    public function initialize(
+        handler as Method(args as Dictionary or String or Null) as Void
+    ) {
         WatchUi.BehaviorDelegate.initialize();
         _notify = handler;
     }
@@ -39,9 +41,13 @@ class WebRequestDelegate extends WatchUi.BehaviorDelegate {
 
         var options = {
             :responseType => Communications.HTTP_RESPONSE_CONTENT_TYPE_JSON,
-            :headers => {
-                "Content-Type" => Communications.REQUEST_CONTENT_TYPE_URL_ENCODED
-            }
+            :headers
+            =>
+            {
+                "Content-Type"
+                =>
+                Communications.REQUEST_CONTENT_TYPE_URL_ENCODED,
+            },
         };
 
         Communications.makeWebRequest(
@@ -55,7 +61,10 @@ class WebRequestDelegate extends WatchUi.BehaviorDelegate {
     //! Receive the data from the web request
     //! @param responseCode The server response code
     //! @param data Content from a successful request
-    public function onReceive(responseCode as Number, data as Dictionary?) as Void {
+    public function onReceive(
+        responseCode as Number,
+        data as Dictionary?
+    ) as Void {
         if (responseCode == 200) {
             _notify.invoke(data);
         } else {

@@ -18,7 +18,9 @@ class SensorTester extends WatchUi.View {
     //! Constructor
     public function initialize() {
         View.initialize();
-        Sensor.setEnabledSensors([Sensor.SENSOR_HEARTRATE] as Array<SensorType>);
+        Sensor.setEnabledSensors(
+            [Sensor.SENSOR_HEARTRATE] as Array<SensorType>
+        );
         Sensor.enableSensorEvents(method(:onSnsr));
         _hrGraph = new $.LineGraph(20, 10, Graphics.COLOR_RED);
 
@@ -33,9 +35,19 @@ class SensorTester extends WatchUi.View {
 
         dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
 
-        dc.drawText(dc.getWidth() / 2, 90, Graphics.FONT_LARGE, _hrString, Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(
+            dc.getWidth() / 2,
+            90,
+            Graphics.FONT_LARGE,
+            _hrString,
+            Graphics.TEXT_JUSTIFY_CENTER
+        );
 
-        _hrGraph.draw(dc, [0, 0] as Array<Number>, [dc.getWidth(), dc.getHeight()] as Array<Number>);
+        _hrGraph.draw(
+            dc,
+            [0, 0] as Array<Number>,
+            [dc.getWidth(), dc.getHeight()] as Array<Number>
+        );
     }
 
     //! Handle sensor updates
@@ -57,9 +69,8 @@ class SensorTester extends WatchUi.View {
 }
 
 //! This app shows how to use sensors. It displays the current heart rate,
-//! along with a time series graph of the heart rate from the last 20 seconds. 
+//! along with a time series graph of the heart rate from the last 20 seconds.
 class SensorTest extends Application.AppBase {
-
     //! Constructor
     public function initialize() {
         AppBase.initialize();
@@ -67,13 +78,11 @@ class SensorTest extends Application.AppBase {
 
     //! Handle app startup
     //! @param state Startup arguments
-    public function onStart(state as Dictionary?) as Void {
-    }
+    public function onStart(state as Dictionary?) as Void {}
 
     //! Handle app shutdown
     //! @param state Shutdown arguments
-    public function onStop(state as Dictionary?) as Void {
-    }
+    public function onStop(state as Dictionary?) as Void {}
 
     //! Return the initial view for the app
     //! @return Array [View]

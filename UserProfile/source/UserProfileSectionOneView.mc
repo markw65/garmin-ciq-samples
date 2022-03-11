@@ -12,7 +12,6 @@ import Toybox.WatchUi;
 
 //! Shows user information about weight, height, gender, and wake time
 class UserProfileSectionOneView extends WatchUi.View {
-
     private var _weightPrefixStr as String;
     private var _weightUnitsStr as String;
     private var _heightPrefixStr as String;
@@ -30,11 +29,14 @@ class UserProfileSectionOneView extends WatchUi.View {
         _weightPrefixStr = WatchUi.loadResource($.Rez.Strings.WeightPrefix) as String;
         _weightUnitsStr = WatchUi.loadResource($.Rez.Strings.GramUnits) as String;
         _heightPrefixStr = WatchUi.loadResource($.Rez.Strings.HeightPrefix) as String;
-        _genderPrefixStr = WatchUi.loadResource($.Rez.Strings.GenderSpecifierPrefix) as String;
+        _genderPrefixStr = WatchUi.loadResource(
+            $.Rez.Strings.GenderSpecifierPrefix
+        ) as String;
         _femaleStr = WatchUi.loadResource($.Rez.Strings.GenderFemale) as String;
         _maleStr = WatchUi.loadResource($.Rez.Strings.GenderMale) as String;
         _heightUnitsStr = WatchUi.loadResource($.Rez.Strings.CMUnits) as String;
-        _wakeTimePrefixStr = WatchUi.loadResource($.Rez.Strings.WakeTimePrefix) as String;
+        _wakeTimePrefixStr = WatchUi.loadResource($.Rez.Strings.WakeTimePrefix) as
+            String;
         _itemNotSetStr = WatchUi.loadResource($.Rez.Strings.ItemNotSet) as String;
     }
 
@@ -86,9 +88,19 @@ class UserProfileSectionOneView extends WatchUi.View {
             if (wakeTime != null) {
                 var wakeTimeValue = wakeTime.value();
                 var hours = wakeTime.divide(Gregorian.SECONDS_PER_HOUR).value();
-                var minutes = (wakeTimeValue - (hours * Gregorian.SECONDS_PER_HOUR)) / Gregorian.SECONDS_PER_MINUTE;
-                var seconds = wakeTimeValue - (hours * Gregorian.SECONDS_PER_HOUR) - (minutes * Gregorian.SECONDS_PER_MINUTE);
-                string += hours.format("%02u") + ":" + minutes.format("%02u") + ":" + seconds.format("%02u");
+                var minutes =
+                    (wakeTimeValue - hours * Gregorian.SECONDS_PER_HOUR) /
+                    Gregorian.SECONDS_PER_MINUTE;
+                var seconds =
+                    wakeTimeValue -
+                    hours * Gregorian.SECONDS_PER_HOUR -
+                    minutes * Gregorian.SECONDS_PER_MINUTE;
+                string +=
+                    hours.format("%02u") +
+                    ":" +
+                    minutes.format("%02u") +
+                    ":" +
+                    seconds.format("%02u");
             } else {
                 string += _itemNotSetStr;
             }

@@ -12,7 +12,6 @@ import Toybox.WatchUi;
 //! on the screen by tipping the device in certain directions. You can 'kick' the
 //! ball by pressing the start button.
 class AccelMagApp extends Application.AppBase {
-
     //! Constructor
     public function initialize() {
         AppBase.initialize();
@@ -20,13 +19,11 @@ class AccelMagApp extends Application.AppBase {
 
     //! Handle app startup
     //! @param state Startup arguments
-    public function onStart(state as Dictionary?) as Void {
-    }
+    public function onStart(state as Dictionary?) as Void {}
 
     //! Handle app shutdown
     //! @param state Shutdown arguments
-    public function onStop(state as Dictionary?) as Void {
-    }
+    public function onStop(state as Dictionary?) as Void {}
 
     //! Return the initial views for the app
     //! @return Array Pair [View, InputDelegate]
@@ -35,5 +32,4 @@ class AccelMagApp extends Application.AppBase {
         var viewDelegate = new $.AccelMagDelegate(mainView);
         return [mainView, viewDelegate] as Array<Views or InputDelegates>;
     }
-
 }

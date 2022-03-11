@@ -16,7 +16,6 @@ const ID_COLORS_TO_DOWNLOAD = 'p';
 //! This app demonstrates how to use the bulk download
 //! features in the Communications API.
 class BulkDownloadApp extends Application.AppBase {
-
     //! Constructor
     public function initialize() {
         AppBase.initialize();
@@ -24,20 +23,19 @@ class BulkDownloadApp extends Application.AppBase {
 
     //! Handle app startup
     //! @param state Startup arguments
-    public function onStart(state as Dictionary?) as Void {
-    }
+    public function onStart(state as Dictionary?) as Void {}
 
     //! Handle app shutdown
     //! @param state Shutdown arguments
-    public function onStop(state as Dictionary?) as Void {
-    }
+    public function onStop(state as Dictionary?) as Void {}
 
     //! Return the initial view for the app
     //! @return Array Pair [View, Delegate]
     public function getInitialView() as Array<Views or InputDelegates>? {
-
         // Initialize the successful download count to 0
-        var successfulDownloads = Storage.getValue($.ID_TOTAL_SUCCESSFUL_DOWNLOADS);
+        var successfulDownloads = Storage.getValue(
+            $.ID_TOTAL_SUCCESSFUL_DOWNLOADS
+        );
         if (successfulDownloads == null) {
             Storage.setValue($.ID_TOTAL_SUCCESSFUL_DOWNLOADS, 0);
         }
@@ -52,5 +50,4 @@ class BulkDownloadApp extends Application.AppBase {
     public function getSyncDelegate() as SyncDelegate? {
         return new $.BulkDownloadDelegate();
     }
-
 }

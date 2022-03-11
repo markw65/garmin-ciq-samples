@@ -16,12 +16,11 @@ enum PropKeys {
     PROP_FLOAT = "float_prop",
     PROP_DOUBLE = "double_prop",
     PROP_STRING = "string_prop",
-    PROP_BOOLEAN = "boolean_prop"
+    PROP_BOOLEAN = "boolean_prop",
 }
 
 //! Show the current property values
 class DefaultPropertiesView extends WatchUi.View {
-
     private var _indicator as PageIndicator;
 
     //! Constructor
@@ -33,7 +32,13 @@ class DefaultPropertiesView extends WatchUi.View {
         var notSelected = Graphics.COLOR_LT_GRAY;
         var alignment = $.ALIGN_TOP_RIGHT;
         var margin = 3;
-        _indicator = new $.PageIndicator(size, selected, notSelected, alignment, margin);
+        _indicator = new $.PageIndicator(
+            size,
+            selected,
+            notSelected,
+            alignment,
+            margin
+        );
     }
 
     //! Load your resources here
@@ -61,7 +66,10 @@ class DefaultPropertiesView extends WatchUi.View {
     //! @param propertyPrefix Label to prefix the property value
     //! @param propertyId The key for the property
     //! @return String with the property prefix and value
-    private function getDisplayString(propertyPrefix as String, propertyId as PropertyKeyType) as String {
+    private function getDisplayString(
+        propertyPrefix as String,
+        propertyId as PropertyKeyType
+    ) as String {
         var value = Properties.getValue(propertyId);
         if (value == null) {
             value = "Not set";
@@ -72,7 +80,10 @@ class DefaultPropertiesView extends WatchUi.View {
     //! Update a label with new text
     //! @param labelId The label to update
     //! @param labelText The text for the label
-    private function updateLabel(labelId as String, labelText as String) as Void {
+    private function updateLabel(
+        labelId as String,
+        labelText as String
+    ) as Void {
         var drawable = View.findDrawableById(labelId);
         if (drawable != null) {
             (drawable as Text).setText(labelText);
@@ -82,7 +93,6 @@ class DefaultPropertiesView extends WatchUi.View {
 
 //! Input handler for the properties view
 class DefaultPropertiesViewDelegate extends WatchUi.BehaviorDelegate {
-
     //! Constructor
     public function initialize() {
         BehaviorDelegate.initialize();
@@ -91,14 +101,22 @@ class DefaultPropertiesViewDelegate extends WatchUi.BehaviorDelegate {
     //! Handle going to the next view
     //! @return true if handled, false otherwise
     public function onNextPage() as Boolean {
-        WatchUi.switchToView(new $.ApplicationStorageView(), new $.ApplicationStorageViewDelegate(), WatchUi.SLIDE_LEFT);
+        WatchUi.switchToView(
+            new $.ApplicationStorageView(),
+            new $.ApplicationStorageViewDelegate(),
+            WatchUi.SLIDE_LEFT
+        );
         return true;
     }
 
     //! Handle going to the previous view
     //! @return true if handled, false otherwise
     public function onPreviousPage() as Boolean {
-        WatchUi.switchToView(new $.ApplicationStorageView(), new $.ApplicationStorageViewDelegate(), WatchUi.SLIDE_RIGHT);
+        WatchUi.switchToView(
+            new $.ApplicationStorageView(),
+            new $.ApplicationStorageViewDelegate(),
+            WatchUi.SLIDE_RIGHT
+        );
         return true;
     }
 
@@ -124,5 +142,4 @@ class DefaultPropertiesViewDelegate extends WatchUi.BehaviorDelegate {
         WatchUi.requestUpdate();
         return true;
     }
-
 }

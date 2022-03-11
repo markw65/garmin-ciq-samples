@@ -13,7 +13,6 @@ import Toybox.WatchUi;
 //! selected by holding and tapping on touch devices or by pressing menu
 //! and then up/down and select on non-touch devices.
 class SelectableApp extends Application.AppBase {
-
     //! Constructor
     public function initialize() {
         AppBase.initialize();
@@ -21,13 +20,11 @@ class SelectableApp extends Application.AppBase {
 
     //! Handle app startup
     //! @param state Startup arguments
-    public function onStart(state as Dictionary?) as Void {
-    }
+    public function onStart(state as Dictionary?) as Void {}
 
     //! Handle app shutdown
     //! @param state Shutdown arguments
-    public function onStop(state as Dictionary?) as Void {
-    }
+    public function onStop(state as Dictionary?) as Void {}
 
     //! Return the initial view for the app
     //! @return Array Pair [View, InputDelegate]
@@ -36,5 +33,4 @@ class SelectableApp extends Application.AppBase {
         var delegate = new $.CheckBoxDelegate(view);
         return [view, delegate] as Array<Views or InputDelegates>;
     }
-
 }

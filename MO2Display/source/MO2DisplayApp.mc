@@ -38,6 +38,9 @@ class MO2DisplayApp extends Application.AppBase {
     public function getInitialView() as Array<Views or InputDelegates>? {
         // The initial view is located at index 0
         var index = 0;
-        return [new $.MainView(_sensor, index), new $.MO2Delegate(_sensor, index)] as Array<Views or InputDelegates>;
+        return [
+            new $.MainView(_sensor, index),
+            new $.MO2Delegate(_sensor, index),
+        ] as Array<Views or InputDelegates>;
     }
 }

@@ -28,15 +28,27 @@ class StringPicker extends WatchUi.Picker {
         if (lastString instanceof String) {
             _curString = lastString;
             titleText = lastString;
-            var startValue = lastString.substring(lastString.length() - 1, lastString.length());
+            var startValue = lastString.substring(
+                lastString.length() - 1,
+                lastString.length()
+            );
             if (startValue != null) {
                 defaults = [_factory.getIndex(startValue)];
             }
         }
 
-        _title = new WatchUi.Text({:text=>titleText, :locX=>WatchUi.LAYOUT_HALIGN_CENTER, :locY=>WatchUi.LAYOUT_VALIGN_BOTTOM, :color=>Graphics.COLOR_WHITE});
+        _title = new WatchUi.Text({
+            :text => titleText,
+            :locX => WatchUi.LAYOUT_HALIGN_CENTER,
+            :locY => WatchUi.LAYOUT_VALIGN_BOTTOM,
+            :color => Graphics.COLOR_WHITE,
+        });
 
-        Picker.initialize({:title=>_title, :pattern=>[_factory], :defaults=>defaults});
+        Picker.initialize({
+            :title => _title,
+            :pattern => [_factory],
+            :defaults => defaults,
+        });
     }
 
     //! Update the view
@@ -59,7 +71,9 @@ class StringPicker extends WatchUi.Picker {
         _curString = _curString.substring(0, _curString.length() - 1) as String;
 
         if (0 == _curString.length()) {
-            _title.setText(WatchUi.loadResource($.Rez.Strings.stringPickerTitle) as String);
+            _title.setText(
+                WatchUi.loadResource($.Rez.Strings.stringPickerTitle) as String
+            );
         } else {
             _title.setText(_curString);
         }
@@ -122,5 +136,4 @@ class StringPickerDelegate extends WatchUi.PickerDelegate {
         }
         return true;
     }
-
 }

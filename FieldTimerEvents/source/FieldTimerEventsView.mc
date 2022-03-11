@@ -10,13 +10,11 @@ import Toybox.Lang;
 import Toybox.WatchUi;
 
 //! DataField View class to show the current lap number
-class FieldTimerEventsView extends WatchUi.DataField
-{
-    private enum TimerState
-    {
+class FieldTimerEventsView extends WatchUi.DataField {
+    private enum TimerState {
         STATE_STOPPED,
         STATE_PAUSED,
-        STATE_RUNNING
+        STATE_RUNNING,
     }
 
     private var _lapNumber as Number = 0;
@@ -24,8 +22,7 @@ class FieldTimerEventsView extends WatchUi.DataField
     private var _lapCertainty as String = "";
 
     //! Constructor
-    public function initialize()
-    {
+    public function initialize() {
         DataField.initialize();
 
         var info = Activity.getActivityInfo();
@@ -86,8 +83,7 @@ class FieldTimerEventsView extends WatchUi.DataField
     //! The given info object contains all the current workout
     //! information. Calculate a value and save it locally in this method.
     //! @param info Activity.Info object
-    public function compute(info as Info) as Void {
-    }
+    public function compute(info as Info) as Void {}
 
     //! Display the value you computed here. This will be called
     //! once a second when the data field is visible.
@@ -114,16 +110,28 @@ class FieldTimerEventsView extends WatchUi.DataField
             var lapString = _lapNumber.format("%d") + _lapCertainty;
 
             // Draw the lap number
-            dc.drawText(dc.getWidth() / 2, dc.getHeight() / 2, Graphics.FONT_MEDIUM, lapString, (Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER));
+            dc.drawText(
+                dc.getWidth() / 2,
+                dc.getHeight() / 2,
+                Graphics.FONT_MEDIUM,
+                lapString,
+                Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER
+            );
 
-        // Timer events are not supported so show a message letting
-        // the user know that.
+            // Timer events are not supported so show a message letting
+            // the user know that.
         } else {
             dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_WHITE);
             dc.clear();
 
             var message = "Timer Events\nNot Supported";
-            dc.drawText(dc.getWidth() / 2, dc.getHeight() / 2, Graphics.FONT_MEDIUM, message, (Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER));
+            dc.drawText(
+                dc.getWidth() / 2,
+                dc.getHeight() / 2,
+                Graphics.FONT_MEDIUM,
+                message,
+                Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER
+            );
         }
     }
 }

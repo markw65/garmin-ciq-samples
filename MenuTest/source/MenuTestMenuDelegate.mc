@@ -9,7 +9,6 @@ import Toybox.WatchUi;
 
 //! Input handler to respond to main menu selections
 class MenuTestMenuDelegate extends WatchUi.MenuInputDelegate {
-
     //! Constructor
     public function initialize() {
         MenuInputDelegate.initialize();
@@ -20,7 +19,11 @@ class MenuTestMenuDelegate extends WatchUi.MenuInputDelegate {
     public function onMenuItem(item as Symbol) as Void {
         if (item == :Item1) {
             System.println("Item 1");
-            WatchUi.pushView(new $.Rez.Menus.AuxMenu(), new $.AuxMenuDelegate(), WatchUi.SLIDE_UP);
+            WatchUi.pushView(
+                new $.Rez.Menus.AuxMenu(),
+                new $.AuxMenuDelegate(),
+                WatchUi.SLIDE_UP
+            );
         } else if (item == :Item2) {
             System.println("Item 2");
         }

@@ -11,10 +11,10 @@ import Toybox.WatchUi;
 //! Create the Basic Drawables custom menu
 function pushBasicCustom() as Void {
     var customMenu = new WatchUi.CustomMenu(35, Graphics.COLOR_WHITE, {
-        :focusItemHeight=>45,
-        :foreground=>new $.Rez.Drawables.MenuForeground(),
-        :title=>new $.DrawableMenuTitle(),
-        :footer=>new $.DrawableMenuFooter()
+        :focusItemHeight => 45,
+        :foreground => new $.Rez.Drawables.MenuForeground(),
+        :title => new $.DrawableMenuTitle(),
+        :footer => new $.DrawableMenuFooter(),
     });
     customMenu.addItem(new $.CustomItem(:item1, "Hello World"));
     customMenu.addItem(new $.CustomItem(:item2, "Foo"));
@@ -28,19 +28,19 @@ function pushBasicCustom() as Void {
 
 //! View to show when an item is selected
 class ItemView extends WatchUi.View {
-
     private var _text as Text;
 
     //! Constructor
     //! @param text The item text
     public function initialize(text as String) {
         View.initialize();
-        _text = new WatchUi.Text({:text => text,
+        _text = new WatchUi.Text({
+            :text => text,
             :color => Graphics.COLOR_BLACK,
             :backgroundColor => Graphics.COLOR_WHITE,
-            :locX =>WatchUi.LAYOUT_HALIGN_CENTER,
-            :locY=>WatchUi.LAYOUT_VALIGN_CENTER,
-            :justification => Graphics.TEXT_JUSTIFY_CENTER
+            :locX => WatchUi.LAYOUT_HALIGN_CENTER,
+            :locY => WatchUi.LAYOUT_VALIGN_CENTER,
+            :justification => Graphics.TEXT_JUSTIFY_CENTER,
         });
     }
 
@@ -55,7 +55,6 @@ class ItemView extends WatchUi.View {
 
 //! This is the menu input delegate for the Basic Drawables menu
 class BasicCustomDelegate extends WatchUi.Menu2InputDelegate {
-
     //! Constructor
     public function initialize() {
         Menu2InputDelegate.initialize();
@@ -64,7 +63,11 @@ class BasicCustomDelegate extends WatchUi.Menu2InputDelegate {
     //! Handle an item being selected
     //! @param item The selected menu item
     public function onSelect(item as CustomItem) as Void {
-        WatchUi.pushView(new $.ItemView(item.getLabel()), null, WatchUi.SLIDE_UP);
+        WatchUi.pushView(
+            new $.ItemView(item.getLabel()),
+            null,
+            WatchUi.SLIDE_UP
+        );
         WatchUi.requestUpdate();
     }
 
@@ -85,7 +88,6 @@ class BasicCustomDelegate extends WatchUi.Menu2InputDelegate {
 //! This is the custom item drawable.
 //! It draws the label it is initialized with at the center of the region
 class CustomItem extends WatchUi.CustomMenuItem {
-
     private var _label as String;
 
     //! Constructor
@@ -110,7 +112,13 @@ class CustomItem extends WatchUi.CustomMenuItem {
         }
 
         dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(dc.getWidth() / 2, dc.getHeight() / 2, font, _label, Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
+        dc.drawText(
+            dc.getWidth() / 2,
+            dc.getHeight() / 2,
+            font,
+            _label,
+            Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER
+        );
         dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_BLACK);
         dc.drawLine(0, 0, dc.getWidth(), 0);
         dc.drawLine(0, dc.getHeight() - 1, dc.getWidth(), dc.getHeight() - 1);
@@ -125,7 +133,6 @@ class CustomItem extends WatchUi.CustomMenuItem {
 
 //! This is the drawable for the custom menu footer
 class DrawableMenuFooter extends WatchUi.Drawable {
-
     //! Constructor
     public function initialize() {
         Drawable.initialize({});

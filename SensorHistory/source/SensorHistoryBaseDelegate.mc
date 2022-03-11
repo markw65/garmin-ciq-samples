@@ -9,7 +9,6 @@ import Toybox.WatchUi;
 
 //! Handle input on initial view
 class SensorHistoryBaseDelegate extends WatchUi.BehaviorDelegate {
-
     //! Constructor
     public function initialize() {
         BehaviorDelegate.initialize();

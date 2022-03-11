@@ -10,7 +10,6 @@ import Toybox.WatchUi;
 
 //! Handle button view behavior
 class ButtonDelegate extends WatchUi.BehaviorDelegate {
-
     //! Constructor
     public function initialize() {
         BehaviorDelegate.initialize();
@@ -34,13 +33,15 @@ class ButtonDelegate extends WatchUi.BehaviorDelegate {
     //! @return true if handled, false otherwise
     public function onMenu() as Boolean {
         if (Attention has :vibrate) {
-            var vibrateData = [new Attention.VibeProfile(25, 100),
-                    new Attention.VibeProfile(50, 100),
-                    new Attention.VibeProfile(75, 100),
-                    new Attention.VibeProfile(100, 100),
-                    new Attention.VibeProfile(75, 100),
-                    new Attention.VibeProfile(50, 100),
-                    new Attention.VibeProfile(25, 100)] as Array<VibeProfile>;
+            var vibrateData = [
+                new Attention.VibeProfile(25, 100),
+                new Attention.VibeProfile(50, 100),
+                new Attention.VibeProfile(75, 100),
+                new Attention.VibeProfile(100, 100),
+                new Attention.VibeProfile(75, 100),
+                new Attention.VibeProfile(50, 100),
+                new Attention.VibeProfile(25, 100),
+            ] as Array<VibeProfile>;
 
             Attention.vibrate(vibrateData);
         }

@@ -45,11 +45,23 @@ class PrimatesDelegate extends WatchUi.BehaviorDelegate {
     //! @return true if handled, false otherwise
     public function onSelect() as Boolean {
         if (_index == 0) {
-            WatchUi.pushView(new $.ApesView(), new $.DetailsDelegate(), WatchUi.SLIDE_UP);
+            WatchUi.pushView(
+                new $.ApesView(),
+                new $.DetailsDelegate(),
+                WatchUi.SLIDE_UP
+            );
         } else if (_index == 1) {
-            WatchUi.pushView(new $.MonkeysView(), new $.DetailsDelegate(), WatchUi.SLIDE_UP);
+            WatchUi.pushView(
+                new $.MonkeysView(),
+                new $.DetailsDelegate(),
+                WatchUi.SLIDE_UP
+            );
         } else if (_index == 2) {
-            WatchUi.pushView(new $.ProsimiansView(), new $.DetailsDelegate(), WatchUi.SLIDE_UP);
+            WatchUi.pushView(
+                new $.ProsimiansView(),
+                new $.DetailsDelegate(),
+                WatchUi.SLIDE_UP
+            );
         }
         return true;
     }

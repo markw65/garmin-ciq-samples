@@ -11,12 +11,11 @@ enum Align {
     ALIGN_BOTTOM_RIGHT,
     ALIGN_BOTTOM_LEFT,
     ALIGN_TOP_RIGHT,
-    ALIGN_TOP_LEFT
+    ALIGN_TOP_LEFT,
 }
 
 //! Graphic to indicate which page the user is on
 class PageIndicator {
-
     private var _size as Number;
     private var _selectedColor as ColorType;
     private var _notSelectedColor as ColorType;
@@ -29,7 +28,13 @@ class PageIndicator {
     //! @param notSelectedColor Color to use for non-selected pages
     //! @param alignment How to align the graphic
     //! @param margin Amount of margin for the graphic
-    public function initialize(size as Number, selectedColor as ColorValue, notSelectedColor as ColorValue, alignment as Align, margin as Number) {
+    public function initialize(
+        size as Number,
+        selectedColor as ColorValue,
+        notSelectedColor as ColorValue,
+        alignment as Align,
+        margin as Number
+    ) {
         _size = size;
         _selectedColor = selectedColor;
         _notSelectedColor = notSelectedColor;
@@ -70,9 +75,8 @@ class PageIndicator {
                 dc.setColor(_notSelectedColor, Graphics.COLOR_TRANSPARENT);
             }
 
-            var tempX = (x + (i * height)) + height / 2;
+            var tempX = x + i * height + height / 2;
             dc.fillCircle(tempX, y, height / 2);
         }
     }
-
 }

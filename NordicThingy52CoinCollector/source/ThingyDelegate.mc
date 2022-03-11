@@ -24,9 +24,18 @@ class ThingyDelegate extends BluetoothLowEnergy.BleDelegate {
     //! Handle new Scan Results being received
     //! @param scanResults An iterator of new scan result objects
     public function onScanResults(scanResults as Iterator) as Void {
-        for (var result = scanResults.next(); result != null; result = scanResults.next()) {
+        for (
+            var result = scanResults.next();
+            result != null;
+            result = scanResults.next()
+        ) {
             if (result instanceof ScanResult) {
-                if (contains(result.getServiceUuids(), _profileManager.THINGY_CONFIGURATION_SERVICE)) {
+                if (
+                    contains(
+                        result.getServiceUuids(),
+                        _profileManager.THINGY_CONFIGURATION_SERVICE
+                    )
+                ) {
                     broadcastScanResult(result);
                 }
             }
@@ -36,7 +45,10 @@ class ThingyDelegate extends BluetoothLowEnergy.BleDelegate {
     //! Handle pairing and connecting to a device
     //! @param device The device state that was changed
     //! @param state The state of the connection
-    public function onConnectedStateChanged(device as Device, state as ConnectionState) as Void {
+    public function onConnectedStateChanged(
+        device as Device,
+        state as ConnectionState
+    ) as Void {
         var onConnection = _onConnection;
         if (onConnection != null) {
             if (onConnection.stillAlive()) {
@@ -48,11 +60,17 @@ class ThingyDelegate extends BluetoothLowEnergy.BleDelegate {
     //! Handle the completion of a write operation on a characteristic
     //! @param characteristic The characteristic that was written
     //! @param status The BluetoothLowEnergy status indicating the result of the operation
-    public function onCharacteristicWrite(characteristic as Characteristic, status as Status) as Void {
+    public function onCharacteristicWrite(
+        characteristic as Characteristic,
+        status as Status
+    ) as Void {
         var onCharWrite = _onCharWrite;
         if (onCharWrite != null) {
             if (onCharWrite.stillAlive()) {
-                (onCharWrite.get() as DeviceManager).procCharWrite(characteristic, status);
+                (onCharWrite.get() as DeviceManager).procCharWrite(
+                    characteristic,
+                    status
+                );
             }
         }
     }
@@ -81,7 +99,9 @@ class ThingyDelegate extends BluetoothLowEnergy.BleDelegate {
         var onScanResult = _onScanResult;
         if (onScanResult != null) {
             if (onScanResult.stillAlive()) {
-                (onScanResult.get() as DeviceManager).procScanResult(scanResult);
+                (onScanResult.get() as DeviceManager).procScanResult(
+                    scanResult
+                );
             }
         }
     }

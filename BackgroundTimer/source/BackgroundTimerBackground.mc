@@ -15,7 +15,6 @@ import Toybox.System;
 //! we should attempt to notify the user.
 (:background)
 class BackgroundTimerServiceDelegate extends System.ServiceDelegate {
-
     //! Constructor
     public function initialize() {
         ServiceDelegate.initialize();
@@ -25,10 +24,11 @@ class BackgroundTimerServiceDelegate extends System.ServiceDelegate {
     //! and the main application is not open. Prompt the user to let them
     //! know the timer expired.
     public function onTemporalEvent() as Void {
-
         // Use background resources if they are available
         if (Application has :loadResource) {
-            Background.requestApplicationWake(Application.loadResource($.Rez.Strings.TimerExpired) as String);
+            Background.requestApplicationWake(
+                Application.loadResource($.Rez.Strings.TimerExpired) as String
+            );
         } else {
             Background.requestApplicationWake("Your timer has expired!");
         }

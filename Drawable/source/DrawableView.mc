@@ -9,7 +9,6 @@ import Toybox.WatchUi;
 
 //! View class for Drawable
 class DrawableView extends WatchUi.View {
-
     private var _train as Drawable;
     private var _backdrop as Drawable;
     private var _cloud as Bitmap;
@@ -19,18 +18,29 @@ class DrawableView extends WatchUi.View {
         View.initialize();
         _train = new $.Rez.Drawables.train();
         _backdrop = new $.Rez.Drawables.backdrop();
-        _cloud = new WatchUi.Bitmap({:rezId=>$.Rez.Drawables.cloud, :locX=>10, :locY=>30});
+        _cloud = new WatchUi.Bitmap({
+            :rezId => $.Rez.Drawables.cloud,
+            :locX => 10,
+            :locY => 30,
+        });
     }
 
     //! Load the resources
     //! @param dc Device context
     public function onLayout(dc as Dc) as Void {
-        WatchUi.animate(_cloud, :locX, WatchUi.ANIM_TYPE_LINEAR, 10, dc.getWidth() + 50, 10, null);
+        WatchUi.animate(
+            _cloud,
+            :locX,
+            WatchUi.ANIM_TYPE_LINEAR,
+            10,
+            dc.getWidth() + 50,
+            10,
+            null
+        );
     }
 
     //! Restore the state of the app and prepare the view to be shown
-    public function onShow() as Void {
-    }
+    public function onShow() as Void {}
 
     //! Update the view
     //! @param dc Device context
@@ -41,5 +51,4 @@ class DrawableView extends WatchUi.View {
         _train.draw(dc);
         _cloud.draw(dc);
     }
-
 }

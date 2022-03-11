@@ -16,25 +16,42 @@ const MINUTE_FORMAT = "%02d";
 
 //! Picker that allows the user to choose a time
 class TimePicker extends WatchUi.Picker {
-
     //! Constructor
     public function initialize() {
-        var title = new WatchUi.Text({:text=>$.Rez.Strings.timePickerTitle, :locX=>WatchUi.LAYOUT_HALIGN_CENTER,
-            :locY=>WatchUi.LAYOUT_VALIGN_BOTTOM, :color=>Graphics.COLOR_WHITE});
+        var title = new WatchUi.Text({
+            :text => $.Rez.Strings.timePickerTitle,
+            :locX => WatchUi.LAYOUT_HALIGN_CENTER,
+            :locY => WatchUi.LAYOUT_VALIGN_BOTTOM,
+            :color => Graphics.COLOR_WHITE,
+        });
         var factories;
 
         if (System.getDeviceSettings().is24Hour) {
-            factories = new Array<PickerFactory or Text>[$.FACTORY_COUNT_24_HOUR];
+            factories = new Array<
+            PickerFactory or Text
+            >[$.FACTORY_COUNT_24_HOUR];
             factories[0] = new $.NumberFactory(0, 23, 1, {});
         } else {
-            factories = new Array<PickerFactory or Text>[$.FACTORY_COUNT_12_HOUR];
+            factories = new Array<
+            PickerFactory or Text
+            >[$.FACTORY_COUNT_12_HOUR];
             factories[0] = new $.NumberFactory(1, 12, 1, {});
-            factories[3] = new $.WordFactory([$.Rez.Strings.morning, $.Rez.Strings.afternoon] as Array<Symbol>, {});
+            factories[3] = new $.WordFactory(
+                [$.Rez.Strings.morning, $.Rez.Strings.afternoon] as Array<Symbol>,
+                {}
+            );
         }
 
-        factories[1] = new WatchUi.Text({:text=>$.Rez.Strings.timeSeparator, :font=>Graphics.FONT_MEDIUM,
-            :locX=>WatchUi.LAYOUT_HALIGN_CENTER, :locY=>WatchUi.LAYOUT_VALIGN_CENTER, :color=>Graphics.COLOR_WHITE});
-        factories[2] = new $.NumberFactory(0, 59, 1, {:format=>$.MINUTE_FORMAT});
+        factories[1] = new WatchUi.Text({
+            :text => $.Rez.Strings.timeSeparator,
+            :font => Graphics.FONT_MEDIUM,
+            :locX => WatchUi.LAYOUT_HALIGN_CENTER,
+            :locY => WatchUi.LAYOUT_VALIGN_CENTER,
+            :color => Graphics.COLOR_WHITE,
+        });
+        factories[2] = new $.NumberFactory(0, 59, 1, {
+            :format => $.MINUTE_FORMAT,
+        });
 
         var time = splitStoredTime(factories.size());
         var defaults = new Array<Number>[factories.size()];
@@ -54,7 +71,11 @@ class TimePicker extends WatchUi.Picker {
             }
         }
 
-        Picker.initialize({:title=>title, :pattern=>factories, :defaults=>defaults});
+        Picker.initialize({
+            :title => title,
+            :pattern => factories,
+            :defaults => defaults,
+        });
     }
 
     //! Update the view
@@ -77,17 +98,28 @@ class TimePicker extends WatchUi.Picker {
             defaults = new Array<String>[factoryCount - 1];
 
             // Parse the stored time from the format HH:MIN AM|PM
-            separatorIndex = storedValue.find(WatchUi.loadResource($.Rez.Strings.timeSeparator) as String);
+            separatorIndex = storedValue.find(
+                WatchUi.loadResource($.Rez.Strings.timeSeparator) as String
+            );
             if (separatorIndex != null) {
                 defaults[0] = storedValue.substring(0, separatorIndex);
 
                 if (factoryCount == $.FACTORY_COUNT_24_HOUR) {
-                    defaults[1] = storedValue.substring(separatorIndex + 1, storedValue.length());
+                    defaults[1] = storedValue.substring(
+                        separatorIndex + 1,
+                        storedValue.length()
+                    );
                 } else {
                     var spaceIndex = storedValue.find(" ");
                     if (spaceIndex != null) {
-                        defaults[1] = storedValue.substring(separatorIndex + 1, spaceIndex);
-                        defaults[2] = storedValue.substring(spaceIndex + 1, storedValue.length());
+                        defaults[1] = storedValue.substring(
+                            separatorIndex + 1,
+                            spaceIndex
+                        );
+                        defaults[2] = storedValue.substring(
+                            spaceIndex + 1,
+                            storedValue.length()
+                        );
                     } else {
                         defaults = null;
                     }
@@ -103,7 +135,6 @@ class TimePicker extends WatchUi.Picker {
 
 //! Responds to a time picker selection or cancellation
 class TimePickerDelegate extends WatchUi.PickerDelegate {
-
     //! Constructor
     public function initialize() {
         PickerDelegate.initialize();
@@ -123,8 +154,11 @@ class TimePickerDelegate extends WatchUi.PickerDelegate {
         var hour = values[0];
         var min = values[2];
 
-        if ((hour != null) && (min != null)) {
-            var time = hour + (WatchUi.loadResource($.Rez.Strings.timeSeparator) as String) + min.format($.MINUTE_FORMAT);
+        if (hour != null && min != null) {
+            var time =
+                hour +
+                (WatchUi.loadResource($.Rez.Strings.timeSeparator) as String) +
+                min.format($.MINUTE_FORMAT);
 
             if (values.size() == $.FACTORY_COUNT_12_HOUR) {
                 var dayPart = values[3];
@@ -138,5 +172,4 @@ class TimePickerDelegate extends WatchUi.PickerDelegate {
         WatchUi.popView(WatchUi.SLIDE_IMMEDIATE);
         return true;
     }
-
 }

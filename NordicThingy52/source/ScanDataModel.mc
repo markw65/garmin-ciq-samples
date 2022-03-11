@@ -44,7 +44,7 @@ class ScanDataModel {
 
     //! Update display to next result
     public function nextResult() as Void {
-        if (_displayResult < (_scanResults.size() - 1)) {
+        if (_displayResult < _scanResults.size() - 1) {
             _displayResult++;
             WatchUi.requestUpdate();
         }

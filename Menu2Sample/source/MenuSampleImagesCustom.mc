@@ -11,22 +11,58 @@ import Toybox.WatchUi;
 //! Create the Images custom menu
 function pushImagesCustom() as Void {
     var customMenu = new $.ImagesMenu(80, Graphics.COLOR_BLACK);
-    customMenu.addItem(new $.CustomImagesItem(:bear, "Bear", WatchUi.loadResource($.Rez.Drawables.bear) as BitmapResource));
-    customMenu.addItem(new $.CustomImagesItem(:dog, "Dog", WatchUi.loadResource($.Rez.Drawables.dog) as BitmapResource));
-    customMenu.addItem(new $.CustomImagesItem(:fox, "Fox", WatchUi.loadResource($.Rez.Drawables.fox) as BitmapResource));
-    customMenu.addItem(new $.CustomImagesItem(:mouse, "Mouse", WatchUi.loadResource($.Rez.Drawables.mouse) as BitmapResource));
-    customMenu.addItem(new $.CustomImagesItem(:turtle, "Turtle", WatchUi.loadResource($.Rez.Drawables.turtle) as BitmapResource));
-    WatchUi.pushView(customMenu, new $.ImagesCustomDelegate(), WatchUi.SLIDE_UP);
+    customMenu.addItem(
+        new $.CustomImagesItem(
+            :bear,
+            "Bear",
+            WatchUi.loadResource($.Rez.Drawables.bear) as BitmapResource
+        )
+    );
+    customMenu.addItem(
+        new $.CustomImagesItem(
+            :dog,
+            "Dog",
+            WatchUi.loadResource($.Rez.Drawables.dog) as BitmapResource
+        )
+    );
+    customMenu.addItem(
+        new $.CustomImagesItem(
+            :fox,
+            "Fox",
+            WatchUi.loadResource($.Rez.Drawables.fox) as BitmapResource
+        )
+    );
+    customMenu.addItem(
+        new $.CustomImagesItem(
+            :mouse,
+            "Mouse",
+            WatchUi.loadResource($.Rez.Drawables.mouse) as BitmapResource
+        )
+    );
+    customMenu.addItem(
+        new $.CustomImagesItem(
+            :turtle,
+            "Turtle",
+            WatchUi.loadResource($.Rez.Drawables.turtle) as BitmapResource
+        )
+    );
+    WatchUi.pushView(
+        customMenu,
+        new $.ImagesCustomDelegate(),
+        WatchUi.SLIDE_UP
+    );
 }
 
 //! This is the Images custom menu, which shows an
 //! image and text for each item
 class ImagesMenu extends WatchUi.CustomMenu {
-
     //! Constructor
     //! @param itemHeight The pixel height of menu items rendered by this menu
     //! @param backgroundColor The color for the menu background
-    public function initialize(itemHeight as Number, backgroundColor as ColorType) {
+    public function initialize(
+        itemHeight as Number,
+        backgroundColor as ColorType
+    ) {
         CustomMenu.initialize(itemHeight, backgroundColor, {});
     }
 
@@ -38,13 +74,18 @@ class ImagesMenu extends WatchUi.CustomMenu {
         dc.drawLine(0, dc.getHeight() - 2, dc.getWidth(), dc.getHeight() - 2);
         dc.setPenWidth(1);
         dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(dc.getWidth() / 2, dc.getHeight() / 2, Graphics.FONT_LARGE, "Images", Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
+        dc.drawText(
+            dc.getWidth() / 2,
+            dc.getHeight() / 2,
+            Graphics.FONT_LARGE,
+            "Images",
+            Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER
+        );
     }
 }
 
 //! This is the menu input delegate for the images custom menu
 class ImagesCustomDelegate extends WatchUi.Menu2InputDelegate {
-
     //! Constructor
     public function initialize() {
         Menu2InputDelegate.initialize();
@@ -65,7 +106,6 @@ class ImagesCustomDelegate extends WatchUi.Menu2InputDelegate {
 //! This is the custom item drawable.
 //! It draws the item's bitmap and label.
 class CustomImagesItem extends WatchUi.CustomMenuItem {
-
     private var _label as String;
     private var _bitmap as BitmapResource;
     private var _bitmapOffset as Number;
@@ -74,7 +114,11 @@ class CustomImagesItem extends WatchUi.CustomMenuItem {
     //! @param id The identifier for this item
     //! @param label Text to display
     //! @param bitmap Color of the text
-    public function initialize(id as Symbol, label as String, bitmap as BitmapResource) {
+    public function initialize(
+        id as Symbol,
+        label as String,
+        bitmap as BitmapResource
+    ) {
         CustomMenuItem.initialize(id, {});
         _label = label;
         _bitmap = bitmap;
@@ -98,7 +142,12 @@ class CustomImagesItem extends WatchUi.CustomMenuItem {
         dc.drawBitmap(bmXY, bmXY, _bitmap);
 
         dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(dc.getHeight(), dc.getHeight() / 2, font, _label, Graphics.TEXT_JUSTIFY_LEFT | Graphics.TEXT_JUSTIFY_VCENTER);
+        dc.drawText(
+            dc.getHeight(),
+            dc.getHeight() / 2,
+            font,
+            _label,
+            Graphics.TEXT_JUSTIFY_LEFT | Graphics.TEXT_JUSTIFY_VCENTER
+        );
     }
 }
-

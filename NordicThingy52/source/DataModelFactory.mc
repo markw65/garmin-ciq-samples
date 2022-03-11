@@ -21,7 +21,10 @@ class DataModelFactory {
     //! Constructor
     //! @param delegate The BLE delegate to use for the models
     //! @param profileManager The profile manager to use for a profile model
-    public function initialize(delegate as ThingyDelegate, profileManager as ProfileManager) {
+    public function initialize(
+        delegate as ThingyDelegate,
+        profileManager as ProfileManager
+    ) {
         _delegate = delegate;
         _profileManager = profileManager;
     }
@@ -32,7 +35,7 @@ class DataModelFactory {
         var scanDataModel = _scanDataModel;
         if (scanDataModel != null) {
             if (scanDataModel.stillAlive()) {
-                return (scanDataModel.get() as ScanDataModel);
+                return scanDataModel.get() as ScanDataModel;
             }
         }
 
@@ -45,11 +48,13 @@ class DataModelFactory {
     //! Get a device data model instance
     //! @param scanResult The scan result to use for a new model
     //! @return The current device data model or a new one
-    public function getDeviceDataModel(scanResult as ScanResult) as DeviceDataModel {
+    public function getDeviceDataModel(
+        scanResult as ScanResult
+    ) as DeviceDataModel {
         var deviceDataModel = _deviceDataModel;
         if (deviceDataModel != null) {
             if (deviceDataModel.stillAlive()) {
-                return (deviceDataModel.get() as DeviceDataModel);
+                return deviceDataModel.get() as DeviceDataModel;
             }
         }
 
@@ -62,15 +67,21 @@ class DataModelFactory {
     //! Get a environment profile model instance
     //! @param device The device to use for a new model
     //! @return The current environment profile model or a new one
-    public function getEnvironmentModel(device as Device) as EnvironmentProfileModel {
+    public function getEnvironmentModel(
+        device as Device
+    ) as EnvironmentProfileModel {
         var envModel = _envModel;
         if (envModel != null) {
             if (envModel.stillAlive()) {
-                return (envModel.get() as EnvironmentProfileModel);
+                return envModel.get() as EnvironmentProfileModel;
             }
         }
 
-        var dataModel = new $.EnvironmentProfileModel(_delegate, _profileManager, device);
+        var dataModel = new $.EnvironmentProfileModel(
+            _delegate,
+            _profileManager,
+            device
+        );
         _envModel = dataModel.weak();
 
         return dataModel;

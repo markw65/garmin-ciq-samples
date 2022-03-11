@@ -16,8 +16,18 @@ class MO2Field extends WatchUi.DataField {
     private const BORDER_PAD = 4;
     private const UNITS_SPACING = 2;
 
-    private const _fonts as Array<FontDefinition> = [Graphics.FONT_XTINY, Graphics.FONT_TINY, Graphics.FONT_SMALL, Graphics.FONT_MEDIUM, Graphics.FONT_LARGE,
-             Graphics.FONT_NUMBER_MILD, Graphics.FONT_NUMBER_MEDIUM, Graphics.FONT_NUMBER_HOT, Graphics.FONT_NUMBER_THAI_HOT] as Array<FontDefinition>;
+    private
+    const _fonts as Array<FontDefinition> = [
+        Graphics.FONT_XTINY,
+        Graphics.FONT_TINY,
+        Graphics.FONT_SMALL,
+        Graphics.FONT_MEDIUM,
+        Graphics.FONT_LARGE,
+        Graphics.FONT_NUMBER_MILD,
+        Graphics.FONT_NUMBER_MEDIUM,
+        Graphics.FONT_NUMBER_HOT,
+        Graphics.FONT_NUMBER_THAI_HOT,
+    ] as Array<FontDefinition>;
 
     // Label Variables
     private const _labelString = "M02 Data";
@@ -75,12 +85,16 @@ class MO2Field extends WatchUi.DataField {
 
         // Units width does not change, compute only once
         if (_hCUnitsWidth == null) {
-            _hCUnitsWidth = dc.getTextWidthInPixels(_hCUnitsString, _unitsFont) + UNITS_SPACING;
+            _hCUnitsWidth =
+                dc.getTextWidthInPixels(_hCUnitsString, _unitsFont) +
+                UNITS_SPACING;
         }
         var hCUnitsWidth = _hCUnitsWidth as Number;
 
         if (_hPUnitsWidth == null) {
-            _hPUnitsWidth = dc.getTextWidthInPixels(_hPUnitsString, _unitsFont) + UNITS_SPACING;
+            _hPUnitsWidth =
+                dc.getTextWidthInPixels(_hPUnitsString, _unitsFont) +
+                UNITS_SPACING;
         }
         var hPUnitsWidth = _hPUnitsWidth as Number;
 
@@ -88,13 +102,21 @@ class MO2Field extends WatchUi.DataField {
         _labelX = width / 2;
 
         // Compute data width/height for both layouts
-        var hLayoutWidth = (width - (4 * BORDER_PAD)) / 2;
-        var hLayoutHeight = height - (2 * BORDER_PAD) - top;
-        var hLayoutFontIdx = selectFont(dc, (hLayoutWidth - hCUnitsWidth), hLayoutHeight);
+        var hLayoutWidth = (width - 4 * BORDER_PAD) / 2;
+        var hLayoutHeight = height - 2 * BORDER_PAD - top;
+        var hLayoutFontIdx = selectFont(
+            dc,
+            hLayoutWidth - hCUnitsWidth,
+            hLayoutHeight
+        );
 
-        var vLayoutWidth = width - (2 * BORDER_PAD);
-        var vLayoutHeight = (height - top - (3 * BORDER_PAD)) / 2;
-        var vLayoutFontIdx = selectFont(dc, (vLayoutWidth - hCUnitsWidth), vLayoutHeight);
+        var vLayoutWidth = width - 2 * BORDER_PAD;
+        var vLayoutHeight = (height - top - 3 * BORDER_PAD) / 2;
+        var vLayoutFontIdx = selectFont(
+            dc,
+            vLayoutWidth - hCUnitsWidth,
+            vLayoutHeight
+        );
 
         // Use the horizontal layout if it supports a larger font
         if (hLayoutFontIdx > vLayoutFontIdx) {
@@ -102,24 +124,33 @@ class MO2Field extends WatchUi.DataField {
             _dataFontAscent = Graphics.getFontAscent(_dataFont);
 
             // Compute the draw location of the Hemoglobin Concentration data
-            _hCX = BORDER_PAD + (hLayoutWidth / 2) - (hCUnitsWidth / 2);
-            _hCY = (height - top) / 2 + top - (_dataFontAscent / 2);
+            _hCX = BORDER_PAD + hLayoutWidth / 2 - hCUnitsWidth / 2;
+            _hCY = (height - top) / 2 + top - _dataFontAscent / 2;
 
             // Compute the center of the Hemo Percentage data
-            _hPX = (2 * BORDER_PAD) + hLayoutWidth + (hLayoutWidth / 2) - (hPUnitsWidth / 2);
+            _hPX =
+                2 * BORDER_PAD +
+                hLayoutWidth +
+                hLayoutWidth / 2 -
+                hPUnitsWidth / 2;
             _hPY = _hCY;
 
             // Use a separator line for horizontal layout
-            _separator = [(width / 2), top + BORDER_PAD, (width / 2), height - BORDER_PAD] as Array<Number>;
+            _separator = [
+                width / 2,
+                top + BORDER_PAD,
+                width / 2,
+                height - BORDER_PAD,
+            ] as Array<Number>;
         } else {
             // otherwise, use the vertical layout
             _dataFont = _fonts[vLayoutFontIdx];
             _dataFontAscent = Graphics.getFontAscent(_dataFont);
 
-            _hCX = BORDER_PAD + (vLayoutWidth / 2) - (hCUnitsWidth / 2);
-            _hCY = top + BORDER_PAD + (vLayoutHeight / 2) - (_dataFontAscent / 2);
+            _hCX = BORDER_PAD + vLayoutWidth / 2 - hCUnitsWidth / 2;
+            _hCY = top + BORDER_PAD + vLayoutHeight / 2 - _dataFontAscent / 2;
 
-            _hPX = BORDER_PAD + (vLayoutWidth / 2) - (hPUnitsWidth / 2);
+            _hPX = BORDER_PAD + vLayoutWidth / 2 - hPUnitsWidth / 2;
             _hPY = _hCY + BORDER_PAD + vLayoutHeight;
 
             // Do not use a separator line for vertical layout
@@ -135,13 +166,17 @@ class MO2Field extends WatchUi.DataField {
     //! @param width Width to fit in
     //! @param height Height to fit in
     //! @return Index of the font that fits
-    private function selectFont(dc as Dc, width as Number, height as Number) as Number {
+    private function selectFont(
+        dc as Dc,
+        width as Number,
+        height as Number
+    ) as Number {
         var testString = "88.88"; // Dummy string to test data width
         var fontIdx;
         // Search through fonts from biggest to smallest
-        for (fontIdx = (_fonts.size() - 1); fontIdx > 0; fontIdx--) {
+        for (fontIdx = _fonts.size() - 1; fontIdx > 0; fontIdx--) {
             var dimensions = dc.getTextDimensions(testString, _fonts[fontIdx]);
-            if ((dimensions[0] <= width) && (dimensions[1] <= height)) {
+            if (dimensions[0] <= width && dimensions[1] <= height) {
                 // If this font fits, it is the biggest one that does
                 break;
             }
@@ -166,34 +201,93 @@ class MO2Field extends WatchUi.DataField {
         dc.setColor(fgColor, Graphics.COLOR_TRANSPARENT);
 
         // Draw the field label
-        dc.drawText(_labelX, _labelY, _labelFont, _labelString, Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(
+            _labelX,
+            _labelY,
+            _labelFont,
+            _labelString,
+            Graphics.TEXT_JUSTIFY_CENTER
+        );
 
         // Update status
         var sensor = _sensor;
         if (sensor == null) {
-            dc.drawText(_xCenter, _yCenter, Graphics.FONT_MEDIUM, "No Channel!", Graphics.TEXT_JUSTIFY_CENTER);
+            dc.drawText(
+                _xCenter,
+                _yCenter,
+                Graphics.FONT_MEDIUM,
+                "No Channel!",
+                Graphics.TEXT_JUSTIFY_CENTER
+            );
         } else if (sensor.isSearching()) {
-            dc.drawText(_xCenter, _yCenter, Graphics.FONT_MEDIUM, "Searching...", Graphics.TEXT_JUSTIFY_CENTER);
+            dc.drawText(
+                _xCenter,
+                _yCenter,
+                Graphics.FONT_MEDIUM,
+                "Searching...",
+                Graphics.TEXT_JUSTIFY_CENTER
+            );
         } else {
-            var HemoConc = sensor.getData().getTotalHemoConcentration().format("%.2f");
-            var HemoPerc = sensor.getData().getCurrentHemoPercent().format("%.1f");
+            var HemoConc = sensor
+                .getData()
+                .getTotalHemoConcentration()
+                .format("%.2f");
+            var HemoPerc = sensor
+                .getData()
+                .getCurrentHemoPercent()
+                .format("%.1f");
 
             // Draw Hemoglobin Concentration
-            dc.drawText(_hCX, _hCY, _dataFont, HemoConc, Graphics.TEXT_JUSTIFY_CENTER);
-            var x = _hCX + (dc.getTextWidthInPixels(HemoConc, _dataFont) / 2) + UNITS_SPACING;
+            dc.drawText(
+                _hCX,
+                _hCY,
+                _dataFont,
+                HemoConc,
+                Graphics.TEXT_JUSTIFY_CENTER
+            );
+            var x =
+                _hCX +
+                dc.getTextWidthInPixels(HemoConc, _dataFont) / 2 +
+                UNITS_SPACING;
             var y = _hCY + _dataFontAscent - Graphics.getFontAscent(_unitsFont);
-            dc.drawText(x, y, _unitsFont, _hCUnitsString, Graphics.TEXT_JUSTIFY_LEFT);
+            dc.drawText(
+                x,
+                y,
+                _unitsFont,
+                _hCUnitsString,
+                Graphics.TEXT_JUSTIFY_LEFT
+            );
 
             // Draw Hemoglobin Percentage
-            dc.drawText(_hPX, _hPY, _dataFont, HemoPerc, Graphics.TEXT_JUSTIFY_CENTER);
-            x = _hPX + (dc.getTextWidthInPixels(HemoPerc, _dataFont) / 2) + UNITS_SPACING;
+            dc.drawText(
+                _hPX,
+                _hPY,
+                _dataFont,
+                HemoPerc,
+                Graphics.TEXT_JUSTIFY_CENTER
+            );
+            x =
+                _hPX +
+                dc.getTextWidthInPixels(HemoPerc, _dataFont) / 2 +
+                UNITS_SPACING;
             y = _hPY + _dataFontAscent - Graphics.getFontAscent(_unitsFont);
-            dc.drawText(x, y, _unitsFont, _hPUnitsString, Graphics.TEXT_JUSTIFY_LEFT);
+            dc.drawText(
+                x,
+                y,
+                _unitsFont,
+                _hPUnitsString,
+                Graphics.TEXT_JUSTIFY_LEFT
+            );
 
             var separator = _separator;
             if (separator != null) {
                 dc.setColor(fgColor, fgColor);
-                dc.drawLine(separator[0], separator[1], separator[2], separator[3]);
+                dc.drawLine(
+                    separator[0],
+                    separator[1],
+                    separator[2],
+                    separator[3]
+                );
             }
         }
     }
@@ -227,7 +321,6 @@ class MO2Field extends WatchUi.DataField {
     public function onTimerReset() as Void {
         _fitContributor.onTimerReset();
     }
-
 }
 
 //! This app uses ANT to create a Moxy data field

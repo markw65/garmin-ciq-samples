@@ -7,19 +7,41 @@
 import Toybox.BluetoothLowEnergy;
 
 class ProfileManager {
-    public const THINGY_CONFIGURATION_SERVICE = BluetoothLowEnergy.longToUuid(0xEF6801009B354933L, 0x9B1052FFA9740042L);
+    public
+    const THINGY_CONFIGURATION_SERVICE = BluetoothLowEnergy.longToUuid(
+        0xef6801009b354933l,
+        0x9b1052ffa9740042l
+    );
 
-    public const THINGY_SOUND_SERVICE         = BluetoothLowEnergy.longToUuid(0xEF6805009B354933L, 0x9B1052FFA9740042L);
-    public const SOUND_CONFIG_CHARACTERISTIC  = BluetoothLowEnergy.longToUuid(0xEF6805019B354933L, 0x9B1052FFA9740042L);
-    public const SPEAKER_DATA_CHARACTERISTIC  = BluetoothLowEnergy.longToUuid(0xEF6805029B354933L, 0x9B1052FFA9740042L);
+    public
+    const THINGY_SOUND_SERVICE = BluetoothLowEnergy.longToUuid(
+        0xef6805009b354933l,
+        0x9b1052ffa9740042l
+    );
+    public
+    const SOUND_CONFIG_CHARACTERISTIC = BluetoothLowEnergy.longToUuid(
+        0xef6805019b354933l,
+        0x9b1052ffa9740042l
+    );
+    public
+    const SPEAKER_DATA_CHARACTERISTIC = BluetoothLowEnergy.longToUuid(
+        0xef6805029b354933l,
+        0x9b1052ffa9740042l
+    );
 
-    private const _soundProfileDef = {
+    private
+    const _soundProfileDef = {
         :uuid => THINGY_SOUND_SERVICE,
-        :characteristics => [{
-            :uuid => SOUND_CONFIG_CHARACTERISTIC
-        }, {
-            :uuid => SPEAKER_DATA_CHARACTERISTIC
-        }]
+        :characteristics
+        =>
+        [
+            {
+                :uuid => SOUND_CONFIG_CHARACTERISTIC,
+            },
+            {
+                :uuid => SPEAKER_DATA_CHARACTERISTIC,
+            },
+        ],
     };
 
     //! Register the bluetooth profile

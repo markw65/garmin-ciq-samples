@@ -9,7 +9,6 @@ import Toybox.WatchUi;
 
 //! Handle moving between sensor views
 class SensorHistoryDelegate extends WatchUi.BehaviorDelegate {
-
     private var _view as SensorHistoryView;
 
     //! Constructor

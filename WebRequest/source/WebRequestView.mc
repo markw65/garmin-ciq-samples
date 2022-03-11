@@ -19,25 +19,28 @@ class WebRequestView extends WatchUi.View {
 
     //! Load your resources here
     //! @param dc Device context
-    public function onLayout(dc as Dc) as Void {
-    }
+    public function onLayout(dc as Dc) as Void {}
 
     //! Restore the state of the app and prepare the view to be shown
-    public function onShow() as Void {
-    }
+    public function onShow() as Void {}
 
     //! Update the view
     //! @param dc Device Context
     public function onUpdate(dc as Dc) as Void {
         dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_BLACK);
         dc.clear();
-        dc.drawText(dc.getWidth() / 2, dc.getHeight() / 2, Graphics.FONT_MEDIUM, _message, Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
+        dc.drawText(
+            dc.getWidth() / 2,
+            dc.getHeight() / 2,
+            Graphics.FONT_MEDIUM,
+            _message,
+            Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER
+        );
     }
 
     //! Called when this View is removed from the screen. Save the
     //! state of your app here.
-    public function onHide() as Void {
-    }
+    public function onHide() as Void {}
 
     //! Show the result or status of the web request
     //! @param args Data from the web request, or error message

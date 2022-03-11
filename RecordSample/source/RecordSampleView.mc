@@ -11,7 +11,6 @@ import Toybox.System;
 import Toybox.WatchUi;
 
 class BaseInputDelegate extends WatchUi.BehaviorDelegate {
-
     private var _view as RecordSampleView;
 
     //! Constructor
@@ -36,7 +35,6 @@ class BaseInputDelegate extends WatchUi.BehaviorDelegate {
 }
 
 class RecordSampleView extends WatchUi.View {
-
     private var _session as Session?;
 
     //! Constructor
@@ -47,7 +45,11 @@ class RecordSampleView extends WatchUi.View {
     //! Stop the recording if necessary
     public function stopRecording() as Void {
         var session = _session;
-        if ((Toybox has :ActivityRecording) && isSessionRecording() && (session != null)) {
+        if (
+            Toybox has :ActivityRecording &&
+            isSessionRecording() &&
+            session != null
+        ) {
             session.stop();
             session.save();
             _session = null;
@@ -57,7 +59,10 @@ class RecordSampleView extends WatchUi.View {
 
     //! Start recording a session
     public function startRecording() as Void {
-        var session = ActivityRecording.createSession({:name=>"Walk", :sport=>ActivityRecording.SPORT_WALKING});
+        var session = ActivityRecording.createSession({
+            :name => "Walk",
+            :sport => ActivityRecording.SPORT_WALKING,
+        });
         _session = session;
         session.start();
         WatchUi.requestUpdate();
@@ -65,18 +70,15 @@ class RecordSampleView extends WatchUi.View {
 
     //! Load your resources here
     //! @param dc Device context
-    public function onLayout(dc as Dc) as Void {
-    }
+    public function onLayout(dc as Dc) as Void {}
 
     //! Called when this View is removed from the screen. Save the
     //! state of this View here. This includes freeing resources from
     //! memory.
-    public function onHide() as Void {
-    }
+    public function onHide() as Void {}
 
     //! Restore the state of the app and prepare the view to be shown.
-    public function onShow() as Void {
-    }
+    public function onShow() as Void {}
 
     //! Update the view
     //! @param dc Device context
@@ -87,26 +89,56 @@ class RecordSampleView extends WatchUi.View {
         dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
         dc.fillRectangle(0, 0, dc.getWidth(), dc.getHeight());
         dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_WHITE);
-        dc.drawText(dc.getWidth() / 2, 0, Graphics.FONT_XTINY, "M:" + System.getSystemStats().usedMemory, Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(
+            dc.getWidth() / 2,
+            0,
+            Graphics.FONT_XTINY,
+            "M:" + System.getSystemStats().usedMemory,
+            Graphics.TEXT_JUSTIFY_CENTER
+        );
 
         if (Toybox has :ActivityRecording) {
             // Draw the instructions
             if (!isSessionRecording()) {
                 dc.setColor(Graphics.COLOR_BLUE, Graphics.COLOR_WHITE);
-                dc.drawText(dc.getWidth() / 2, dc.getHeight() / 2, Graphics.FONT_MEDIUM, "Press Menu to\nStart Recording", Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
+                dc.drawText(
+                    dc.getWidth() / 2,
+                    dc.getHeight() / 2,
+                    Graphics.FONT_MEDIUM,
+                    "Press Menu to\nStart Recording",
+                    Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER
+                );
             } else {
                 var x = dc.getWidth() / 2;
                 var y = dc.getFontHeight(Graphics.FONT_XTINY);
                 dc.setColor(Graphics.COLOR_RED, Graphics.COLOR_WHITE);
-                dc.drawText(x, y, Graphics.FONT_MEDIUM, "Recording...", Graphics.TEXT_JUSTIFY_CENTER);
+                dc.drawText(
+                    x,
+                    y,
+                    Graphics.FONT_MEDIUM,
+                    "Recording...",
+                    Graphics.TEXT_JUSTIFY_CENTER
+                );
                 y += dc.getFontHeight(Graphics.FONT_MEDIUM);
                 dc.setColor(Graphics.COLOR_BLUE, Graphics.COLOR_WHITE);
-                dc.drawText(x, y, Graphics.FONT_MEDIUM, "Press Menu again\nto Stop and Save\nthe Recording", Graphics.TEXT_JUSTIFY_CENTER);
+                dc.drawText(
+                    x,
+                    y,
+                    Graphics.FONT_MEDIUM,
+                    "Press Menu again\nto Stop and Save\nthe Recording",
+                    Graphics.TEXT_JUSTIFY_CENTER
+                );
             }
         } else {
             // tell the user this sample doesn't work
             dc.setColor(Graphics.COLOR_RED, Graphics.COLOR_WHITE);
-            dc.drawText(dc.getWidth() / 2, dc.getWidth() / 2, Graphics.FONT_MEDIUM, "This product doesn't\nhave FIT Support", Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
+            dc.drawText(
+                dc.getWidth() / 2,
+                dc.getWidth() / 2,
+                Graphics.FONT_MEDIUM,
+                "This product doesn't\nhave FIT Support",
+                Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER
+            );
         }
     }
 
@@ -119,5 +151,4 @@ class RecordSampleView extends WatchUi.View {
         }
         return false;
     }
-
 }

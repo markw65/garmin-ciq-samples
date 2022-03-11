@@ -14,7 +14,10 @@ class ScanDelegate extends WatchUi.BehaviorDelegate {
     //! Constructor
     //! @param scanDataModel The model containing the scan results
     //! @param viewController Object that controls pushing new views
-    public function initialize(scanDataModel as ScanDataModel, viewController as ViewController) {
+    public function initialize(
+        scanDataModel as ScanDataModel,
+        viewController as ViewController
+    ) {
         BehaviorDelegate.initialize();
 
         _scanDataModel = scanDataModel;

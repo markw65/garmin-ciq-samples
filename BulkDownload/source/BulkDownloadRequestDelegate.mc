@@ -29,15 +29,20 @@ class BulkDownloadRequestDelegate {
     //! @option options :context A user-specific context object to pass to the response callback
     //! @option options :maxBandwidth The maximum bandwidth
     //! @option options :fileDownloadProgressCallback A callback method
-    public function makeWebRequest(url as String, params as Dictionary?, options as {
-            :method as HttpRequestMethod,
-            :headers as Dictionary,
-            :responseType as HttpResponseContentType,
-            :context as Object?,
-            :maxBandwidth as Number,
-            :fileDownloadProgressCallback as Method(totalBytesTransferred as Number, fileSize as Number?) as Void
-        }?) as Void {
-        Communications.makeWebRequest(url, params, options, self.method(:onWebResponse));
+    public function makeWebRequest(
+        url as String,
+        params as Dictionary?,
+        options as { :method as HttpRequestMethod, :headers as Dictionary, :responseType
+                    as HttpResponseContentType, :context as Object?, :maxBandwidth
+                    as Number, :fileDownloadProgressCallback as Method(totalBytesTransferred
+                            as Number, fileSize as Number?) as Void }?
+    ) as Void {
+        Communications.makeWebRequest(
+            url,
+            params,
+            options,
+            self.method(:onWebResponse)
+        );
     }
 
     //! Make an image request using the given options.
@@ -48,13 +53,18 @@ class BulkDownloadRequestDelegate {
     //! @option options :maxWidth The maximum width an image should be scaled to
     //! @option options :maxHeight The maximum height an image should be scaled to
     //! @option options :dithering The type of dithering to use when processing the image
-    public function makeImageRequest(url as String, params as Dictionary?, options as {
-            :palette as Array<Number>,
-            :maxWidth as Number,
-            :maxHeight as Number,
-            :dithering as Dithering
-        }) as Void {
-        Communications.makeImageRequest(url, params, options, self.method(:onImageResponse));
+    public function makeImageRequest(
+        url as String,
+        params as Dictionary?,
+        options as { :palette as Array<Number>, :maxWidth as Number, :maxHeight as
+                    Number, :dithering as Dithering }
+    ) as Void {
+        Communications.makeImageRequest(
+            url,
+            params,
+            options,
+            self.method(:onImageResponse)
+        );
     }
 
     //! Handle completed web request
@@ -67,7 +77,10 @@ class BulkDownloadRequestDelegate {
     //! Handle completed image request
     //! @param code The server response code or BLE error
     //! @param data A bitmap from a successful request
-    public function onImageResponse(code as Number, data as BitmapResource?) as Void {
+    public function onImageResponse(
+        code as Number,
+        data as BitmapResource?
+    ) as Void {
         _callback.invoke(code);
     }
 }

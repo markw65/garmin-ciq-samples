@@ -10,16 +10,14 @@ import Toybox.WatchUi;
 
 //! The settings menu
 class DataFieldSettingsMenu extends WatchUi.Menu2 {
-
     //! Constructor
     public function initialize() {
-        Menu2.initialize({:title=>"Settings"});
+        Menu2.initialize({ :title => "Settings" });
     }
 }
 
 //! Handles menu input and stores the menu data
 class DataFieldSettingsMenuDelegate extends WatchUi.Menu2InputDelegate {
-
     //! Constructor
     public function initialize() {
         Menu2InputDelegate.initialize();

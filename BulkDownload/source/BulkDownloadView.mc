@@ -11,7 +11,6 @@ import Toybox.WatchUi;
 
 //! Display the current download status
 class BulkDownloadView extends WatchUi.View {
-
     private var _lines as Array<String>;
 
     //! Constructor
@@ -35,15 +34,31 @@ class BulkDownloadView extends WatchUi.View {
 
         cy -= (_lines.size() * dy) / 2;
         for (var i = 0; i < _lines.size(); ++i) {
-            dc.drawText(cx, cy, font, _lines[i], Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
+            dc.drawText(
+                cx,
+                cy,
+                font,
+                _lines[i],
+                Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER
+            );
             cy += dy;
         }
 
-        var successfulDownloads = Storage.getValue($.ID_TOTAL_SUCCESSFUL_DOWNLOADS);
+        var successfulDownloads = Storage.getValue(
+            $.ID_TOTAL_SUCCESSFUL_DOWNLOADS
+        );
         if (successfulDownloads instanceof Number) {
             if (successfulDownloads > 0) {
-                var downloadStatus = Lang.format("$1$ downloaded", [successfulDownloads]);
-                dc.drawText(cx, cy, font, downloadStatus, Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
+                var downloadStatus = Lang.format("$1$ downloaded", [
+                    successfulDownloads,
+                ]);
+                dc.drawText(
+                    cx,
+                    cy,
+                    font,
+                    downloadStatus,
+                    Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER
+                );
             }
         }
     }

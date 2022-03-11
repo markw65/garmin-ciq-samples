@@ -20,5 +20,4 @@ class DetailsDelegate extends WatchUi.BehaviorDelegate {
         WatchUi.popView(WatchUi.SLIDE_IMMEDIATE);
         return true;
     }
-
 }

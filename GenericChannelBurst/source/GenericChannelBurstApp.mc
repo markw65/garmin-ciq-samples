@@ -11,7 +11,6 @@ import Toybox.WatchUi;
 
 //! This application demonstrates bursting over a Generic Channel in Ant
 class GenericChannelBurstApp extends Application.AppBase {
-
     private const UI_UPDATE_PERIOD_MS = 250;
 
     private var _channelManager as BurstChannelManager;
@@ -39,7 +38,10 @@ class GenericChannelBurstApp extends Application.AppBase {
     //! Return the initial views for the app
     //! @return Array Pair [View, InputDelegate]
     public function getInitialView() as Array<Views or InputDelegates>? {
-        return [new $.GenericChannelBurstView(_channelManager), new $.GenericChannelBurstDelegate(_channelManager)] as Array<Views or InputDelegates>;
+        return [
+            new $.GenericChannelBurstView(_channelManager),
+            new $.GenericChannelBurstDelegate(_channelManager),
+        ] as Array<Views or InputDelegates>;
     }
 
     //! A wrapper function to allow the timer to request a screen update

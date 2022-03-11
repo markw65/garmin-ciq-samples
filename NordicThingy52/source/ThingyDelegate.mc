@@ -26,9 +26,18 @@ class ThingyDelegate extends BluetoothLowEnergy.BleDelegate {
     //! Handle new scan results being received
     //! @param scanResults An iterator of new scan results
     public function onScanResults(scanResults as Iterator) as Void {
-        for (var result = scanResults.next(); result != null; result = scanResults.next()) {
+        for (
+            var result = scanResults.next();
+            result != null;
+            result = scanResults.next()
+        ) {
             if (result instanceof ScanResult) {
-                if (contains(result.getServiceUuids(), _profileManager.THINGY_CONFIGURATION_SERVICE)) {
+                if (
+                    contains(
+                        result.getServiceUuids(),
+                        _profileManager.THINGY_CONFIGURATION_SERVICE
+                    )
+                ) {
                     broadcastScanResult(result);
                 }
             }
@@ -38,7 +47,10 @@ class ThingyDelegate extends BluetoothLowEnergy.BleDelegate {
     //! Handle pairing and connecting to a device
     //! @param device The device state that was changed
     //! @param state The state of the connection
-    public function onConnectedStateChanged(device as Device, state as ConnectionState) as Void {
+    public function onConnectedStateChanged(
+        device as Device,
+        state as ConnectionState
+    ) as Void {
         var onConnection = _onConnection;
         if (null != onConnection) {
             if (onConnection.stillAlive()) {
@@ -50,11 +62,17 @@ class ThingyDelegate extends BluetoothLowEnergy.BleDelegate {
     //! Handle the completion of a write operation on a descriptor
     //! @param descriptor The descriptor that was written
     //! @param status The BluetoothLowEnergy status indicating the result of the operation
-    public function onDescriptorWrite(descriptor as Descriptor, status as Status) as Void {
+    public function onDescriptorWrite(
+        descriptor as Descriptor,
+        status as Status
+    ) as Void {
         var onDescriptorWrite = _onDescriptorWrite;
         if (null != onDescriptorWrite) {
             if (onDescriptorWrite.stillAlive()) {
-                (onDescriptorWrite.get() as EnvironmentProfileModel).onDescriptorWrite(descriptor, status);
+                (onDescriptorWrite.get() as EnvironmentProfileModel).onDescriptorWrite(
+                    descriptor,
+                    status
+                );
             }
         }
     }
@@ -62,11 +80,17 @@ class ThingyDelegate extends BluetoothLowEnergy.BleDelegate {
     //! Handle a characteristic being changed
     //! @param char The characteristic that changed
     //! @param value The updated value of the characteristic
-    public function onCharacteristicChanged(char as Characteristic, value as ByteArray) as Void {
+    public function onCharacteristicChanged(
+        char as Characteristic,
+        value as ByteArray
+    ) as Void {
         var onCharChanged = _onCharChanged;
         if (null != onCharChanged) {
             if (onCharChanged.stillAlive()) {
-                (onCharChanged.get() as EnvironmentProfileModel).onCharacteristicChanged(char, value);
+                (onCharChanged.get() as EnvironmentProfileModel).onCharacteristicChanged(
+                    char,
+                    value
+                );
             }
         }
     }
@@ -85,13 +109,17 @@ class ThingyDelegate extends BluetoothLowEnergy.BleDelegate {
 
     //! Store a new model to handle descriptor writes
     //! @param model The model for descriptors
-    public function notifyDescriptorWrite(model as EnvironmentProfileModel) as Void {
+    public function notifyDescriptorWrite(
+        model as EnvironmentProfileModel
+    ) as Void {
         _onDescriptorWrite = model.weak();
     }
 
     //! Store a new model to handle characteristic changes
     //! @param model The model for characteristics
-    public function notifyCharacteristicChanged(model as EnvironmentProfileModel) as Void {
+    public function notifyCharacteristicChanged(
+        model as EnvironmentProfileModel
+    ) as Void {
         _onCharChanged = model.weak();
     }
 
@@ -101,7 +129,9 @@ class ThingyDelegate extends BluetoothLowEnergy.BleDelegate {
         var onScanResult = _onScanResult;
         if (null != onScanResult) {
             if (onScanResult.stillAlive()) {
-                (onScanResult.get() as ScanDataModel).procScanResult(scanResult);
+                (onScanResult.get() as ScanDataModel).procScanResult(
+                    scanResult
+                );
             }
         }
     }

@@ -12,7 +12,6 @@ import Toybox.WatchUi;
 
 //! The data field alert
 class DataFieldAlertView extends WatchUi.DataFieldAlert {
-
     //! Constructor
     public function initialize() {
         DataFieldAlert.initialize();
@@ -25,7 +24,13 @@ class DataFieldAlertView extends WatchUi.DataFieldAlert {
         dc.clear();
         dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
 
-        dc.drawText(dc.getWidth() / 2, dc.getHeight() / 2 - 30, Graphics.FONT_SMALL, "Alert: 10 sec elapsed", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(
+            dc.getWidth() / 2,
+            dc.getHeight() / 2 - 30,
+            Graphics.FONT_SMALL,
+            "Alert: 10 sec elapsed",
+            Graphics.TEXT_JUSTIFY_CENTER
+        );
     }
 }
 
@@ -48,11 +53,13 @@ class DataField extends WatchUi.SimpleDataField {
     //! Get the information to show in the data field
     //! @param info The updated Activity.Info object
     //! @return The data to show
-    public function compute(info as Info) as Numeric or Duration or String or Null {
+    public function compute(
+        info as Info
+    ) as Numeric or Duration or String or Null {
         var value_picked = "--";
 
         // Cycle between heart rate (int), distance (float), and stopwatch time (Duration)
-        if ((_counter == 0) && (info.currentHeartRate != null)) {
+        if (_counter == 0 && info.currentHeartRate != null) {
             value_picked = info.currentHeartRate;
         } else if (_counter == 1) {
             var elapsedDistance = info.elapsedDistance;
@@ -62,11 +69,18 @@ class DataField extends WatchUi.SimpleDataField {
         } else if (_counter == 2) {
             var timerTime = info.timerTime;
             if (timerTime != null) {
-                var options = {:seconds => (timerTime *  MILLISECONDS_TO_SECONDS).toNumber()};
+                var options = {
+                    :seconds
+                    =>
+                    (timerTime * MILLISECONDS_TO_SECONDS).toNumber(),
+                };
                 value_picked = Time.Gregorian.duration(options);
 
-                if ((WatchUi.DataField has :showAlert) && ((timerTime * MILLISECONDS_TO_SECONDS) > 10.000f)
-                    && !_alertDisplayed) {
+                if (
+                    WatchUi.DataField has :showAlert &&
+                    timerTime * MILLISECONDS_TO_SECONDS > 10.000f &&
+                    !_alertDisplayed
+                ) {
                     WatchUi.DataField.showAlert(new $.DataFieldAlertView());
                     _alertDisplayed = true;
                 }

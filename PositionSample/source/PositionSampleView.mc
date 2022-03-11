@@ -10,7 +10,6 @@ import Toybox.WatchUi;
 
 //! This view displays the position information
 class PositionSampleView extends WatchUi.View {
-
     private var _posnInfo as Info?;
 
     //! Constructor
@@ -20,21 +19,17 @@ class PositionSampleView extends WatchUi.View {
 
     //! Load your resources here
     //! @param dc Device context
-    public function onLayout(dc as Dc) as Void {
-    }
+    public function onLayout(dc as Dc) as Void {}
 
     //! Handle view being hidden
-    public function onHide() as Void {
-    }
+    public function onHide() as Void {}
 
     //! Restore the state of the app and prepare the view to be shown
-    public function onShow() as Void {
-    }
+    public function onShow() as Void {}
 
     //! Update the view
     //! @param dc Device context
     public function onUpdate(dc as Dc) as Void {
-
         // Set background color
         dc.setColor(Graphics.COLOR_TRANSPARENT, Graphics.COLOR_BLACK);
         dc.clear();
@@ -43,31 +38,69 @@ class PositionSampleView extends WatchUi.View {
         if (posnInfo != null) {
             var position = posnInfo.position;
             if (position != null) {
-                var string = "Location lat = " + position.toDegrees()[0].toString();
-                dc.drawText((dc.getWidth() / 2), ((dc.getHeight() / 2) - 40), Graphics.FONT_SMALL, string, Graphics.TEXT_JUSTIFY_CENTER);
-                string = "Location long = " + position.toDegrees()[1].toString();
-                dc.drawText((dc.getWidth() / 2), ((dc.getHeight() / 2) - 20), Graphics.FONT_SMALL, string, Graphics.TEXT_JUSTIFY_CENTER);
+                var string =
+                    "Location lat = " + position.toDegrees()[0].toString();
+                dc.drawText(
+                    dc.getWidth() / 2,
+                    dc.getHeight() / 2 - 40,
+                    Graphics.FONT_SMALL,
+                    string,
+                    Graphics.TEXT_JUSTIFY_CENTER
+                );
+                string =
+                    "Location long = " + position.toDegrees()[1].toString();
+                dc.drawText(
+                    dc.getWidth() / 2,
+                    dc.getHeight() / 2 - 20,
+                    Graphics.FONT_SMALL,
+                    string,
+                    Graphics.TEXT_JUSTIFY_CENTER
+                );
             }
 
             var speed = posnInfo.speed;
             if (speed != null) {
                 var string = "speed = " + speed.toString();
-                dc.drawText((dc.getWidth() / 2), ((dc.getHeight() / 2)), Graphics.FONT_SMALL, string, Graphics.TEXT_JUSTIFY_CENTER);
+                dc.drawText(
+                    dc.getWidth() / 2,
+                    dc.getHeight() / 2,
+                    Graphics.FONT_SMALL,
+                    string,
+                    Graphics.TEXT_JUSTIFY_CENTER
+                );
             }
 
             var altitude = posnInfo.altitude;
             if (altitude != null) {
                 var string = "alt = " + altitude.toString();
-                dc.drawText((dc.getWidth() / 2), ((dc.getHeight() / 2) + 20), Graphics.FONT_SMALL, string, Graphics.TEXT_JUSTIFY_CENTER);
+                dc.drawText(
+                    dc.getWidth() / 2,
+                    dc.getHeight() / 2 + 20,
+                    Graphics.FONT_SMALL,
+                    string,
+                    Graphics.TEXT_JUSTIFY_CENTER
+                );
             }
 
             var heading = posnInfo.heading;
             if (heading != null) {
                 var string = "heading = " + heading.toString();
-                dc.drawText((dc.getWidth() / 2), ((dc.getHeight() / 2) + 40), Graphics.FONT_SMALL, string, Graphics.TEXT_JUSTIFY_CENTER);
+                dc.drawText(
+                    dc.getWidth() / 2,
+                    dc.getHeight() / 2 + 40,
+                    Graphics.FONT_SMALL,
+                    string,
+                    Graphics.TEXT_JUSTIFY_CENTER
+                );
             }
         } else {
-            dc.drawText((dc.getWidth() / 2), (dc.getHeight() / 2), Graphics.FONT_SMALL, "No position info", Graphics.TEXT_JUSTIFY_CENTER);
+            dc.drawText(
+                dc.getWidth() / 2,
+                dc.getHeight() / 2,
+                Graphics.FONT_SMALL,
+                "No position info",
+                Graphics.TEXT_JUSTIFY_CENTER
+            );
         }
     }
 
@@ -77,5 +110,4 @@ class PositionSampleView extends WatchUi.View {
         _posnInfo = info;
         WatchUi.requestUpdate();
     }
-
 }

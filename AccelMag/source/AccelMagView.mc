@@ -50,7 +50,6 @@ class AccelMagView extends WatchUi.View {
         _yMult = 0;
         _accel = new Array<Float>[3];
         _mag = new Array<Float>[3];
-
     }
 
     //! Initialize members based on the screen resolution
@@ -64,12 +63,10 @@ class AccelMagView extends WatchUi.View {
 
         _x = _width / 2;
         _y = _height / 2;
-
     }
 
     //! Restore the state of the app and prepare the view to be shown
-    public function onShow() as Void {
-    }
+    public function onShow() as Void {}
 
     //! Update the view
     //! @param dc Device context
@@ -89,15 +86,15 @@ class AccelMagView extends WatchUi.View {
             dc.drawLine(xArrow, yArrow, _x, _y);
 
             // Draw first arrow tail
-            var xArrowTail = _x + _yMult * _arrowLen / 2;
-            var yArrowTail = _y - _xMult * _arrowLen / 2;
+            var xArrowTail = _x + (_yMult * _arrowLen) / 2;
+            var yArrowTail = _y - (_xMult * _arrowLen) / 2;
             xArrowTail = (xArrowTail + xArrow) / 2;
             yArrowTail = (yArrowTail + yArrow) / 2;
             dc.drawLine(xArrowTail, yArrowTail, _x, _y);
 
             // Draw second arrow tail
-            xArrowTail = _x - _yMult * _arrowLen / 2;
-            yArrowTail = _y + _xMult * _arrowLen / 2;
+            xArrowTail = _x - (_yMult * _arrowLen) / 2;
+            yArrowTail = _y + (_xMult * _arrowLen) / 2;
             xArrowTail = (xArrowTail + xArrow) / 2;
             yArrowTail = (yArrowTail + yArrow) / 2;
             dc.drawLine(xArrowTail, yArrowTail, _x, _y);
@@ -105,21 +102,68 @@ class AccelMagView extends WatchUi.View {
 
         dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
         if (_accel != null) {
-            dc.drawText(_width / 2,  3, Graphics.FONT_TINY, "Ax = " + _accel[0], Graphics.TEXT_JUSTIFY_CENTER);
-            dc.drawText(_width / 2, 23, Graphics.FONT_TINY, "Ay = " + _accel[1], Graphics.TEXT_JUSTIFY_CENTER);
-            dc.drawText(_width / 2, 43, Graphics.FONT_TINY, "Az = " + _accel[2], Graphics.TEXT_JUSTIFY_CENTER);
+            dc.drawText(
+                _width / 2,
+                3,
+                Graphics.FONT_TINY,
+                "Ax = " + _accel[0],
+                Graphics.TEXT_JUSTIFY_CENTER
+            );
+            dc.drawText(
+                _width / 2,
+                23,
+                Graphics.FONT_TINY,
+                "Ay = " + _accel[1],
+                Graphics.TEXT_JUSTIFY_CENTER
+            );
+            dc.drawText(
+                _width / 2,
+                43,
+                Graphics.FONT_TINY,
+                "Az = " + _accel[2],
+                Graphics.TEXT_JUSTIFY_CENTER
+            );
         } else {
-            dc.drawText(_width / 2, 3, Graphics.FONT_TINY, "no Accel", Graphics.TEXT_JUSTIFY_CENTER);
+            dc.drawText(
+                _width / 2,
+                3,
+                Graphics.FONT_TINY,
+                "no Accel",
+                Graphics.TEXT_JUSTIFY_CENTER
+            );
         }
 
         if (_mag != null) {
-            dc.drawText(_width / 2, _height - 70, Graphics.FONT_TINY, "Mx = " + _mag[0], Graphics.TEXT_JUSTIFY_CENTER);
-            dc.drawText(_width / 2, _height - 50, Graphics.FONT_TINY, "My = " + _mag[1], Graphics.TEXT_JUSTIFY_CENTER);
-            dc.drawText(_width / 2, _height - 30, Graphics.FONT_TINY, "Mz = " + _mag[2], Graphics.TEXT_JUSTIFY_CENTER);
+            dc.drawText(
+                _width / 2,
+                _height - 70,
+                Graphics.FONT_TINY,
+                "Mx = " + _mag[0],
+                Graphics.TEXT_JUSTIFY_CENTER
+            );
+            dc.drawText(
+                _width / 2,
+                _height - 50,
+                Graphics.FONT_TINY,
+                "My = " + _mag[1],
+                Graphics.TEXT_JUSTIFY_CENTER
+            );
+            dc.drawText(
+                _width / 2,
+                _height - 30,
+                Graphics.FONT_TINY,
+                "Mz = " + _mag[2],
+                Graphics.TEXT_JUSTIFY_CENTER
+            );
         } else {
-            dc.drawText(_width /2, _height - 30, Graphics.FONT_TINY, "no Mag", Graphics.TEXT_JUSTIFY_CENTER);
+            dc.drawText(
+                _width / 2,
+                _height - 30,
+                Graphics.FONT_TINY,
+                "no Mag",
+                Graphics.TEXT_JUSTIFY_CENTER
+            );
         }
-
     }
 
     //! On a timer interval, read the accelerometer
@@ -134,16 +178,16 @@ class AccelMagView extends WatchUi.View {
             var yAccel = _accel[1] * -1; // Cardinal Y direction is opposite the screen coordinates
 
             // Ignore low acceleration values
-            if ((xAccel > _incrFrict) || (xAccel < -1 * _incrFrict)) {
+            if (xAccel > _incrFrict || xAccel < -1 * _incrFrict) {
                 _xVelocity += xAccel;
             }
-            if ((yAccel > _incrFrict) || (yAccel < -1 * _incrFrict)) {
+            if (yAccel > _incrFrict || yAccel < -1 * _incrFrict) {
                 _yVelocity += yAccel;
             }
 
             // Apply some friction
-            _xVelocity = _xVelocity * _pcntFrict / 100;
-            _yVelocity = _yVelocity * _pcntFrict / 100;
+            _xVelocity = (_xVelocity * _pcntFrict) / 100;
+            _yVelocity = (_yVelocity * _pcntFrict) / 100;
             if (_xVelocity > _incrFrict) {
                 _xVelocity -= _incrFrict;
             } else if (_xVelocity < -1 * _incrFrict) {
@@ -160,39 +204,38 @@ class AccelMagView extends WatchUi.View {
                 _yVelocity = 0;
             }
 
-
             // Move the ball
-            _x += (_xVelocity * _velocityToPix);
-            _y += (_yVelocity * _velocityToPix);
+            _x += _xVelocity * _velocityToPix;
+            _y += _yVelocity * _velocityToPix;
 
             // Check for wall collisions
-            if (_x < (0 + _r)) {
+            if (_x < 0 + _r) {
                 _x = 2 * _r - _x;
                 _xVelocity *= -1;
-                _xVelocity = _xVelocity * _wallLoss / 100; // remove some energy when bouncing
-            } else if (_x >= (_width - _r)) {
+                _xVelocity = (_xVelocity * _wallLoss) / 100; // remove some energy when bouncing
+            } else if (_x >= _width - _r) {
                 _x = 2 * (_width - _r) - _x;
                 _xVelocity *= -1;
-                _xVelocity = _xVelocity * _wallLoss / 100; // remove some energy when bouncing
+                _xVelocity = (_xVelocity * _wallLoss) / 100; // remove some energy when bouncing
             }
 
-            if (_y < (0 + _r)) {
+            if (_y < 0 + _r) {
                 _y = 2 * _r - _y;
                 _yVelocity *= -1;
-                _yVelocity = _yVelocity * _wallLoss / 100; // remove some energy when bouncing
-            } else if (_y >= (_height - _r)) {
+                _yVelocity = (_yVelocity * _wallLoss) / 100; // remove some energy when bouncing
+            } else if (_y >= _height - _r) {
                 _y = 2 * (_height - _r) - _y;
                 _yVelocity *= -1;
-                _yVelocity = _yVelocity * _wallLoss / 100; // remove some energy when bouncing
+                _yVelocity = (_yVelocity * _wallLoss) / 100; // remove some energy when bouncing
             }
         }
 
-        if ((info has :mag) && (info.mag != null)) {
+        if (info has :mag && info.mag != null) {
             _mag = info.mag as Array<Float>;
             var xMag = _mag[0];
             var yMag = _mag[1] * -1; // Cardinal Y direction is opposite the screen coordinates
 
-            var magMagnitude = Math.sqrt(Math.pow(xMag,2) + Math.pow(yMag,2));
+            var magMagnitude = Math.sqrt(Math.pow(xMag, 2) + Math.pow(yMag, 2));
 
             if (magMagnitude != 0) {
                 _xMult = xMag / magMagnitude;
@@ -207,16 +250,14 @@ class AccelMagView extends WatchUi.View {
     }
 
     //! Kick the ball
-    public function kickBall() as Void
-    {
+    public function kickBall() as Void {
         if (_mag != null) {
-            _xVelocity += (_xMult * _hitForce / _velocityToPix).toNumber();
-            _yVelocity += (_yMult * _hitForce / _velocityToPix).toNumber();
+            _xVelocity += ((_xMult * _hitForce) / _velocityToPix).toNumber();
+            _yVelocity += ((_yMult * _hitForce) / _velocityToPix).toNumber();
         }
     }
 
     //! Called when this View is removed from the screen. Save the
     //! state of your app here.
-    public function onHide() as Void {
-    }
+    public function onHide() as Void {}
 }

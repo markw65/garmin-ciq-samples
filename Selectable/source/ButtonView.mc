@@ -9,7 +9,6 @@ import Toybox.WatchUi;
 
 //! Display a back button and a menu icon
 class ButtonView extends WatchUi.View {
-
     //! Constructor
     public function initialize() {
         View.initialize();

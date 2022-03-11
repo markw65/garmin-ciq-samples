@@ -10,7 +10,6 @@ import Toybox.WatchUi;
 
 //! Show the pitch counter data
 class PitchCounterView extends WatchUi.View {
-
     private var _labelCount as Text?;
     private var _labelSamples as Text?;
     private var _labelPeriod as Text?;
@@ -64,5 +63,4 @@ class PitchCounterView extends WatchUi.View {
     public function onHide() as Void {
         _pitchCounter.onStop();
     }
-
 }

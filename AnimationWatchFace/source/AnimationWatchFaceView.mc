@@ -11,7 +11,6 @@ import Toybox.WatchUi;
 
 //! Responds to animation events
 class AnimationDelegate extends WatchUi.AnimationDelegate {
-
     private var _view as AnimationWatchFaceView;
 
     //! Constructor
@@ -24,7 +23,10 @@ class AnimationDelegate extends WatchUi.AnimationDelegate {
     //! Handle an animation event
     //! @param event The animation event
     //! @param options A dictionary of animation options
-    public function onAnimationEvent(event as AnimationEvent, options as Dictionary) as Void {
+    public function onAnimationEvent(
+        event as AnimationEvent,
+        options as Dictionary
+    ) as Void {
         if (event == WatchUi.ANIMATION_EVENT_COMPLETE) {
             var playCount = _view.getPlayCount();
             System.println("onComplete: " + playCount);
@@ -40,7 +42,6 @@ class AnimationDelegate extends WatchUi.AnimationDelegate {
 
 //! Displays the animated watch face
 class AnimationWatchFaceView extends WatchUi.WatchFace {
-
     private var _playCount as Number = 0;
     private var _backgroundAnimationLayer as AnimationLayer;
     private var _foregroundAnimationLayer as AnimationLayer;
@@ -59,7 +60,7 @@ class AnimationWatchFaceView extends WatchUi.WatchFace {
     private const MINOR_FONT = Graphics.FONT_NUMBER_MILD;
     private const GAP = 10;
 
-    private const RAND_BASE = 0x7FFFFFFF;
+    private const RAND_BASE = 0x7fffffff;
 
     //! Constructor
     public function initialize() {
@@ -67,9 +68,9 @@ class AnimationWatchFaceView extends WatchUi.WatchFace {
 
         var settings = System.getDeviceSettings();
         var majorFontHeight = Graphics.getFontHeight(MAJOR_FONT);
-        var majorFontWidth = majorFontHeight * 2 / 3;
+        var majorFontWidth = (majorFontHeight * 2) / 3;
         var minorFontHeight = Graphics.getFontHeight(MINOR_FONT);
-        var minorFontWidth = minorFontHeight * 2 / 3;
+        var minorFontWidth = (minorFontHeight * 2) / 3;
 
         var drawLayerWidth = majorFontWidth * 5;
         var drawLayerHeight = majorFontHeight + GAP + minorFontHeight;
@@ -81,7 +82,7 @@ class AnimationWatchFaceView extends WatchUi.WatchFace {
             (settings.screenWidth - drawLayerWidth) / 2,
             settings.screenHeight / 3,
             drawLayerWidth,
-            drawLayerHeight
+            drawLayerHeight,
         ] as Array<Number>;
 
         // set the text offsets with in the draw layer
@@ -95,20 +96,27 @@ class AnimationWatchFaceView extends WatchUi.WatchFace {
             (_drawLayerArea[2] - partialUpdateWidth) / 2,
             _minorTextOffsetY,
             partialUpdateWidth,
-            partialUpdateHeight
+            partialUpdateHeight,
         ] as Array<Number>;
 
         // seed the random number
         Math.srand(0);
 
         // create animation and draw layers
-        _backgroundAnimationLayer = new WatchUi.AnimationLayer($.Rez.Drawables.backgroundmonkey, null);
+        _backgroundAnimationLayer = new WatchUi.AnimationLayer(
+            $.Rez.Drawables.backgroundmonkey,
+            null
+        );
         _drawLayer = new WatchUi.Layer({
-            :locX=>_drawLayerArea[0],
-            :locY=>_drawLayerArea[1],
-            :width=>_drawLayerArea[2],
-            :height=>_drawLayerArea[3]});
-        _foregroundAnimationLayer = new WatchUi.AnimationLayer($.Rez.Drawables.transparentmonkey, null);
+            :locX => _drawLayerArea[0],
+            :locY => _drawLayerArea[1],
+            :width => _drawLayerArea[2],
+            :height => _drawLayerArea[3],
+        });
+        _foregroundAnimationLayer = new WatchUi.AnimationLayer(
+            $.Rez.Drawables.transparentmonkey,
+            null
+        );
     }
 
     //! Set the layout and layers for the view
@@ -139,7 +147,9 @@ class AnimationWatchFaceView extends WatchUi.WatchFace {
         // alternate the playback between foreground and background animations
         if (_playCount % 4 == 0) {
             _backgroundAnimationLayer.setVisible(true);
-            _backgroundAnimationLayer.play({:delegate=>new $.AnimationDelegate(self)});
+            _backgroundAnimationLayer.play({
+                :delegate => new $.AnimationDelegate(self),
+            });
         } else {
             // set the foreground animation to be visible
             _foregroundAnimationLayer.setVisible(true);
@@ -154,12 +164,20 @@ class AnimationWatchFaceView extends WatchUi.WatchFace {
             var deltaPercX = Math.rand().toDouble() / RAND_BASE;
             var deltaPercY = Math.rand().toDouble() / RAND_BASE;
             var animationRez = _foregroundAnimationLayer.getResource();
-            var x = _drawLayerArea[0] + (_drawLayerArea[2] * deltaPercX).toNumber() - animationRez.getWidth() / 2;
-            var y = _drawLayerArea[1] + (_drawLayerArea[3] * deltaPercY).toNumber() - animationRez.getHeight() / 2;
+            var x =
+                _drawLayerArea[0] +
+                (_drawLayerArea[2] * deltaPercX).toNumber() -
+                animationRez.getWidth() / 2;
+            var y =
+                _drawLayerArea[1] +
+                (_drawLayerArea[3] * deltaPercY).toNumber() -
+                animationRez.getHeight() / 2;
             // reset the x and z (layer) to the new coordinates
             _foregroundAnimationLayer.setLocation(x, y);
             // start the playback
-            _foregroundAnimationLayer.play({:delegate=>new $.AnimationDelegate(self)});
+            _foregroundAnimationLayer.play({
+                :delegate => new $.AnimationDelegate(self),
+            });
         }
         _playCount++;
     }
@@ -185,7 +203,10 @@ class AnimationWatchFaceView extends WatchUi.WatchFace {
         if (drawLayerDc != null) {
             // Get and overlay the current time on top of the animation background
             var clockTime = System.getClockTime();
-            var hourMinString = Lang.format("$1$:$2$", [clockTime.hour, clockTime.min.format("%02d")]);
+            var hourMinString = Lang.format("$1$:$2$", [
+                clockTime.hour,
+                clockTime.min.format("%02d"),
+            ]);
             var secString = Lang.format("$1$", [clockTime.sec.format("%02d")]);
 
             if (isFullUpdate) {
@@ -197,20 +218,36 @@ class AnimationWatchFaceView extends WatchUi.WatchFace {
                     _partialUpdateClip[0],
                     _partialUpdateClip[1],
                     _partialUpdateClip[2],
-                    _partialUpdateClip[3]);
+                    _partialUpdateClip[3]
+                );
             }
 
             // clear the clip region with transparent background color, so the animation rendered in the background
             // can be seen through the overlay
-            drawLayerDc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_TRANSPARENT);
+            drawLayerDc.setColor(
+                Graphics.COLOR_BLACK,
+                Graphics.COLOR_TRANSPARENT
+            );
             drawLayerDc.clear();
 
             // draw clock text
             if (isFullUpdate) {
                 // only re-draw hour/min during full update
-                drawLayerDc.drawText(_majorTextOffsetX, _majorTextOffsetY, MAJOR_FONT, hourMinString, Graphics.TEXT_JUSTIFY_CENTER);
+                drawLayerDc.drawText(
+                    _majorTextOffsetX,
+                    _majorTextOffsetY,
+                    MAJOR_FONT,
+                    hourMinString,
+                    Graphics.TEXT_JUSTIFY_CENTER
+                );
             }
-            drawLayerDc.drawText(_minorTextOffsetX, _minorTextOffsetY, MINOR_FONT, secString, Graphics.TEXT_JUSTIFY_CENTER);
+            drawLayerDc.drawText(
+                _minorTextOffsetX,
+                _minorTextOffsetY,
+                MINOR_FONT,
+                secString,
+                Graphics.TEXT_JUSTIFY_CENTER
+            );
         }
     }
 

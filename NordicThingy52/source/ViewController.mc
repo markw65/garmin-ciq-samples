@@ -22,12 +22,19 @@ class ViewController {
     public function getInitialView() as Array<ScanView or ScanDelegate> {
         var scanDataModel = _modelFactory.getScanDataModel();
 
-        return [new $.ScanView(scanDataModel), new $.ScanDelegate(scanDataModel, self)] as Array<ScanView or ScanDelegate>;
+        return [
+            new $.ScanView(scanDataModel),
+            new $.ScanDelegate(scanDataModel, self),
+        ] as Array<ScanView or ScanDelegate>;
     }
 
     //! Push the scan menu view
     public function pushScanMenu() as Void {
-        WatchUi.pushView(new $.Rez.Menus.MainMenu(), new $.ScanMenuDelegate(), WatchUi.SLIDE_UP);
+        WatchUi.pushView(
+            new $.Rez.Menus.MainMenu(),
+            new $.ScanMenuDelegate(),
+            WatchUi.SLIDE_UP
+        );
     }
 
     //! Push the device view
@@ -35,6 +42,10 @@ class ViewController {
     public function pushDeviceView(scanResult as ScanResult) as Void {
         var deviceDataModel = _modelFactory.getDeviceDataModel(scanResult);
 
-        WatchUi.pushView(new $.DeviceView(deviceDataModel), new $.DeviceDelegate(deviceDataModel), WatchUi.SLIDE_UP);
+        WatchUi.pushView(
+            new $.DeviceView(deviceDataModel),
+            new $.DeviceDelegate(deviceDataModel),
+            WatchUi.SLIDE_UP
+        );
     }
 }

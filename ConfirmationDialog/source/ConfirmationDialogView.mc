@@ -10,7 +10,6 @@ import Toybox.WatchUi;
 
 //! Shows the result of the confirmation dialog
 class ConfirmationDialogView extends WatchUi.View {
-
     private var _resultString as String;
 
     //! Constructor
@@ -26,8 +25,7 @@ class ConfirmationDialogView extends WatchUi.View {
     }
 
     //! Restore the state of the app and prepare the view to be shown
-    public function onShow() as Void {
-    }
+    public function onShow() as Void {}
 
     //! Update the view
     //! @param dc Device Context

@@ -12,7 +12,6 @@ import Toybox.WatchUi;
 //! with different callback frequencies will start counting
 //! the callbacks and will update the screen with the count.
 class TimerApp extends Application.AppBase {
-
     //! Constructor
     public function initialize() {
         AppBase.initialize();
@@ -20,13 +19,11 @@ class TimerApp extends Application.AppBase {
 
     //! Handle app startup
     //! @param state Startup arguments
-    public function onStart(state as Dictionary?) as Void {
-    }
+    public function onStart(state as Dictionary?) as Void {}
 
     //! Handle app shutdown
     //! @param state Shutdown arguments
-    public function onStop(state as Dictionary?) as Void {
-    }
+    public function onStop(state as Dictionary?) as Void {}
 
     //! Return the initial view for the app
     //! @return Array Pair [View, Delegate]
@@ -35,5 +32,4 @@ class TimerApp extends Application.AppBase {
         var delegate = new $.TimerDelegate(view);
         return [view, delegate] as Array<Views or InputDelegates>;
     }
-
 }

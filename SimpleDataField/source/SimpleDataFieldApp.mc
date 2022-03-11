@@ -12,7 +12,6 @@ import Toybox.WatchUi;
 //! between showing heart rate, distance and total time.
 //! It also uses the data field settings and alerts.
 class SimpleDataField extends Application.AppBase {
-
     //! Constructor
     public function initialize() {
         AppBase.initialize();
@@ -20,13 +19,11 @@ class SimpleDataField extends Application.AppBase {
 
     //! Handle app startup
     //! @param state Startup arguments
-    public function onStart(state as Dictionary?) as Void {
-    }
+    public function onStart(state as Dictionary?) as Void {}
 
     //! Handle app shutdown
     //! @param state Shutdown arguments
-    public function onStop(state as Dictionary?) as Void {
-    }
+    public function onStop(state as Dictionary?) as Void {}
 
     //! Return the initial view for the app
     //! @return Array [View]
@@ -37,6 +34,9 @@ class SimpleDataField extends Application.AppBase {
     //! Return the settings view and delegate for the app
     //! @return Array Pair [View, Delegate]
     public function getSettingsView() as Array<Views or InputDelegates>? {
-        return [new $.DataFieldSettingsView(), new $.DataFieldSettingsDelegate()] as Array<Views or InputDelegates>;
+        return [
+            new $.DataFieldSettingsView(),
+            new $.DataFieldSettingsDelegate(),
+        ] as Array<Views or InputDelegates>;
     }
 }

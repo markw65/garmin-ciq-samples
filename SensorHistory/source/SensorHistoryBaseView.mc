@@ -9,7 +9,6 @@ import Toybox.WatchUi;
 
 //! Initial view
 class SensorHistoryBaseView extends WatchUi.View {
-
     //! Constructor
     public function initialize() {
         View.initialize();
@@ -21,8 +20,12 @@ class SensorHistoryBaseView extends WatchUi.View {
         dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_BLACK);
         dc.clear();
 
-        dc.drawText(dc.getWidth() / 2, dc.getHeight() / 2, Graphics.FONT_MEDIUM, "Press Select", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(
+            dc.getWidth() / 2,
+            dc.getHeight() / 2,
+            Graphics.FONT_MEDIUM,
+            "Press Select",
+            Graphics.TEXT_JUSTIFY_CENTER
+        );
     }
 }
-
-

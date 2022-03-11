@@ -26,8 +26,13 @@ class NordicThingyApp extends Application.AppBase {
     public function onStart(state as Dictionary?) as Void {
         _profileManager = new $.ProfileManager();
         _bleDelegate = new $.ThingyDelegate(_profileManager as ProfileManager);
-        _modelFactory = new $.DataModelFactory(_bleDelegate as ThingyDelegate, _profileManager as ProfileManager);
-        _viewController = new $.ViewController(_modelFactory as DataModelFactory);
+        _modelFactory = new $.DataModelFactory(
+            _bleDelegate as ThingyDelegate,
+            _profileManager as ProfileManager
+        );
+        _viewController = new $.ViewController(
+            _modelFactory as DataModelFactory
+        );
 
         BluetoothLowEnergy.setDelegate(_bleDelegate as ThingyDelegate);
         var profileManager = _profileManager;
@@ -54,5 +59,4 @@ class NordicThingyApp extends Application.AppBase {
         }
         return null;
     }
-
 }

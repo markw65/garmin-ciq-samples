@@ -27,7 +27,13 @@ class CommandView extends WatchUi.View {
         var selected = Graphics.COLOR_DK_GRAY;
         var notSelected = Graphics.COLOR_LT_GRAY;
         var alignment = $.ALIGN_BOTTOM_RIGHT;
-        _indicator = new $.PageIndicator(size, selected, notSelected, alignment, 0);
+        _indicator = new $.PageIndicator(
+            size,
+            selected,
+            notSelected,
+            alignment,
+            0
+        );
     }
 
     //! Update the view
@@ -44,34 +50,63 @@ class CommandView extends WatchUi.View {
         var font = Graphics.FONT_LARGE;
         var fWidth = dc.getTextWidthInPixels(text, font);
         dc.setColor(Graphics.COLOR_BLUE, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(width / 2 - fWidth / 2, margin, font, text, Graphics.TEXT_JUSTIFY_LEFT);
+        dc.drawText(
+            width / 2 - fWidth / 2,
+            margin,
+            font,
+            text,
+            Graphics.TEXT_JUSTIFY_LEFT
+        );
 
         text = "UTC Time";
         font = Graphics.FONT_MEDIUM;
         fWidth = dc.getTextWidthInPixels(text, font);
         dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(width / 2 - fWidth / 2, height / 3 + margin, font, text, Graphics.TEXT_JUSTIFY_LEFT);
+        dc.drawText(
+            width / 2 - fWidth / 2,
+            height / 3 + margin,
+            font,
+            text,
+            Graphics.TEXT_JUSTIFY_LEFT
+        );
 
         if (_sensor.getData().isUtcTimeSet()) {
             text = "Required";
             fWidth = dc.getTextWidthInPixels(text, font);
             dc.setColor(Graphics.COLOR_RED, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(width / 2 - fWidth / 2, height * 2 / 3, font, text, Graphics.TEXT_JUSTIFY_LEFT);
+            dc.drawText(
+                width / 2 - fWidth / 2,
+                (height * 2) / 3,
+                font,
+                text,
+                Graphics.TEXT_JUSTIFY_LEFT
+            );
 
             text = "Tap to set";
             font = Graphics.FONT_SMALL;
             fWidth = dc.getTextWidthInPixels(text, font);
             dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(width / 2 - fWidth / 2, height * 2 / 3 + margin, font, text, Graphics.TEXT_JUSTIFY_LEFT);
+            dc.drawText(
+                width / 2 - fWidth / 2,
+                (height * 2) / 3 + margin,
+                font,
+                text,
+                Graphics.TEXT_JUSTIFY_LEFT
+            );
         } else {
             text = "Not Required";
             fWidth = dc.getTextWidthInPixels(text, font);
             dc.setColor(Graphics.COLOR_GREEN, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(width / 2 - fWidth / 2, height * 2 / 3, font, text, Graphics.TEXT_JUSTIFY_LEFT);
+            dc.drawText(
+                width / 2 - fWidth / 2,
+                (height * 2) / 3,
+                font,
+                text,
+                Graphics.TEXT_JUSTIFY_LEFT
+            );
         }
 
         // Draw page indicator
         _indicator.draw(dc, _index);
     }
-
 }

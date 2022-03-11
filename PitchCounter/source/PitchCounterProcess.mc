@@ -31,7 +31,7 @@ class PitchCounterProcess {
     private const QN_THR = -QP_THR;
 
     // --- Pause range: number of samples * 40 ms each
-    private const Q_RANGE = (100 * 40);
+    private const Q_RANGE = 100 * 40;
 
     private var _x as Array<Float> = [0.0] as Array<Float>;
     private var _y as Array<Number> = [0] as Array<Number>;
@@ -59,11 +59,20 @@ class PitchCounterProcess {
     //! Constructor
     public function initialize() {
         // initialize FIR filter
-        var options = {:coefficients => [-0.0278f, 0.9444f, -0.0278f] as Array<Float>, :gain => 0.001f};
+        var options = {
+            :coefficients => [-0.0278f, 0.9444f, -0.0278f] as Array<Float>,
+            :gain => 0.001f,
+        };
         try {
             _filter = new Math.FirFilter(options);
-            _logger = new SensorLogging.SensorLogger({:accelerometer => {:enabled => true}});
-            _session = ActivityRecording.createSession({:name=>"PitchCounter", :sport=>ActivityRecording.SPORT_GENERIC, :sensorLogger =>_logger as SensorLogger});
+            _logger = new SensorLogging.SensorLogger({
+                :accelerometer => { :enabled => true },
+            });
+            _session = ActivityRecording.createSession({
+                :name => "PitchCounter",
+                :sport => ActivityRecording.SPORT_GENERIC,
+                :sensorLogger => _logger as SensorLogger,
+            });
         } catch (e) {
             System.println(e.getErrorMessage());
         }
@@ -87,14 +96,17 @@ class PitchCounterProcess {
     //! Start pitch counter
     public function onStart() as Void {
         // initialize accelerometer
-        var options = {:period => 1, :accelerometer => {:enabled => true, :sampleRate => 25}};
+        var options = {
+            :period => 1,
+            :accelerometer => { :enabled => true, :sampleRate => 25 },
+        };
         try {
             Sensor.registerSensorDataListener(method(:accelCallback), options);
             var session = _session;
             if (session != null) {
                 session.start();
             }
-        } catch(e) {
+        } catch (e) {
             System.println(e.getErrorMessage());
         }
     }
@@ -150,8 +162,14 @@ class PitchCounterProcess {
                 _skipSample--;
             } else {
                 // --- Pause feature?
-                if ((cur_acc_x < QP_THR) && (cur_acc_x > QN_THR) && (cur_acc_y < QP_THR) &&
-                   (cur_acc_y > QN_THR) && (cur_acc_z < QP_THR) && (cur_acc_z > QN_THR)) {
+                if (
+                    cur_acc_x < QP_THR &&
+                    cur_acc_x > QN_THR &&
+                    cur_acc_y < QP_THR &&
+                    cur_acc_y > QN_THR &&
+                    cur_acc_z < QP_THR &&
+                    cur_acc_z > QN_THR
+                ) {
                     _pauseCount++;
 
                     // --- Long enough pause before a pitch?
@@ -170,8 +188,11 @@ class PitchCounterProcess {
                 _maxZ = max(max(_accZ1, _accZ2), cur_acc_z);
 
                 // --- Pitching motion?
-                if ((time - _pauseTime < Q_RANGE) && (((_minZ < LOW_THR) && (_maxX > HIGH_THR)) || ((_minZ < LOW_THR) && (_minX < LOW_THR)))) {
-
+                if (
+                    time - _pauseTime < Q_RANGE &&
+                    ((_minZ < LOW_THR && _maxX > HIGH_THR) ||
+                        (_minZ < LOW_THR && _minX < LOW_THR))
+                ) {
                     // --- A new pitch detected
                     _pitchCount++;
 
@@ -202,12 +223,14 @@ class PitchCounterProcess {
         WatchUi.requestUpdate();
     }
 
-
     //! Return min of two values
     //! @param a First value
     //! @param b Second value
     //! @return The smaller of the given values
-    private function min(a as Float or Number, b as Float or Number) as Float or Number {
+    private function min(
+        a as Float or Number,
+        b as Float or Number
+    ) as Float or Number {
         if (a < b) {
             return a;
         } else {
@@ -219,7 +242,10 @@ class PitchCounterProcess {
     //! @param a First value
     //! @param b Second value
     //! @return The larger of the given values
-    private function max(a as Float or Number, b as Float or Number) as Float or Number {
+    private function max(
+        a as Float or Number,
+        b as Float or Number
+    ) as Float or Number {
         if (a > b) {
             return a;
         } else {

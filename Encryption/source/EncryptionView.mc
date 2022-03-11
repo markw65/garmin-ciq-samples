@@ -9,7 +9,6 @@ import Toybox.WatchUi;
 
 //! Main view for the encryption app
 class EncryptionView extends WatchUi.View {
-
     //! Constructor
     public function initialize() {
         // Initializes parent class

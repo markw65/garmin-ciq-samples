@@ -14,7 +14,6 @@ import Toybox.WatchUi;
 //! pickers for selecting colors, dates, strings, or times. It also includes
 //! a layout picker to show the layout of the picker on a given device.
 class PickerApp extends Application.AppBase {
-
     //! Constructor
     public function initialize() {
         AppBase.initialize();
@@ -26,19 +25,17 @@ class PickerApp extends Application.AppBase {
         // make sure that there is a valid color in storage to
         // prevent null checks in several places
         if (Storage.getValue("color") == null) {
-           Storage.setValue("color", Graphics.COLOR_RED);
+            Storage.setValue("color", Graphics.COLOR_RED);
         }
     }
 
     //! Handle app shutdown
     //! @param state Shutdown arguments
-    public function onStop(state as Dictionary?) as Void {
-    }
+    public function onStop(state as Dictionary?) as Void {}
 
     //! Return the initial views for the app
     //! @return Array Pair [View, InputDelegate]
     public function getInitialView() as Array<Views or InputDelegates>? {
         return [new $.PickerView(), new $.PickerDelegate()] as Array<Views or InputDelegates>;
     }
-
 }

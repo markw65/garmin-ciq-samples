@@ -51,20 +51,33 @@ class CharacterFactory extends WatchUi.PickerFactory {
     //! @param index The item index
     //! @param selected true if the current item is selected, false otherwise
     //! @return Drawable for the item
-    public function getDrawable(index as Number, selected as Boolean) as Drawable? {
+    public function getDrawable(
+        index as Number,
+        selected as Boolean
+    ) as Drawable? {
         if (index == _characterSet.length()) {
-            return new WatchUi.Text({:text=>$.Rez.Strings.characterPickerOk, :color=>Graphics.COLOR_WHITE,
-                :font=>Graphics.FONT_LARGE, :locX=>WatchUi.LAYOUT_HALIGN_CENTER, :locY=>WatchUi.LAYOUT_VALIGN_CENTER});
+            return new WatchUi.Text({
+                :text => $.Rez.Strings.characterPickerOk,
+                :color => Graphics.COLOR_WHITE,
+                :font => Graphics.FONT_LARGE,
+                :locX => WatchUi.LAYOUT_HALIGN_CENTER,
+                :locY => WatchUi.LAYOUT_VALIGN_CENTER,
+            });
         }
 
-        return new WatchUi.Text({:text=>getValue(index) as String, :color=>Graphics.COLOR_WHITE, :font=>Graphics.FONT_LARGE,
-            :locX=>WatchUi.LAYOUT_HALIGN_CENTER, :locY=>WatchUi.LAYOUT_VALIGN_CENTER});
+        return new WatchUi.Text({
+            :text => getValue(index) as String,
+            :color => Graphics.COLOR_WHITE,
+            :font => Graphics.FONT_LARGE,
+            :locX => WatchUi.LAYOUT_HALIGN_CENTER,
+            :locY => WatchUi.LAYOUT_VALIGN_CENTER,
+        });
     }
 
     //! Get whether the user selected OK and is done picking
     //! @param value Value user selected
     //! @return true if user is done, false otherwise
     public function isDone(value as String or Number) as Boolean {
-        return _addOk and (value == DONE);
+        return _addOk and value == DONE;
     }
 }

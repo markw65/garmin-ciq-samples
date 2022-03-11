@@ -11,7 +11,6 @@ import Toybox.WatchUi;
 //! This app demonstrates a basic analog watch face. It also shows
 //! a new page when a goal is met and has an app settings menu.
 class AnalogWatch extends Application.AppBase {
-
     //! Constructor
     public function initialize() {
         AppBase.initialize();
@@ -19,13 +18,11 @@ class AnalogWatch extends Application.AppBase {
 
     //! Handle app startup
     //! @param state Startup arguments
-    public function onStart(state as Dictionary?) as Void {
-    }
+    public function onStart(state as Dictionary?) as Void {}
 
     //! Handle app shutdown
     //! @param state Shutdown arguments
-    public function onStop(state as Dictionary?) as Void {
-    }
+    public function onStop(state as Dictionary?) as Void {}
 
     //! Return the initial view for the app
     //! @return Array Pair [View, Delegate] or Array [View]

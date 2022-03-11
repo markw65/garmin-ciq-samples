@@ -11,7 +11,6 @@ import Toybox.WatchUi;
 //! This application creates an ANT channel and
 //! allows the channel to be encrypted or not
 class EncryptionApp extends Application.AppBase {
-
     //! Constructor
     public function initialize() {
         AppBase.initialize();
@@ -22,5 +21,4 @@ class EncryptionApp extends Application.AppBase {
     public function getInitialView() as Array<Views or InputDelegates>? {
         return [new $.EncryptionView(), new $.EncryptionDelegate()] as Array<Views or InputDelegates>;
     }
-
 }

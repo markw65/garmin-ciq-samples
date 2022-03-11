@@ -9,7 +9,6 @@ import Toybox.WatchUi;
 
 //! Handles navigating between views
 class UserProfileDelegate extends WatchUi.BehaviorDelegate {
-
     private var _page as Number = 1;
 
     //! Constructor

@@ -15,7 +15,7 @@ class MO2FitContributor {
         FIELD_AVG_HEMO_CONC,
         FIELD_CURR_HEMO_PERCENT,
         FIELD_LAP_HEMO_PERCENT,
-        FIELD_AVG_HEMO_PERCENT
+        FIELD_AVG_HEMO_PERCENT,
     }
 
     // Variables for computing averages
@@ -38,13 +38,67 @@ class MO2FitContributor {
     //! Constructor
     //! @param dataField Data field to use to create fields
     public function initialize(dataField as MO2Field) {
-        _currentHCField = dataField.createField("currHemoConc", FIELD_CURR_HEMO_CONC, FitContributor.DATA_TYPE_UINT16, { :nativeNum=>54, :mesgType=>FitContributor.MESG_TYPE_RECORD, :units=>"g/dl" });
-        _lapAverageHCField = dataField.createField("lapHemoConc", FIELD_LAP_HEMO_CONC, FitContributor.DATA_TYPE_UINT16, { :nativeNum=>84, :mesgType=>FitContributor.MESG_TYPE_LAP, :units=>"g/dl" });
-        _sessionAverageHCField = dataField.createField("avgHemoConc", FIELD_AVG_HEMO_CONC, FitContributor.DATA_TYPE_UINT16, { :nativeNum=>95, :mesgType=>FitContributor.MESG_TYPE_SESSION, :units=>"g/dl" });
+        _currentHCField = dataField.createField(
+            "currHemoConc",
+            FIELD_CURR_HEMO_CONC,
+            FitContributor.DATA_TYPE_UINT16,
+            {
+                :nativeNum => 54,
+                :mesgType => FitContributor.MESG_TYPE_RECORD,
+                :units => "g/dl",
+            }
+        );
+        _lapAverageHCField = dataField.createField(
+            "lapHemoConc",
+            FIELD_LAP_HEMO_CONC,
+            FitContributor.DATA_TYPE_UINT16,
+            {
+                :nativeNum => 84,
+                :mesgType => FitContributor.MESG_TYPE_LAP,
+                :units => "g/dl",
+            }
+        );
+        _sessionAverageHCField = dataField.createField(
+            "avgHemoConc",
+            FIELD_AVG_HEMO_CONC,
+            FitContributor.DATA_TYPE_UINT16,
+            {
+                :nativeNum => 95,
+                :mesgType => FitContributor.MESG_TYPE_SESSION,
+                :units => "g/dl",
+            }
+        );
 
-        _currentHPField = dataField.createField("currHemoPerc", FIELD_CURR_HEMO_PERCENT, FitContributor.DATA_TYPE_UINT16, { :nativeNum=>57, :mesgType=>FitContributor.MESG_TYPE_RECORD, :units=>"%" });
-        _lapAverageHPField = dataField.createField("lapHemoConc", FIELD_LAP_HEMO_PERCENT, FitContributor.DATA_TYPE_UINT16, { :nativeNum=>87, :mesgType=>FitContributor.MESG_TYPE_LAP, :units=>"%" });
-        _sessionAverageHPField = dataField.createField("avgHemoConc", FIELD_AVG_HEMO_PERCENT, FitContributor.DATA_TYPE_UINT16, { :nativeNum=>98, :mesgType=>FitContributor.MESG_TYPE_SESSION, :units=>"%" });
+        _currentHPField = dataField.createField(
+            "currHemoPerc",
+            FIELD_CURR_HEMO_PERCENT,
+            FitContributor.DATA_TYPE_UINT16,
+            {
+                :nativeNum => 57,
+                :mesgType => FitContributor.MESG_TYPE_RECORD,
+                :units => "%",
+            }
+        );
+        _lapAverageHPField = dataField.createField(
+            "lapHemoConc",
+            FIELD_LAP_HEMO_PERCENT,
+            FitContributor.DATA_TYPE_UINT16,
+            {
+                :nativeNum => 87,
+                :mesgType => FitContributor.MESG_TYPE_LAP,
+                :units => "%",
+            }
+        );
+        _sessionAverageHPField = dataField.createField(
+            "avgHemoConc",
+            FIELD_AVG_HEMO_PERCENT,
+            FitContributor.DATA_TYPE_UINT16,
+            {
+                :nativeNum => 98,
+                :mesgType => FitContributor.MESG_TYPE_SESSION,
+                :units => "%",
+            }
+        );
 
         _currentHCField.setData(0);
         _lapAverageHCField.setData(0);
@@ -53,7 +107,6 @@ class MO2FitContributor {
         _currentHPField.setData(0);
         _lapAverageHPField.setData(0);
         _sessionAverageHPField.setData(0);
-
     }
 
     //! Update data and fields
@@ -78,11 +131,19 @@ class MO2FitContributor {
                 _hPSessionAverage += hemoPerc;
 
                 // Update lap/session FIT Contributions
-                _lapAverageHCField.setData(toFixed(_hCLapAverage / _lapRecordCount, 100));
-                _sessionAverageHCField.setData(toFixed(_hCSessionAverage / _sessionRecordCount, 100));
+                _lapAverageHCField.setData(
+                    toFixed(_hCLapAverage / _lapRecordCount, 100)
+                );
+                _sessionAverageHCField.setData(
+                    toFixed(_hCSessionAverage / _sessionRecordCount, 100)
+                );
 
-                _lapAverageHPField.setData(toFixed(_hPLapAverage / _lapRecordCount, 10));
-                _sessionAverageHPField.setData(toFixed(_hPSessionAverage / _sessionRecordCount, 10));
+                _lapAverageHPField.setData(
+                    toFixed(_hPLapAverage / _lapRecordCount, 10)
+                );
+                _sessionAverageHPField.setData(
+                    toFixed(_hPSessionAverage / _sessionRecordCount, 10)
+                );
             }
         }
     }
@@ -92,7 +153,7 @@ class MO2FitContributor {
     //! @param scale Scale to use
     //! @return Fixed value
     private function toFixed(value as Numeric, scale as Number) as Number {
-        return ((value * scale) + 0.5).toNumber();
+        return (value * scale + 0.5).toNumber();
     }
 
     //! Set whether the timer is running
@@ -114,5 +175,4 @@ class MO2FitContributor {
         _hCSessionAverage = 0.0;
         _hPSessionAverage = 0.0;
     }
-
 }

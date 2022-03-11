@@ -60,11 +60,29 @@ class TimerView extends WatchUi.View {
         dc.clear();
         dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
         var string = "Count: " + _count1;
-        dc.drawText(40, (dc.getHeight() / 2) - 30, Graphics.FONT_MEDIUM, string, Graphics.TEXT_JUSTIFY_LEFT);
+        dc.drawText(
+            40,
+            dc.getHeight() / 2 - 30,
+            Graphics.FONT_MEDIUM,
+            string,
+            Graphics.TEXT_JUSTIFY_LEFT
+        );
         string = "Count: " + _count2;
-        dc.drawText(40, (dc.getHeight() / 2), Graphics.FONT_MEDIUM, string, Graphics.TEXT_JUSTIFY_LEFT);
+        dc.drawText(
+            40,
+            dc.getHeight() / 2,
+            Graphics.FONT_MEDIUM,
+            string,
+            Graphics.TEXT_JUSTIFY_LEFT
+        );
         string = "Count: " + _count3;
-        dc.drawText(40, (dc.getHeight() / 2) + 30, Graphics.FONT_MEDIUM, string, Graphics.TEXT_JUSTIFY_LEFT);
+        dc.drawText(
+            40,
+            dc.getHeight() / 2 + 30,
+            Graphics.FONT_MEDIUM,
+            string,
+            Graphics.TEXT_JUSTIFY_LEFT
+        );
     }
 
     //! Stop the first timer

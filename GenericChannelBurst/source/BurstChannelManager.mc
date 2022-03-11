@@ -8,10 +8,9 @@ import Toybox.Ant;
 import Toybox.Lang;
 import Toybox.System;
 
-public const ANT_DATA_PACKET_SIZE = 8;
+const ANT_DATA_PACKET_SIZE = 8;
 
 class BurstChannelManager {
-
     private const BURST_TX_MESSAGE_COUNT = 50;
 
     private var _listener as TestBurstListener;
@@ -21,8 +20,14 @@ class BurstChannelManager {
     //! Constructor
     public function initialize() {
         _listener = new $.TestBurstListener();
-        _masterChannel = new $.BurstChannel(Ant.CHANNEL_TYPE_TX_NOT_RX, _listener);
-        _slaveChannel = new $.BurstChannel(Ant.CHANNEL_TYPE_RX_NOT_TX, _listener);
+        _masterChannel = new $.BurstChannel(
+            Ant.CHANNEL_TYPE_TX_NOT_RX,
+            _listener
+        );
+        _slaveChannel = new $.BurstChannel(
+            Ant.CHANNEL_TYPE_RX_NOT_TX,
+            _listener
+        );
     }
 
     //! Sends a burst over the master channel
@@ -62,11 +67,15 @@ class BurstChannel extends Ant.GenericChannel {
     //! Initializes the channel object, sets the burst listener and opens the channel
     //! @param channelType Type of channel to use
     //! @param listener The BurstListener to assign
-    public function initialize(channelType as ChannelType, listener as BurstListener) {
+    public function initialize(
+        channelType as ChannelType,
+        listener as BurstListener
+    ) {
         // Get the channel
         var chanAssign = new Ant.ChannelAssignment(
-                channelType,
-                Ant.NETWORK_PUBLIC);
+            channelType,
+            Ant.NETWORK_PUBLIC
+        );
         GenericChannel.initialize(method(:onMessage), chanAssign);
 
         // Set the configuration
@@ -75,7 +84,8 @@ class BurstChannel extends Ant.GenericChannel {
             :deviceType => DEVICE_TYPE,
             :transmissionType => TRANS_TYPE,
             :messagePeriod => PERIOD_1_HZ,
-            :radioFrequency => FREQUENCY});
+            :radioFrequency => FREQUENCY,
+        });
         GenericChannel.setDeviceConfig(deviceCfg);
 
         // Set the listener for burst messages
@@ -92,7 +102,10 @@ class BurstChannel extends Ant.GenericChannel {
     //! @param msg The Message received over the channel
     public function onMessage(msg as Message) as Void {
         var payload = msg.getPayload();
-        if ((Ant.MSG_ID_CHANNEL_RESPONSE_EVENT == msg.messageId) && (Ant.MSG_ID_RF_EVENT == payload[0])) {
+        if (
+            Ant.MSG_ID_CHANNEL_RESPONSE_EVENT == msg.messageId &&
+            Ant.MSG_ID_RF_EVENT == payload[0]
+        ) {
             var eventCode = payload[1];
             if (Ant.MSG_CODE_EVENT_TX == eventCode) {
                 // Create and populate the data payload
@@ -114,7 +127,6 @@ class BurstChannel extends Ant.GenericChannel {
             }
         }
     }
-
 }
 
 //! An extension of BurstListener that handles burst related events

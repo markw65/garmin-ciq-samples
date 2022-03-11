@@ -20,7 +20,10 @@ class DeviceManager {
     //! Constructor
     //! @param bleDelegate The BLE delegate
     //! @param profileManager The profile manager
-    public function initialize(bleDelegate as ThingyDelegate, profileManager as ProfileManager) {
+    public function initialize(
+        bleDelegate as ThingyDelegate,
+        profileManager as ProfileManager
+    ) {
         _device = null;
 
         bleDelegate.notifyScanResult(self);
@@ -59,7 +62,10 @@ class DeviceManager {
     //! Handle the completion of a write operation on a characteristic
     //! @param char The characteristic that was written
     //! @param status The result of the operation
-    public function procCharWrite(char as Characteristic, status as Status) as Void {
+    public function procCharWrite(
+        char as Characteristic,
+        status as Status
+    ) as Void {
         System.println("Proc Write: (" + char.getUuid() + ") - " + status);
 
         if (char.equals(_config)) {
@@ -73,7 +79,7 @@ class DeviceManager {
     //! Play the sample sound
     //! @param sampleId Identifier of the sample
     public function playSample(sampleId as Number) as Void {
-        if ((null == _device) || !_configComplete || _sampleInProgress) {
+        if (null == _device || !_configComplete || _sampleInProgress) {
             return;
         }
 
@@ -89,18 +95,26 @@ class DeviceManager {
         System.println("Start Sound");
         var device = _device;
         if (device != null) {
-            _soundService = device.getService(_profileManager.THINGY_SOUND_SERVICE);
+            _soundService = device.getService(
+                _profileManager.THINGY_SOUND_SERVICE
+            );
             var soundService = _soundService;
             if (soundService != null) {
-                _config = soundService.getCharacteristic(_profileManager.SOUND_CONFIG_CHARACTERISTIC);
-                _speakerData = soundService.getCharacteristic(_profileManager.SPEAKER_DATA_CHARACTERISTIC);
+                _config = soundService.getCharacteristic(
+                    _profileManager.SOUND_CONFIG_CHARACTERISTIC
+                );
+                _speakerData = soundService.getCharacteristic(
+                    _profileManager.SPEAKER_DATA_CHARACTERISTIC
+                );
             }
         }
         // Put the speaker into Sample Mode
         _configComplete = false;
         var config = _config;
         if (config != null) {
-            config.requestWrite([0x03, 0x01]b, {:writeType => BluetoothLowEnergy.WRITE_TYPE_WITH_RESPONSE});
+            config.requestWrite([0x03, 0x01]b, {
+                :writeType => BluetoothLowEnergy.WRITE_TYPE_WITH_RESPONSE,
+            });
         }
     }
 }

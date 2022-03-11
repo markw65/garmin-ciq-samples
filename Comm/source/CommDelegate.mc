@@ -16,7 +16,6 @@ import Toybox.WatchUi;
 
 //! Handles the completion of communication operations
 class CommListener extends Communications.ConnectionListener {
-
     //! Constructor
     public function initialize() {
         Communications.ConnectionListener.initialize();
@@ -69,7 +68,6 @@ class CommInputDelegate extends WatchUi.BehaviorDelegate {
 
 //! Handle menu selections for the main menu
 class BaseMenuDelegate extends WatchUi.MenuInputDelegate {
-
     //! Constructor
     public function initialize() {
         WatchUi.MenuInputDelegate.initialize();
@@ -103,7 +101,6 @@ class BaseMenuDelegate extends WatchUi.MenuInputDelegate {
 
 //! Handle menu selections for the send menu
 class SendMenuDelegate extends WatchUi.MenuInputDelegate {
-
     //! Constructor
     public function initialize() {
         WatchUi.MenuInputDelegate.initialize();
@@ -128,7 +125,6 @@ class SendMenuDelegate extends WatchUi.MenuInputDelegate {
 
 //! Handle menu selections for the listener menu
 class ListenerMenuDelegate extends WatchUi.MenuInputDelegate {
-
     //! Constructor
     public function initialize() {
         WatchUi.MenuInputDelegate.initialize();
@@ -142,7 +138,9 @@ class ListenerMenuDelegate extends WatchUi.MenuInputDelegate {
             Communications.setMailboxListener(app.getMailMethod());
         } else if (item == :phone) {
             if (Communications has :registerForPhoneAppMessages) {
-                Communications.registerForPhoneAppMessages(app.getPhoneMethod());
+                Communications.registerForPhoneAppMessages(
+                    app.getPhoneMethod()
+                );
             }
         } else if (item == :none) {
             Communications.registerForPhoneAppMessages(null);
@@ -155,4 +153,3 @@ class ListenerMenuDelegate extends WatchUi.MenuInputDelegate {
         WatchUi.popView(SLIDE_IMMEDIATE);
     }
 }
-

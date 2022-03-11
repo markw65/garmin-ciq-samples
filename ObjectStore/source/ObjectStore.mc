@@ -12,7 +12,6 @@ import Toybox.WatchUi;
 //! the device. The object store has been deprecated in ConnectIQ 4.0.0 and
 //! replaced by Application.Properties and Application.Storage.
 class ObjectStore extends Application.AppBase {
-
     //! Constructor
     public function initialize() {
         AppBase.initialize();
@@ -20,13 +19,11 @@ class ObjectStore extends Application.AppBase {
 
     //! Handle app startup
     //! @param state Startup arguments
-    public function onStart(state as Dictionary?) as Void {
-    }
+    public function onStart(state as Dictionary?) as Void {}
 
     //! Handle app shutdown
     //! @param state Shutdown arguments
-    public function onStop(state as Dictionary?) as Void {
-    }
+    public function onStop(state as Dictionary?) as Void {}
 
     //! Return the initial views for the app
     //! @return Array Pair [View, InputDelegate]

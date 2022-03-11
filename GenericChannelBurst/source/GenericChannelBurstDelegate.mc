@@ -8,7 +8,6 @@ import Toybox.Lang;
 import Toybox.WatchUi;
 
 class GenericChannelBurstDelegate extends WatchUi.BehaviorDelegate {
-
     private var _channelManager as BurstChannelManager;
 
     //! Constructor
@@ -24,5 +23,4 @@ class GenericChannelBurstDelegate extends WatchUi.BehaviorDelegate {
         _channelManager.sendBurst();
         return true;
     }
-
 }

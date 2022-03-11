@@ -19,12 +19,11 @@ enum StorageKeys {
     KEY_BOOLEAN,
     KEY_ARRAY,
     KEY_DICTIONARY,
-    KEY_COUNT
+    KEY_COUNT,
 }
 
 //! Show the current storage values
 class ApplicationStorageView extends WatchUi.View {
-
     private var _indicator as PageIndicator;
 
     //! Constructor
@@ -36,7 +35,13 @@ class ApplicationStorageView extends WatchUi.View {
         var notSelected = Graphics.COLOR_LT_GRAY;
         var alignment = $.ALIGN_TOP_RIGHT;
         var margin = 3;
-        _indicator = new $.PageIndicator(size, selected, notSelected, alignment, margin);
+        _indicator = new $.PageIndicator(
+            size,
+            selected,
+            notSelected,
+            alignment,
+            margin
+        );
     }
 
     //! Load your resources here
@@ -49,7 +54,10 @@ class ApplicationStorageView extends WatchUi.View {
     //! @param storagePrefix Label to prefix the storage value
     //! @param storageId The key for the storage item
     //! @return String with the storage prefix and value
-    private function getDisplayString(storagePrefix as String, storageId as Number) as String {
+    private function getDisplayString(
+        storagePrefix as String,
+        storageId as Number
+    ) as String {
         var value = Storage.getValue(storageId);
         if (value == null) {
             value = "Not set";
@@ -60,7 +68,10 @@ class ApplicationStorageView extends WatchUi.View {
     //! Update a label with new text
     //! @param labelId The label to update
     //! @param labelText The text for the label
-    private function updateLabel(labelId as String, labelText as String) as Void {
+    private function updateLabel(
+        labelId as String,
+        labelText as String
+    ) as Void {
         var drawable = View.findDrawableById(labelId);
         if (drawable != null) {
             (drawable as Text).setText(labelText);
@@ -77,7 +88,10 @@ class ApplicationStorageView extends WatchUi.View {
         updateLabel("StringLabel", getDisplayString("String", $.KEY_STRING));
         updateLabel("BoolLabel", getDisplayString("Boolean", $.KEY_BOOLEAN));
         updateLabel("ArrayLabel", getDisplayString("Array", $.KEY_ARRAY));
-        updateLabel("DictLabel", getDisplayString("Dictionary", $.KEY_DICTIONARY));
+        updateLabel(
+            "DictLabel",
+            getDisplayString("Dictionary", $.KEY_DICTIONARY)
+        );
 
         View.onUpdate(dc);
 
@@ -103,14 +117,22 @@ class ApplicationStorageViewDelegate extends WatchUi.BehaviorDelegate {
     //! Handle going to the next view
     //! @return true if handled, false otherwise
     public function onNextPage() as Boolean {
-        WatchUi.switchToView(new $.DefaultPropertiesView(), new $.DefaultPropertiesViewDelegate(), WatchUi.SLIDE_LEFT);
+        WatchUi.switchToView(
+            new $.DefaultPropertiesView(),
+            new $.DefaultPropertiesViewDelegate(),
+            WatchUi.SLIDE_LEFT
+        );
         return true;
     }
 
     //! Handle going to the previous view
     //! @return true if handled, false otherwise
     public function onPreviousPage() as Boolean {
-        WatchUi.switchToView(new $.DefaultPropertiesView(), new $.DefaultPropertiesViewDelegate(), WatchUi.SLIDE_RIGHT);
+        WatchUi.switchToView(
+            new $.DefaultPropertiesView(),
+            new $.DefaultPropertiesViewDelegate(),
+            WatchUi.SLIDE_RIGHT
+        );
         return true;
     }
 
@@ -153,7 +175,10 @@ class ApplicationStorageViewDelegate extends WatchUi.BehaviorDelegate {
                 Storage.setValue(_count, [1, 2, 3, null] as Array<Number?>);
                 break;
             case $.KEY_DICTIONARY:
-                Storage.setValue(_count, {1=>"one", "two"=>2, "null"=>null} as Dictionary<Number or String, Number or String or Null>);
+                Storage.setValue(
+                    _count,
+                    { 1 => "one", "two" => 2, "null" => null } as Dictionary<Number or String, Number or String or Null>
+                );
                 break;
             default:
                 Storage.deleteValue(_count - $.KEY_COUNT);
@@ -161,7 +186,7 @@ class ApplicationStorageViewDelegate extends WatchUi.BehaviorDelegate {
 
         _count++;
 
-        if (_count == (2 * $.KEY_COUNT)) {
+        if (_count == 2 * $.KEY_COUNT) {
             _count = 0;
         }
 
@@ -180,5 +205,4 @@ class ApplicationStorageViewDelegate extends WatchUi.BehaviorDelegate {
         WatchUi.requestUpdate();
         return true;
     }
-
 }

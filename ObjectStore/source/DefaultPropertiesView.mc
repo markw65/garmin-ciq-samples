@@ -16,12 +16,11 @@ enum DefaultProps {
     PROP_NUMBER = "number_prop",
     PROP_FLOAT = "float_prop",
     PROP_STRING = "string_prop",
-    PROP_BOOLEAN = "boolean_prop"
+    PROP_BOOLEAN = "boolean_prop",
 }
 
 //! Show the default property values in the object store
 class DefaultPropertiesView extends WatchUi.View {
-
     private var _indicator as PageIndicator;
 
     //! Constructor
@@ -32,7 +31,13 @@ class DefaultPropertiesView extends WatchUi.View {
         var notSelected = Graphics.COLOR_LT_GRAY;
         var alignment = $.ALIGN_TOP_RIGHT;
         var margin = 3;
-        _indicator = new $.PageIndicator(size, selected, notSelected, alignment, margin);
+        _indicator = new $.PageIndicator(
+            size,
+            selected,
+            notSelected,
+            alignment,
+            margin
+        );
     }
 
     //! Load the resources
@@ -85,7 +90,6 @@ class DefaultPropertiesView extends WatchUi.View {
 
 //! Handle input on the default properties view
 class DefaultPropertiesViewDelegate extends WatchUi.BehaviorDelegate {
-
     //! Constructor
     public function initialize() {
         BehaviorDelegate.initialize();
@@ -94,14 +98,22 @@ class DefaultPropertiesViewDelegate extends WatchUi.BehaviorDelegate {
     //! Handle going to the next view
     //! @return true if handled, false otherwise
     public function onNextPage() as Boolean {
-        WatchUi.switchToView(new $.ObjectStoreView(), new $.ObjectStoreViewDelegate(), WatchUi.SLIDE_LEFT);
+        WatchUi.switchToView(
+            new $.ObjectStoreView(),
+            new $.ObjectStoreViewDelegate(),
+            WatchUi.SLIDE_LEFT
+        );
         return true;
     }
 
     //! Handle going to the previous view
     //! @return true if handled, false otherwise
     public function onPreviousPage() as Boolean {
-        WatchUi.switchToView(new $.ObjectStoreView(), new $.ObjectStoreViewDelegate(), WatchUi.SLIDE_RIGHT);
+        WatchUi.switchToView(
+            new $.ObjectStoreView(),
+            new $.ObjectStoreViewDelegate(),
+            WatchUi.SLIDE_RIGHT
+        );
         return true;
     }
 

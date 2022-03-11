@@ -10,7 +10,6 @@ import Toybox.WatchUi;
 
 //! Factory for creating rectangles
 class RectangleFactory extends WatchUi.PickerFactory {
-
     private var _color as ColorType;
 
     //! Constructor
@@ -37,7 +36,10 @@ class RectangleFactory extends WatchUi.PickerFactory {
     //! @param index The item index
     //! @param selected true if the current item is selected, false otherwise
     //! @return Drawable for the item
-    public function getDrawable(index as Number, selected as Boolean) as Drawable? {
+    public function getDrawable(
+        index as Number,
+        selected as Boolean
+    ) as Drawable? {
         return new $.Rectangle(_color);
     }
 }

@@ -11,7 +11,6 @@ import Toybox.WatchUi;
 
 //! Initial view
 class MyWatchView extends WatchUi.View {
-
     //! Constructor
     public function initialize() {
         View.initialize();
@@ -24,9 +23,14 @@ class MyWatchView extends WatchUi.View {
         dc.clear();
         dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
         var string = "Push 'Select'\n to start the\n progress bar";
-        dc.drawText(dc.getWidth() / 2, dc.getHeight() / 2, Graphics.FONT_SMALL, string, Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
+        dc.drawText(
+            dc.getWidth() / 2,
+            dc.getHeight() / 2,
+            Graphics.FONT_SMALL,
+            string,
+            Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER
+        );
     }
-
 }
 
 //! Input handler for the progress bar
@@ -50,7 +54,6 @@ class ProgressDelegate extends WatchUi.BehaviorDelegate {
 
 //! Creates and updates the progress bar
 class InputDelegate extends WatchUi.BehaviorDelegate {
-
     private var _progressBar as ProgressBar?;
     private var _timer as Timer.Timer?;
     private var _count as Number = 0;
@@ -69,7 +72,11 @@ class InputDelegate extends WatchUi.BehaviorDelegate {
         _count = 0;
 
         _progressBar = new WatchUi.ProgressBar("Processing", null);
-        WatchUi.pushView(_progressBar, new $.ProgressDelegate(method(:stopTimer)), WatchUi.SLIDE_DOWN);
+        WatchUi.pushView(
+            _progressBar,
+            new $.ProgressDelegate(method(:stopTimer)),
+            WatchUi.SLIDE_DOWN
+        );
 
         (_timer as Timer.Timer).start(method(:timerCallback), 1000, true);
         return true;

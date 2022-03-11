@@ -11,7 +11,6 @@ import Toybox.WatchUi;
 
 //! Shows user information about activity level and birth year
 class UserProfileSectionThreeView extends WatchUi.View {
-
     private var _activityPrefixStr as String;
     private var _lowActivityStr as String;
     private var _medActivityStr as String;
@@ -23,11 +22,19 @@ class UserProfileSectionThreeView extends WatchUi.View {
     public function initialize() {
         View.initialize();
 
-        _activityPrefixStr = WatchUi.loadResource($.Rez.Strings.ActivityLevelPrefix) as String;
-        _lowActivityStr = WatchUi.loadResource($.Rez.Strings.LowActivityLevel) as String;
-        _medActivityStr = WatchUi.loadResource($.Rez.Strings.MediumActivityLevel) as String;
-        _highActivityStr = WatchUi.loadResource($.Rez.Strings.HighActivityLevel) as String;
-        _birthYearPrefixStr = WatchUi.loadResource($.Rez.Strings.BirthYearPrefix) as String;
+        _activityPrefixStr = WatchUi.loadResource(
+            $.Rez.Strings.ActivityLevelPrefix
+        ) as String;
+        _lowActivityStr = WatchUi.loadResource($.Rez.Strings.LowActivityLevel) as
+            String;
+        _medActivityStr = WatchUi.loadResource(
+            $.Rez.Strings.MediumActivityLevel
+        ) as String;
+        _highActivityStr = WatchUi.loadResource($.Rez.Strings.HighActivityLevel)
+            as String;
+        _birthYearPrefixStr = WatchUi.loadResource(
+            $.Rez.Strings.BirthYearPrefix
+        ) as String;
         _itemNotSetStr = WatchUi.loadResource($.Rez.Strings.ItemNotSet) as String;
     }
 
@@ -47,11 +54,17 @@ class UserProfileSectionThreeView extends WatchUi.View {
             var activityClass = profile.activityClass;
             if (activityClass != null) {
                 if (activityClass <= 20) {
-                    string += _lowActivityStr + " (" + activityClass.toString() + ")";
+                    string +=
+                        _lowActivityStr + " (" + activityClass.toString() + ")";
                 } else if (activityClass <= 50) {
-                    string += _medActivityStr + " (" + activityClass.toString() + ")";
+                    string +=
+                        _medActivityStr + " (" + activityClass.toString() + ")";
                 } else {
-                    string += _highActivityStr + " (" + activityClass.toString() + ")";
+                    string +=
+                        _highActivityStr +
+                        " (" +
+                        activityClass.toString() +
+                        ")";
                 }
             } else {
                 string += _itemNotSetStr;

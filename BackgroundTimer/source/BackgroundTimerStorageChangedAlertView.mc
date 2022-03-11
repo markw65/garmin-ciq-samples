@@ -9,7 +9,6 @@ import Toybox.WatchUi;
 
 //! This view shows the storage was changed
 class BackgroundTimerStorageChangedAlertView extends WatchUi.View {
-
     //! Constructor
     public function initialize() {
         View.initialize();

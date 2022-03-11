@@ -11,7 +11,6 @@ import Toybox.WatchUi;
 //! This app loads JSON data from resource files and loops through
 //! each resource, showing it on the device
 class JsonDataResourcesApp extends Application.AppBase {
-
     //! Constructor
     public function initialize() {
         AppBase.initialize();
@@ -19,13 +18,11 @@ class JsonDataResourcesApp extends Application.AppBase {
 
     //! Handle app startup
     //! @param state Startup arguments
-    public function onStart(state as Dictionary?) as Void {
-    }
+    public function onStart(state as Dictionary?) as Void {}
 
     //! Handle app shutdown
     //! @param state Shutdown arguments
-    public function onStop(state as Dictionary?) as Void {
-    }
+    public function onStop(state as Dictionary?) as Void {}
 
     //! Return the initial views for the app
     //! @return Array Pair [View, InputDelegate]
@@ -34,5 +31,4 @@ class JsonDataResourcesApp extends Application.AppBase {
         var inputDelegate = new $.BaseInputDelegate(mainView);
         return [mainView, inputDelegate] as Array<Views or InputDelegates>;
     }
-
 }

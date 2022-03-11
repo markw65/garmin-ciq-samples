@@ -9,7 +9,6 @@ import Toybox.WatchUi;
 
 //! Shows a fact about prosimians
 class ProsimiansView extends WatchUi.View {
-
     private var _color as ColorType;
 
     //! Constructor
@@ -31,15 +30,44 @@ class ProsimiansView extends WatchUi.View {
         var x = dc.getWidth() / 2;
         var y = 20;
 
-        dc.drawText(x, y, Graphics.FONT_MEDIUM, "Prosimians", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(
+            x,
+            y,
+            Graphics.FONT_MEDIUM,
+            "Prosimians",
+            Graphics.TEXT_JUSTIFY_CENTER
+        );
         y += dc.getFontHeight(Graphics.FONT_MEDIUM);
-        dc.drawText(x, y, Graphics.FONT_SMALL, "Prosimian means", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(
+            x,
+            y,
+            Graphics.FONT_SMALL,
+            "Prosimian means",
+            Graphics.TEXT_JUSTIFY_CENTER
+        );
         y += dc.getFontHeight(Graphics.FONT_SMALL);
-        dc.drawText(x, y, Graphics.FONT_SMALL, "'before monkeys'", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(
+            x,
+            y,
+            Graphics.FONT_SMALL,
+            "'before monkeys'",
+            Graphics.TEXT_JUSTIFY_CENTER
+        );
         y += dc.getFontHeight(Graphics.FONT_SMALL);
-        dc.drawText(x, y, Graphics.FONT_SMALL, "and they are the", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(
+            x,
+            y,
+            Graphics.FONT_SMALL,
+            "and they are the",
+            Graphics.TEXT_JUSTIFY_CENTER
+        );
         y += dc.getFontHeight(Graphics.FONT_SMALL);
-        dc.drawText(x, y, Graphics.FONT_SMALL, "most primitive.", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(
+            x,
+            y,
+            Graphics.FONT_SMALL,
+            "most primitive.",
+            Graphics.TEXT_JUSTIFY_CENTER
+        );
     }
-
 }

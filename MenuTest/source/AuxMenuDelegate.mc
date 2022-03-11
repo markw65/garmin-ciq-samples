@@ -10,7 +10,6 @@ import Toybox.WatchUi;
 
 //! Input handler to respond to Aux menu selections
 class AuxMenuDelegate extends WatchUi.MenuInputDelegate {
-
     //! Constructor
     public function initialize() {
         MenuInputDelegate.initialize();

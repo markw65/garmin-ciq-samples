@@ -9,7 +9,6 @@ import Toybox.WatchUi;
 
 //! Input handler for the map views
 class MapSampleMapDelegate extends WatchUi.BehaviorDelegate {
-
     private var _view as MapView;
 
     //! Constructor

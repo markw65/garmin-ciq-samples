@@ -10,15 +10,16 @@ import Toybox.WatchUi;
 
 //! Class to show the picker layout for the current device
 class LayoutPicker extends WatchUi.Picker {
-
     //! Constructor
     public function initialize() {
         var factory = new $.RectangleFactory(Graphics.COLOR_PURPLE);
-        Picker.initialize({:title=>new $.Rectangle(Graphics.COLOR_RED),
-                           :pattern=>[factory, factory, factory, factory, factory],
-                           :nextArrow=>new $.Rectangle(Graphics.COLOR_GREEN),
-                           :previousArrow=>new $.Rectangle(Graphics.COLOR_GREEN),
-                           :confirm=>new $.Rectangle(Graphics.COLOR_WHITE)});
+        Picker.initialize({
+            :title => new $.Rectangle(Graphics.COLOR_RED),
+            :pattern => [factory, factory, factory, factory, factory],
+            :nextArrow => new $.Rectangle(Graphics.COLOR_GREEN),
+            :previousArrow => new $.Rectangle(Graphics.COLOR_GREEN),
+            :confirm => new $.Rectangle(Graphics.COLOR_WHITE),
+        });
     }
 
     //! Update the view
@@ -32,7 +33,6 @@ class LayoutPicker extends WatchUi.Picker {
 
 //! Responds to a layout picker selection or cancellation
 class LayoutPickerDelegate extends WatchUi.PickerDelegate {
-
     //! Constructor
     public function initialize() {
         PickerDelegate.initialize();
@@ -52,5 +52,4 @@ class LayoutPickerDelegate extends WatchUi.PickerDelegate {
         WatchUi.popView(WatchUi.SLIDE_IMMEDIATE);
         return true;
     }
-
 }

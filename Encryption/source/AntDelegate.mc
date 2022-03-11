@@ -9,7 +9,6 @@ import Toybox.WatchUi;
 
 //! Input delegate for the AntSensor data view
 class AntDelegate extends WatchUi.BehaviorDelegate {
-
     private var _sensor as AntModule.AntSensor;
 
     //! Constructor

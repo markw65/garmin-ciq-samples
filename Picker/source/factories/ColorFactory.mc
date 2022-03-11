@@ -43,7 +43,10 @@ class ColorFactory extends WatchUi.PickerFactory {
     //! @param index The item index
     //! @param selected true if the current item is selected, false otherwise
     //! @return Drawable for the item
-    public function getDrawable(index as Number, selected as Boolean) as Drawable? {
+    public function getDrawable(
+        index as Number,
+        selected as Boolean
+    ) as Drawable? {
         _colorWheel.setColor(index);
         return _colorWheel;
     }

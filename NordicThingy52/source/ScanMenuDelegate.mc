@@ -9,7 +9,6 @@ import Toybox.Lang;
 import Toybox.WatchUi;
 
 class ScanMenuDelegate extends WatchUi.MenuInputDelegate {
-
     //! Constructor
     public function initialize() {
         MenuInputDelegate.initialize();
@@ -19,7 +18,9 @@ class ScanMenuDelegate extends WatchUi.MenuInputDelegate {
     //! @param item The identifier of the chosen item
     public function onMenuItem(item as Symbol) as Void {
         if (item == :item_1) {
-            BluetoothLowEnergy.setScanState(BluetoothLowEnergy.SCAN_STATE_SCANNING);
+            BluetoothLowEnergy.setScanState(
+                BluetoothLowEnergy.SCAN_STATE_SCANNING
+            );
         } else if (item == :item_2) {
             BluetoothLowEnergy.setScanState(BluetoothLowEnergy.SCAN_STATE_OFF);
         }
