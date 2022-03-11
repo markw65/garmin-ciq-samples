@@ -1,0 +1,7 @@
+#!/bin/bash
+
+target=$1
+bin=${2:-bin-$(git rev-parse --abbrev-ref HEAD)}
+
+set -x
+~/Library/ApplicationSupport/Garmin/ConnectIQ/Sdks/connectiq-sdk-mac-4.0.10-2022-02-08-277ce4444/bin/monkeyc -o $target/$bin/$target.prg -f "$(pwd)/$target/monkey.jungle" -y /Users/mwilliams/connect-iq/developer_key -w -l 1 -d $(xmlstarlet sel -t -m '//iq:product[1]' -v '@id' $target/manifest.xml)_sim -r
